@@ -1,0 +1,7033 @@
+{
+  "source": {
+    "repo": "LandSandBoat/server",
+    "path": "/home/ubuntu/ffxi_research/server",
+    "files": [
+      "sql/item_basic.sql",
+      "sql/item_equipment.sql",
+      "sql/item_weapon.sql",
+      "sql/item_mods.sql",
+      "sql/item_latents.sql",
+      "sql/item_mods_pet.sql",
+      "data/enums/mod.yaml",
+      "data/enums/job.yaml",
+      "data/enums/skill_type.yaml",
+      "data/enums/latent.yaml",
+      "data/enums/damage_type.yaml"
+    ]
+  },
+  "jobs": [
+    {
+      "id": 1,
+      "abbr": "WAR",
+      "bit": 1
+    },
+    {
+      "id": 2,
+      "abbr": "MNK",
+      "bit": 2
+    },
+    {
+      "id": 3,
+      "abbr": "WHM",
+      "bit": 4
+    },
+    {
+      "id": 4,
+      "abbr": "BLM",
+      "bit": 8
+    },
+    {
+      "id": 5,
+      "abbr": "RDM",
+      "bit": 16
+    },
+    {
+      "id": 6,
+      "abbr": "THF",
+      "bit": 32
+    },
+    {
+      "id": 7,
+      "abbr": "PLD",
+      "bit": 64
+    },
+    {
+      "id": 8,
+      "abbr": "DRK",
+      "bit": 128
+    },
+    {
+      "id": 9,
+      "abbr": "BST",
+      "bit": 256
+    },
+    {
+      "id": 10,
+      "abbr": "BRD",
+      "bit": 512
+    },
+    {
+      "id": 11,
+      "abbr": "RNG",
+      "bit": 1024
+    },
+    {
+      "id": 12,
+      "abbr": "SAM",
+      "bit": 2048
+    },
+    {
+      "id": 13,
+      "abbr": "NIN",
+      "bit": 4096
+    },
+    {
+      "id": 14,
+      "abbr": "DRG",
+      "bit": 8192
+    },
+    {
+      "id": 15,
+      "abbr": "SMN",
+      "bit": 16384
+    },
+    {
+      "id": 16,
+      "abbr": "BLU",
+      "bit": 32768
+    },
+    {
+      "id": 17,
+      "abbr": "COR",
+      "bit": 65536
+    },
+    {
+      "id": 18,
+      "abbr": "PUP",
+      "bit": 131072
+    },
+    {
+      "id": 19,
+      "abbr": "DNC",
+      "bit": 262144
+    },
+    {
+      "id": 20,
+      "abbr": "SCH",
+      "bit": 524288
+    },
+    {
+      "id": 21,
+      "abbr": "GEO",
+      "bit": 1048576
+    },
+    {
+      "id": 22,
+      "abbr": "RUN",
+      "bit": 2097152
+    }
+  ],
+  "slots": [
+    {
+      "id": 0,
+      "name": "Main",
+      "bit": 1
+    },
+    {
+      "id": 1,
+      "name": "Sub",
+      "bit": 2
+    },
+    {
+      "id": 2,
+      "name": "Ranged",
+      "bit": 4
+    },
+    {
+      "id": 3,
+      "name": "Ammo",
+      "bit": 8
+    },
+    {
+      "id": 4,
+      "name": "Head",
+      "bit": 16
+    },
+    {
+      "id": 5,
+      "name": "Body",
+      "bit": 32
+    },
+    {
+      "id": 6,
+      "name": "Hands",
+      "bit": 64
+    },
+    {
+      "id": 7,
+      "name": "Legs",
+      "bit": 128
+    },
+    {
+      "id": 8,
+      "name": "Feet",
+      "bit": 256
+    },
+    {
+      "id": 9,
+      "name": "Neck",
+      "bit": 512
+    },
+    {
+      "id": 10,
+      "name": "Waist",
+      "bit": 1024
+    },
+    {
+      "id": 11,
+      "name": "Ear1",
+      "bit": 2048
+    },
+    {
+      "id": 12,
+      "name": "Ear2",
+      "bit": 4096
+    },
+    {
+      "id": 13,
+      "name": "Ring1",
+      "bit": 8192
+    },
+    {
+      "id": 14,
+      "name": "Ring2",
+      "bit": 16384
+    },
+    {
+      "id": 15,
+      "name": "Back",
+      "bit": 32768
+    }
+  ],
+  "weaponSkillTypes": [
+    {
+      "id": 0,
+      "name": "None",
+      "enumName": "none"
+    },
+    {
+      "id": 1,
+      "name": "Hand To Hand",
+      "enumName": "hand_to_hand"
+    },
+    {
+      "id": 2,
+      "name": "Dagger",
+      "enumName": "dagger"
+    },
+    {
+      "id": 3,
+      "name": "Sword",
+      "enumName": "sword"
+    },
+    {
+      "id": 4,
+      "name": "Great Sword",
+      "enumName": "great_sword"
+    },
+    {
+      "id": 5,
+      "name": "Axe",
+      "enumName": "axe"
+    },
+    {
+      "id": 6,
+      "name": "Great Axe",
+      "enumName": "great_axe"
+    },
+    {
+      "id": 7,
+      "name": "Scythe",
+      "enumName": "scythe"
+    },
+    {
+      "id": 8,
+      "name": "Polearm",
+      "enumName": "polearm"
+    },
+    {
+      "id": 9,
+      "name": "Katana",
+      "enumName": "katana"
+    },
+    {
+      "id": 10,
+      "name": "Great Katana",
+      "enumName": "great_katana"
+    },
+    {
+      "id": 11,
+      "name": "Club",
+      "enumName": "club"
+    },
+    {
+      "id": 12,
+      "name": "Staff",
+      "enumName": "staff"
+    },
+    {
+      "id": 22,
+      "name": "Automaton Melee",
+      "enumName": "automaton_melee"
+    },
+    {
+      "id": 23,
+      "name": "Automaton Ranged",
+      "enumName": "automaton_ranged"
+    },
+    {
+      "id": 24,
+      "name": "Automaton Magic",
+      "enumName": "automaton_magic"
+    },
+    {
+      "id": 25,
+      "name": "Archery",
+      "enumName": "archery"
+    },
+    {
+      "id": 26,
+      "name": "Marksmanship",
+      "enumName": "marksmanship"
+    },
+    {
+      "id": 27,
+      "name": "Throwing",
+      "enumName": "throwing"
+    },
+    {
+      "id": 28,
+      "name": "Guard",
+      "enumName": "guard"
+    },
+    {
+      "id": 29,
+      "name": "Evasion",
+      "enumName": "evasion"
+    },
+    {
+      "id": 30,
+      "name": "Shield",
+      "enumName": "shield"
+    },
+    {
+      "id": 31,
+      "name": "Parry",
+      "enumName": "parry"
+    },
+    {
+      "id": 32,
+      "name": "Divine Magic",
+      "enumName": "divine_magic"
+    },
+    {
+      "id": 33,
+      "name": "Healing Magic",
+      "enumName": "healing_magic"
+    },
+    {
+      "id": 34,
+      "name": "Enhancing Magic",
+      "enumName": "enhancing_magic"
+    },
+    {
+      "id": 35,
+      "name": "Enfeebling Magic",
+      "enumName": "enfeebling_magic"
+    },
+    {
+      "id": 36,
+      "name": "Elemental Magic",
+      "enumName": "elemental_magic"
+    },
+    {
+      "id": 37,
+      "name": "Dark Magic",
+      "enumName": "dark_magic"
+    },
+    {
+      "id": 38,
+      "name": "Summoning Magic",
+      "enumName": "summoning_magic"
+    },
+    {
+      "id": 39,
+      "name": "Ninjutsu",
+      "enumName": "ninjutsu"
+    },
+    {
+      "id": 40,
+      "name": "Singing",
+      "enumName": "singing"
+    },
+    {
+      "id": 41,
+      "name": "String Instrument",
+      "enumName": "string_instrument"
+    },
+    {
+      "id": 42,
+      "name": "Wind Instrument",
+      "enumName": "wind_instrument"
+    },
+    {
+      "id": 43,
+      "name": "Blue Magic",
+      "enumName": "blue_magic"
+    },
+    {
+      "id": 44,
+      "name": "Geomancy",
+      "enumName": "geomancy"
+    },
+    {
+      "id": 45,
+      "name": "Handbell",
+      "enumName": "handbell"
+    },
+    {
+      "id": 48,
+      "name": "Fishing",
+      "enumName": "fishing"
+    },
+    {
+      "id": 49,
+      "name": "Woodworking",
+      "enumName": "woodworking"
+    },
+    {
+      "id": 50,
+      "name": "Smithing",
+      "enumName": "smithing"
+    },
+    {
+      "id": 51,
+      "name": "Goldsmithing",
+      "enumName": "goldsmithing"
+    },
+    {
+      "id": 52,
+      "name": "Clothcraft",
+      "enumName": "clothcraft"
+    },
+    {
+      "id": 53,
+      "name": "Leathercraft",
+      "enumName": "leathercraft"
+    },
+    {
+      "id": 54,
+      "name": "Bonecraft",
+      "enumName": "bonecraft"
+    },
+    {
+      "id": 55,
+      "name": "Alchemy",
+      "enumName": "alchemy"
+    },
+    {
+      "id": 56,
+      "name": "Cooking",
+      "enumName": "cooking"
+    },
+    {
+      "id": 57,
+      "name": "Synergy",
+      "enumName": "synergy"
+    },
+    {
+      "id": 58,
+      "name": "Rid",
+      "enumName": "rid"
+    },
+    {
+      "id": 59,
+      "name": "Dig",
+      "enumName": "dig"
+    }
+  ],
+  "damageTypes": [
+    {
+      "id": 0,
+      "name": "None",
+      "enumName": "none"
+    },
+    {
+      "id": 1,
+      "name": "Piercing",
+      "enumName": "piercing"
+    },
+    {
+      "id": 2,
+      "name": "Slashing",
+      "enumName": "slashing"
+    },
+    {
+      "id": 3,
+      "name": "Blunt",
+      "enumName": "blunt"
+    },
+    {
+      "id": 4,
+      "name": "Hand To Hand",
+      "enumName": "hand_to_hand"
+    },
+    {
+      "id": 5,
+      "name": "Elemental",
+      "enumName": "elemental"
+    },
+    {
+      "id": 6,
+      "name": "Fire",
+      "enumName": "fire"
+    },
+    {
+      "id": 7,
+      "name": "Ice",
+      "enumName": "ice"
+    },
+    {
+      "id": 8,
+      "name": "Wind",
+      "enumName": "wind"
+    },
+    {
+      "id": 9,
+      "name": "Earth",
+      "enumName": "earth"
+    },
+    {
+      "id": 10,
+      "name": "Thunder",
+      "enumName": "thunder"
+    },
+    {
+      "id": 11,
+      "name": "Water",
+      "enumName": "water"
+    },
+    {
+      "id": 12,
+      "name": "Light",
+      "enumName": "light"
+    },
+    {
+      "id": 13,
+      "name": "Dark",
+      "enumName": "dark"
+    }
+  ],
+  "latentConditions": [
+    {
+      "id": 0,
+      "name": "hp_under_percent"
+    },
+    {
+      "id": 1,
+      "name": "hp_over_percent"
+    },
+    {
+      "id": 2,
+      "name": "hp_under_tp_under_100"
+    },
+    {
+      "id": 3,
+      "name": "hp_over_tp_under_100"
+    },
+    {
+      "id": 4,
+      "name": "mp_under_percent"
+    },
+    {
+      "id": 5,
+      "name": "mp_under"
+    },
+    {
+      "id": 6,
+      "name": "tp_under"
+    },
+    {
+      "id": 7,
+      "name": "tp_over"
+    },
+    {
+      "id": 8,
+      "name": "subjob"
+    },
+    {
+      "id": 9,
+      "name": "pet_id"
+    },
+    {
+      "id": 10,
+      "name": "weapon_drawn"
+    },
+    {
+      "id": 11,
+      "name": "weapon_sheathed"
+    },
+    {
+      "id": 12,
+      "name": "signet_bonus"
+    },
+    {
+      "id": 13,
+      "name": "status_effect_active"
+    },
+    {
+      "id": 14,
+      "name": "no_food_active"
+    },
+    {
+      "id": 15,
+      "name": "party_members"
+    },
+    {
+      "id": 16,
+      "name": "party_members_in_zone"
+    },
+    {
+      "id": 17,
+      "name": "sanction_regen_bonus"
+    },
+    {
+      "id": 18,
+      "name": "sanction_refresh_bonus"
+    },
+    {
+      "id": 19,
+      "name": "sigil_regen_bonus"
+    },
+    {
+      "id": 20,
+      "name": "sigil_refresh_bonus"
+    },
+    {
+      "id": 21,
+      "name": "avatar_in_party"
+    },
+    {
+      "id": 22,
+      "name": "job_in_party"
+    },
+    {
+      "id": 23,
+      "name": "zone"
+    },
+    {
+      "id": 24,
+      "name": "synth_trainee"
+    },
+    {
+      "id": 25,
+      "name": "song_roll_active"
+    },
+    {
+      "id": 26,
+      "name": "time_of_day"
+    },
+    {
+      "id": 27,
+      "name": "hour_of_day"
+    },
+    {
+      "id": 28,
+      "name": "firesday"
+    },
+    {
+      "id": 29,
+      "name": "earthsday"
+    },
+    {
+      "id": 30,
+      "name": "watersday"
+    },
+    {
+      "id": 31,
+      "name": "windsday"
+    },
+    {
+      "id": 32,
+      "name": "darksday"
+    },
+    {
+      "id": 34,
+      "name": "iceday"
+    },
+    {
+      "id": 35,
+      "name": "lightningsday"
+    },
+    {
+      "id": 36,
+      "name": "lightsday"
+    },
+    {
+      "id": 37,
+      "name": "moon_phase"
+    },
+    {
+      "id": 38,
+      "name": "job_multiple"
+    },
+    {
+      "id": 39,
+      "name": "job_multiple_at_night"
+    },
+    {
+      "id": 40,
+      "name": "equipped_in_slot"
+    },
+    {
+      "id": 41,
+      "name": "during_ws"
+    },
+    {
+      "id": 42,
+      "name": "weather_condition"
+    },
+    {
+      "id": 43,
+      "name": "weapon_drawn_hp_under"
+    },
+    {
+      "id": 44,
+      "name": "nation_citizen"
+    },
+    {
+      "id": 45,
+      "name": "mp_under_visible_gear"
+    },
+    {
+      "id": 46,
+      "name": "hp_over_visible_gear"
+    },
+    {
+      "id": 47,
+      "name": "weapon_broken"
+    },
+    {
+      "id": 48,
+      "name": "in_dynamis"
+    },
+    {
+      "id": 49,
+      "name": "food_active"
+    },
+    {
+      "id": 50,
+      "name": "job_level_below"
+    },
+    {
+      "id": 51,
+      "name": "job_level_above"
+    },
+    {
+      "id": 52,
+      "name": "weather_element"
+    },
+    {
+      "id": 53,
+      "name": "nation_control"
+    },
+    {
+      "id": 54,
+      "name": "zone_home_nation"
+    },
+    {
+      "id": 55,
+      "name": "mp_over"
+    },
+    {
+      "id": 56,
+      "name": "weapon_drawn_mp_over"
+    },
+    {
+      "id": 57,
+      "name": "eleven_roll_active"
+    },
+    {
+      "id": 58,
+      "name": "in_assault"
+    },
+    {
+      "id": 59,
+      "name": "vs_ecosystem"
+    },
+    {
+      "id": 60,
+      "name": "vs_species"
+    },
+    {
+      "id": 61,
+      "name": "vs_family"
+    },
+    {
+      "id": 62,
+      "name": "mainjob"
+    },
+    {
+      "id": 63,
+      "name": "in_adoulin"
+    },
+    {
+      "id": 64,
+      "name": "in_garrison"
+    },
+    {
+      "id": 65,
+      "name": "sanction_food_bonus"
+    },
+    {
+      "id": 66,
+      "name": "sigil_food_bonus"
+    }
+  ],
+  "petTypes": [
+    {
+      "id": 0,
+      "name": "All"
+    },
+    {
+      "id": 1,
+      "name": "Avatar"
+    },
+    {
+      "id": 2,
+      "name": "Wyvern"
+    },
+    {
+      "id": 3,
+      "name": "Automaton"
+    },
+    {
+      "id": 4,
+      "name": "Harlequin"
+    },
+    {
+      "id": 5,
+      "name": "Valoredge"
+    },
+    {
+      "id": 6,
+      "name": "Sharpshot"
+    },
+    {
+      "id": 7,
+      "name": "Stormwaker"
+    },
+    {
+      "id": 8,
+      "name": "Luopan"
+    }
+  ],
+  "itemFlags": {
+    "canEquip": 2048,
+    "exclusive": 16384,
+    "rare": 32768
+  },
+  "mods": {
+    "0": {
+      "enumName": "none",
+      "statKey": "none"
+    },
+    "1": {
+      "enumName": "def",
+      "statKey": "DEF"
+    },
+    "2": {
+      "enumName": "hp",
+      "statKey": "HP"
+    },
+    "3": {
+      "enumName": "hpp",
+      "statKey": "HPP"
+    },
+    "4": {
+      "enumName": "convmptohp",
+      "statKey": "convmptohp"
+    },
+    "5": {
+      "enumName": "mp",
+      "statKey": "MP"
+    },
+    "6": {
+      "enumName": "mpp",
+      "statKey": "MPP"
+    },
+    "7": {
+      "enumName": "convhptomp",
+      "statKey": "convhptomp"
+    },
+    "8": {
+      "enumName": "str",
+      "statKey": "STR"
+    },
+    "9": {
+      "enumName": "dex",
+      "statKey": "DEX"
+    },
+    "10": {
+      "enumName": "vit",
+      "statKey": "VIT"
+    },
+    "11": {
+      "enumName": "agi",
+      "statKey": "AGI"
+    },
+    "12": {
+      "enumName": "int",
+      "statKey": "INT"
+    },
+    "13": {
+      "enumName": "mnd",
+      "statKey": "MND"
+    },
+    "14": {
+      "enumName": "chr",
+      "statKey": "CHR"
+    },
+    "15": {
+      "enumName": "fire_meva",
+      "statKey": "fireMeva"
+    },
+    "16": {
+      "enumName": "ice_meva",
+      "statKey": "iceMeva"
+    },
+    "17": {
+      "enumName": "wind_meva",
+      "statKey": "windMeva"
+    },
+    "18": {
+      "enumName": "earth_meva",
+      "statKey": "earthMeva"
+    },
+    "19": {
+      "enumName": "thunder_meva",
+      "statKey": "thunderMeva"
+    },
+    "20": {
+      "enumName": "water_meva",
+      "statKey": "waterMeva"
+    },
+    "21": {
+      "enumName": "light_meva",
+      "statKey": "lightMeva"
+    },
+    "22": {
+      "enumName": "dark_meva",
+      "statKey": "darkMeva"
+    },
+    "23": {
+      "enumName": "att",
+      "statKey": "ATT"
+    },
+    "24": {
+      "enumName": "ratt",
+      "statKey": "RATT"
+    },
+    "25": {
+      "enumName": "acc",
+      "statKey": "ACC"
+    },
+    "26": {
+      "enumName": "racc",
+      "statKey": "RACC"
+    },
+    "27": {
+      "enumName": "enmity",
+      "statKey": "enmity"
+    },
+    "28": {
+      "enumName": "matt",
+      "statKey": "MATT"
+    },
+    "29": {
+      "enumName": "mdef",
+      "statKey": "MDEF"
+    },
+    "30": {
+      "enumName": "macc",
+      "statKey": "MACC"
+    },
+    "31": {
+      "enumName": "meva",
+      "statKey": "MEVA"
+    },
+    "32": {
+      "enumName": "fire_mab",
+      "statKey": "fireMab"
+    },
+    "33": {
+      "enumName": "ice_mab",
+      "statKey": "iceMab"
+    },
+    "34": {
+      "enumName": "wind_mab",
+      "statKey": "windMab"
+    },
+    "35": {
+      "enumName": "earth_mab",
+      "statKey": "earthMab"
+    },
+    "36": {
+      "enumName": "thunder_mab",
+      "statKey": "thunderMab"
+    },
+    "37": {
+      "enumName": "water_mab",
+      "statKey": "waterMab"
+    },
+    "38": {
+      "enumName": "light_mab",
+      "statKey": "lightMab"
+    },
+    "39": {
+      "enumName": "dark_mab",
+      "statKey": "darkMab"
+    },
+    "40": {
+      "enumName": "fire_macc",
+      "statKey": "fireMacc"
+    },
+    "41": {
+      "enumName": "ice_macc",
+      "statKey": "iceMacc"
+    },
+    "42": {
+      "enumName": "wind_macc",
+      "statKey": "windMacc"
+    },
+    "43": {
+      "enumName": "earth_macc",
+      "statKey": "earthMacc"
+    },
+    "44": {
+      "enumName": "thunder_macc",
+      "statKey": "thunderMacc"
+    },
+    "45": {
+      "enumName": "water_macc",
+      "statKey": "waterMacc"
+    },
+    "46": {
+      "enumName": "light_macc",
+      "statKey": "lightMacc"
+    },
+    "47": {
+      "enumName": "dark_macc",
+      "statKey": "darkMacc"
+    },
+    "48": {
+      "enumName": "wsacc",
+      "statKey": "wsacc"
+    },
+    "49": {
+      "enumName": "slash_sdt",
+      "statKey": "slashSdt"
+    },
+    "50": {
+      "enumName": "pierce_sdt",
+      "statKey": "pierceSdt"
+    },
+    "51": {
+      "enumName": "impact_sdt",
+      "statKey": "impactSdt"
+    },
+    "52": {
+      "enumName": "hth_sdt",
+      "statKey": "hthSdt"
+    },
+    "53": {
+      "enumName": "souleater_effect_ii",
+      "statKey": "souleaterEffectIi"
+    },
+    "54": {
+      "enumName": "fire_sdt",
+      "statKey": "fireSdt"
+    },
+    "55": {
+      "enumName": "ice_sdt",
+      "statKey": "iceSdt"
+    },
+    "56": {
+      "enumName": "wind_sdt",
+      "statKey": "windSdt"
+    },
+    "57": {
+      "enumName": "earth_sdt",
+      "statKey": "earthSdt"
+    },
+    "58": {
+      "enumName": "thunder_sdt",
+      "statKey": "thunderSdt"
+    },
+    "59": {
+      "enumName": "water_sdt",
+      "statKey": "waterSdt"
+    },
+    "60": {
+      "enumName": "light_sdt",
+      "statKey": "lightSdt"
+    },
+    "61": {
+      "enumName": "dark_sdt",
+      "statKey": "darkSdt"
+    },
+    "62": {
+      "enumName": "attp",
+      "statKey": "attp"
+    },
+    "63": {
+      "enumName": "defp",
+      "statKey": "defp"
+    },
+    "64": {
+      "enumName": "combat_skillup_rate",
+      "statKey": "combatSkillupRate"
+    },
+    "65": {
+      "enumName": "magic_skillup_rate",
+      "statKey": "magicSkillupRate"
+    },
+    "66": {
+      "enumName": "rattp",
+      "statKey": "rattp"
+    },
+    "67": {
+      "enumName": "enhances_cursna_rcvd",
+      "statKey": "enhancesCursnaRcvd"
+    },
+    "68": {
+      "enumName": "eva",
+      "statKey": "EVA"
+    },
+    "69": {
+      "enumName": "rdef",
+      "statKey": "RDEF"
+    },
+    "70": {
+      "enumName": "reva",
+      "statKey": "reva"
+    },
+    "71": {
+      "enumName": "mpheal",
+      "statKey": "mpheal"
+    },
+    "72": {
+      "enumName": "hpheal",
+      "statKey": "hpheal"
+    },
+    "73": {
+      "enumName": "storetp",
+      "statKey": "storetp"
+    },
+    "74": {
+      "enumName": "enhances_mana_cede",
+      "statKey": "enhancesManaCede"
+    },
+    "75": {
+      "enumName": "move_speed_stackable",
+      "statKey": "moveSpeedStackable"
+    },
+    "76": {
+      "enumName": "move_speed_gear_bonus",
+      "statKey": "moveSpeedGearBonus"
+    },
+    "77": {
+      "enumName": "move_speed_weight_penalty",
+      "statKey": "moveSpeedWeightPenalty"
+    },
+    "78": {
+      "enumName": "move_speed_quickening",
+      "statKey": "moveSpeedQuickening"
+    },
+    "79": {
+      "enumName": "move_speed_mazurka",
+      "statKey": "moveSpeedMazurka"
+    },
+    "80": {
+      "enumName": "hth",
+      "statKey": "hth"
+    },
+    "81": {
+      "enumName": "dagger",
+      "statKey": "dagger"
+    },
+    "82": {
+      "enumName": "sword",
+      "statKey": "sword"
+    },
+    "83": {
+      "enumName": "gsword",
+      "statKey": "gsword"
+    },
+    "84": {
+      "enumName": "axe",
+      "statKey": "axe"
+    },
+    "85": {
+      "enumName": "gaxe",
+      "statKey": "gaxe"
+    },
+    "86": {
+      "enumName": "scythe",
+      "statKey": "scythe"
+    },
+    "87": {
+      "enumName": "polearm",
+      "statKey": "polearm"
+    },
+    "88": {
+      "enumName": "katana",
+      "statKey": "katana"
+    },
+    "89": {
+      "enumName": "gkatana",
+      "statKey": "gkatana"
+    },
+    "90": {
+      "enumName": "club",
+      "statKey": "club"
+    },
+    "91": {
+      "enumName": "staff",
+      "statKey": "staff"
+    },
+    "92": {
+      "enumName": "rampart_duration",
+      "statKey": "rampartDuration"
+    },
+    "93": {
+      "enumName": "flee_duration",
+      "statKey": "fleeDuration"
+    },
+    "94": {
+      "enumName": "meditate_duration",
+      "statKey": "meditateDuration"
+    },
+    "95": {
+      "enumName": "warding_circle_duration",
+      "statKey": "wardingCircleDuration"
+    },
+    "96": {
+      "enumName": "souleater_effect",
+      "statKey": "souleaterEffect"
+    },
+    "97": {
+      "enumName": "boost_effect",
+      "statKey": "boostEffect"
+    },
+    "98": {
+      "enumName": "camouflage_duration",
+      "statKey": "camouflageDuration"
+    },
+    "99": {
+      "enumName": "food_maccp",
+      "statKey": "foodMaccp"
+    },
+    "100": {
+      "enumName": "food_macc_cap",
+      "statKey": "foodMaccCap"
+    },
+    "101": {
+      "enumName": "auto_melee_skill",
+      "statKey": "autoMeleeSkill"
+    },
+    "102": {
+      "enumName": "auto_ranged_skill",
+      "statKey": "autoRangedSkill"
+    },
+    "103": {
+      "enumName": "auto_magic_skill",
+      "statKey": "autoMagicSkill"
+    },
+    "104": {
+      "enumName": "archery",
+      "statKey": "archery"
+    },
+    "105": {
+      "enumName": "marksman",
+      "statKey": "marksman"
+    },
+    "106": {
+      "enumName": "throw",
+      "statKey": "throw"
+    },
+    "107": {
+      "enumName": "guard",
+      "statKey": "guard"
+    },
+    "108": {
+      "enumName": "evasion",
+      "statKey": "evasion"
+    },
+    "109": {
+      "enumName": "shield",
+      "statKey": "shield"
+    },
+    "110": {
+      "enumName": "parry",
+      "statKey": "parry"
+    },
+    "111": {
+      "enumName": "divine",
+      "statKey": "divine"
+    },
+    "112": {
+      "enumName": "healing",
+      "statKey": "healing"
+    },
+    "113": {
+      "enumName": "enhance",
+      "statKey": "enhance"
+    },
+    "114": {
+      "enumName": "enfeeble",
+      "statKey": "enfeeble"
+    },
+    "115": {
+      "enumName": "elem",
+      "statKey": "elem"
+    },
+    "116": {
+      "enumName": "dark",
+      "statKey": "dark"
+    },
+    "117": {
+      "enumName": "summoning",
+      "statKey": "summoning"
+    },
+    "118": {
+      "enumName": "ninjutsu",
+      "statKey": "ninjutsu"
+    },
+    "119": {
+      "enumName": "singing",
+      "statKey": "singing"
+    },
+    "120": {
+      "enumName": "string",
+      "statKey": "string"
+    },
+    "121": {
+      "enumName": "wind",
+      "statKey": "wind"
+    },
+    "122": {
+      "enumName": "blue",
+      "statKey": "blue"
+    },
+    "123": {
+      "enumName": "geomancy_skill",
+      "statKey": "geomancySkill"
+    },
+    "124": {
+      "enumName": "handbell_skill",
+      "statKey": "handbellSkill"
+    },
+    "125": {
+      "enumName": "suppress_overload",
+      "statKey": "suppressOverload"
+    },
+    "126": {
+      "enumName": "bp_damage",
+      "statKey": "bpDamage"
+    },
+    "127": {
+      "enumName": "fish",
+      "statKey": "fish"
+    },
+    "128": {
+      "enumName": "wood",
+      "statKey": "wood"
+    },
+    "129": {
+      "enumName": "smith",
+      "statKey": "smith"
+    },
+    "130": {
+      "enumName": "goldsmith",
+      "statKey": "goldsmith"
+    },
+    "131": {
+      "enumName": "cloth",
+      "statKey": "cloth"
+    },
+    "132": {
+      "enumName": "leather",
+      "statKey": "leather"
+    },
+    "133": {
+      "enumName": "bone",
+      "statKey": "bone"
+    },
+    "134": {
+      "enumName": "alchemy",
+      "statKey": "alchemy"
+    },
+    "135": {
+      "enumName": "cook",
+      "statKey": "cook"
+    },
+    "136": {
+      "enumName": "synergy",
+      "statKey": "synergy"
+    },
+    "137": {
+      "enumName": "riding",
+      "statKey": "riding"
+    },
+    "138": {
+      "enumName": "barrage_count",
+      "statKey": "barrageCount"
+    },
+    "139": {
+      "enumName": "waltz_cost",
+      "statKey": "waltzCost"
+    },
+    "140": {
+      "enumName": "spirit_cast_reduction",
+      "statKey": "spiritCastReduction"
+    },
+    "141": {
+      "enumName": "crithitrate_only_wep",
+      "statKey": "crithitrateOnlyWep"
+    },
+    "142": {
+      "enumName": "null_damage",
+      "statKey": "nullDamage"
+    },
+    "143": {
+      "enumName": "null_breath_damage",
+      "statKey": "nullBreathDamage"
+    },
+    "144": {
+      "enumName": "synth_anti_hq_woodworking",
+      "statKey": "synthAntiHqWoodworking"
+    },
+    "145": {
+      "enumName": "synth_anti_hq_smithing",
+      "statKey": "synthAntiHqSmithing"
+    },
+    "146": {
+      "enumName": "synth_anti_hq_goldsmithing",
+      "statKey": "synthAntiHqGoldsmithing"
+    },
+    "147": {
+      "enumName": "synth_anti_hq_clothcraft",
+      "statKey": "synthAntiHqClothcraft"
+    },
+    "148": {
+      "enumName": "synth_anti_hq_leathercraft",
+      "statKey": "synthAntiHqLeathercraft"
+    },
+    "149": {
+      "enumName": "synth_anti_hq_bonecraft",
+      "statKey": "synthAntiHqBonecraft"
+    },
+    "150": {
+      "enumName": "synth_anti_hq_alchemy",
+      "statKey": "synthAntiHqAlchemy"
+    },
+    "151": {
+      "enumName": "synth_anti_hq_cooking",
+      "statKey": "synthAntiHqCooking"
+    },
+    "152": {
+      "enumName": "penguin_ring_effect",
+      "statKey": "penguinRingEffect"
+    },
+    "153": {
+      "enumName": "albatross_ring_effect",
+      "statKey": "albatrossRingEffect"
+    },
+    "154": {
+      "enumName": "pelican_ring_effect",
+      "statKey": "pelicanRingEffect"
+    },
+    "155": {
+      "enumName": "fishing_skill_gain",
+      "statKey": "fishingSkillGain"
+    },
+    "156": {
+      "enumName": "appreciate_gysahl_greens",
+      "statKey": "appreciateGysahlGreens"
+    },
+    "157": {
+      "enumName": "auto_mab_coefficient",
+      "statKey": "autoMabCoefficient"
+    },
+    "158": {
+      "enumName": "dmg_aoe",
+      "statKey": "dmgAoe"
+    },
+    "159": {
+      "enumName": "drink_distilled",
+      "statKey": "drinkDistilled"
+    },
+    "160": {
+      "enumName": "dmg",
+      "statKey": "dmg"
+    },
+    "161": {
+      "enumName": "dmgphys",
+      "statKey": "dmgphys"
+    },
+    "162": {
+      "enumName": "dmgbreath",
+      "statKey": "dmgbreath"
+    },
+    "163": {
+      "enumName": "dmgmagic",
+      "statKey": "dmgmagic"
+    },
+    "164": {
+      "enumName": "dmgrange",
+      "statKey": "dmgrange"
+    },
+    "165": {
+      "enumName": "crithitrate",
+      "statKey": "crithitrate"
+    },
+    "166": {
+      "enumName": "critical_hit_evasion",
+      "statKey": "criticalHitEvasion"
+    },
+    "167": {
+      "enumName": "haste_magic",
+      "statKey": "hasteMagic"
+    },
+    "168": {
+      "enumName": "spellinterrupt",
+      "statKey": "spellinterrupt"
+    },
+    "169": {
+      "enumName": "move_speed_override",
+      "statKey": "moveSpeedOverride"
+    },
+    "170": {
+      "enumName": "fastcast",
+      "statKey": "fastcast"
+    },
+    "171": {
+      "enumName": "delay",
+      "statKey": "delay"
+    },
+    "172": {
+      "enumName": "ranged_delay",
+      "statKey": "rangedDelay"
+    },
+    "173": {
+      "enumName": "martial_arts",
+      "statKey": "martialArts"
+    },
+    "174": {
+      "enumName": "skillchainbonus",
+      "statKey": "skillchainbonus"
+    },
+    "175": {
+      "enumName": "skillchaindmg",
+      "statKey": "skillchaindmg"
+    },
+    "176": {
+      "enumName": "food_hpp",
+      "statKey": "foodHpp"
+    },
+    "177": {
+      "enumName": "food_hp_cap",
+      "statKey": "foodHpCap"
+    },
+    "178": {
+      "enumName": "food_mpp",
+      "statKey": "foodMpp"
+    },
+    "179": {
+      "enumName": "food_mp_cap",
+      "statKey": "foodMpCap"
+    },
+    "180": {
+      "enumName": "food_attp",
+      "statKey": "foodAttp"
+    },
+    "181": {
+      "enumName": "food_att_cap",
+      "statKey": "foodAttCap"
+    },
+    "182": {
+      "enumName": "food_defp",
+      "statKey": "foodDefp"
+    },
+    "183": {
+      "enumName": "food_def_cap",
+      "statKey": "foodDefCap"
+    },
+    "184": {
+      "enumName": "food_accp",
+      "statKey": "foodAccp"
+    },
+    "185": {
+      "enumName": "food_acc_cap",
+      "statKey": "foodAccCap"
+    },
+    "186": {
+      "enumName": "food_rattp",
+      "statKey": "foodRattp"
+    },
+    "187": {
+      "enumName": "food_ratt_cap",
+      "statKey": "foodRattCap"
+    },
+    "188": {
+      "enumName": "food_raccp",
+      "statKey": "foodRaccp"
+    },
+    "189": {
+      "enumName": "food_racc_cap",
+      "statKey": "foodRaccCap"
+    },
+    "190": {
+      "enumName": "dmgphys_ii",
+      "statKey": "dmgphysIi"
+    },
+    "191": {
+      "enumName": "quick_draw_macc",
+      "statKey": "quickDrawMacc"
+    },
+    "192": {
+      "enumName": "fire_res_rank",
+      "statKey": "fireResRank"
+    },
+    "193": {
+      "enumName": "ice_res_rank",
+      "statKey": "iceResRank"
+    },
+    "194": {
+      "enumName": "wind_res_rank",
+      "statKey": "windResRank"
+    },
+    "195": {
+      "enumName": "earth_res_rank",
+      "statKey": "earthResRank"
+    },
+    "196": {
+      "enumName": "thunder_res_rank",
+      "statKey": "thunderResRank"
+    },
+    "197": {
+      "enumName": "water_res_rank",
+      "statKey": "waterResRank"
+    },
+    "198": {
+      "enumName": "light_res_rank",
+      "statKey": "lightResRank"
+    },
+    "199": {
+      "enumName": "dark_res_rank",
+      "statKey": "darkResRank"
+    },
+    "200": {
+      "enumName": "sleep_meva",
+      "statKey": "sleepMeva"
+    },
+    "201": {
+      "enumName": "poison_meva",
+      "statKey": "poisonMeva"
+    },
+    "202": {
+      "enumName": "paralyze_meva",
+      "statKey": "paralyzeMeva"
+    },
+    "203": {
+      "enumName": "blind_meva",
+      "statKey": "blindMeva"
+    },
+    "204": {
+      "enumName": "silence_meva",
+      "statKey": "silenceMeva"
+    },
+    "205": {
+      "enumName": "virus_meva",
+      "statKey": "virusMeva"
+    },
+    "206": {
+      "enumName": "petrify_meva",
+      "statKey": "petrifyMeva"
+    },
+    "207": {
+      "enumName": "bind_meva",
+      "statKey": "bindMeva"
+    },
+    "208": {
+      "enumName": "curse_meva",
+      "statKey": "curseMeva"
+    },
+    "209": {
+      "enumName": "gravity_meva",
+      "statKey": "gravityMeva"
+    },
+    "210": {
+      "enumName": "slow_meva",
+      "statKey": "slowMeva"
+    },
+    "211": {
+      "enumName": "stun_meva",
+      "statKey": "stunMeva"
+    },
+    "212": {
+      "enumName": "charm_meva",
+      "statKey": "charmMeva"
+    },
+    "213": {
+      "enumName": "amnesia_meva",
+      "statKey": "amnesiaMeva"
+    },
+    "214": {
+      "enumName": "lullaby_meva",
+      "statKey": "lullabyMeva"
+    },
+    "215": {
+      "enumName": "death_meva",
+      "statKey": "deathMeva"
+    },
+    "216": {
+      "enumName": "status_meva",
+      "statKey": "statusMeva"
+    },
+    "217": {
+      "enumName": "twohand_haste_ability",
+      "statKey": "twohandHasteAbility"
+    },
+    "218": {
+      "enumName": "twohand_str",
+      "statKey": "twohandStr"
+    },
+    "219": {
+      "enumName": "twohand_acc",
+      "statKey": "twohandAcc"
+    },
+    "220": {
+      "enumName": "random_deal_bonus",
+      "statKey": "randomDealBonus"
+    },
+    "221": {
+      "enumName": "received_damage_cap",
+      "statKey": "receivedDamageCap"
+    },
+    "222": {
+      "enumName": "received_damage_variant",
+      "statKey": "receivedDamageVariant"
+    },
+    "223": {
+      "enumName": "nin_nuke_bonus_innin",
+      "statKey": "ninNukeBonusInnin"
+    },
+    "224": {
+      "enumName": "vermin_killer",
+      "statKey": "verminKiller"
+    },
+    "225": {
+      "enumName": "bird_killer",
+      "statKey": "birdKiller"
+    },
+    "226": {
+      "enumName": "amorph_killer",
+      "statKey": "amorphKiller"
+    },
+    "227": {
+      "enumName": "lizard_killer",
+      "statKey": "lizardKiller"
+    },
+    "228": {
+      "enumName": "aquan_killer",
+      "statKey": "aquanKiller"
+    },
+    "229": {
+      "enumName": "plantoid_killer",
+      "statKey": "plantoidKiller"
+    },
+    "230": {
+      "enumName": "beast_killer",
+      "statKey": "beastKiller"
+    },
+    "231": {
+      "enumName": "undead_killer",
+      "statKey": "undeadKiller"
+    },
+    "232": {
+      "enumName": "arcana_killer",
+      "statKey": "arcanaKiller"
+    },
+    "233": {
+      "enumName": "dragon_killer",
+      "statKey": "dragonKiller"
+    },
+    "234": {
+      "enumName": "demon_killer",
+      "statKey": "demonKiller"
+    },
+    "235": {
+      "enumName": "empty_killer",
+      "statKey": "emptyKiller"
+    },
+    "236": {
+      "enumName": "humanoid_killer",
+      "statKey": "humanoidKiller"
+    },
+    "237": {
+      "enumName": "luminian_killer",
+      "statKey": "luminianKiller"
+    },
+    "238": {
+      "enumName": "luminion_killer",
+      "statKey": "luminionKiller"
+    },
+    "239": {
+      "enumName": "null_ranged_damage",
+      "statKey": "nullRangedDamage"
+    },
+    "240": {
+      "enumName": "sleepres",
+      "statKey": "sleepres"
+    },
+    "241": {
+      "enumName": "poisonres",
+      "statKey": "poisonres"
+    },
+    "242": {
+      "enumName": "paralyzeres",
+      "statKey": "paralyzeres"
+    },
+    "243": {
+      "enumName": "blindres",
+      "statKey": "blindres"
+    },
+    "244": {
+      "enumName": "silenceres",
+      "statKey": "silenceres"
+    },
+    "245": {
+      "enumName": "virusres",
+      "statKey": "virusres"
+    },
+    "246": {
+      "enumName": "petrifyres",
+      "statKey": "petrifyres"
+    },
+    "247": {
+      "enumName": "bindres",
+      "statKey": "bindres"
+    },
+    "248": {
+      "enumName": "curseres",
+      "statKey": "curseres"
+    },
+    "249": {
+      "enumName": "gravityres",
+      "statKey": "gravityres"
+    },
+    "250": {
+      "enumName": "slowres",
+      "statKey": "slowres"
+    },
+    "251": {
+      "enumName": "stunres",
+      "statKey": "stunres"
+    },
+    "252": {
+      "enumName": "charmres",
+      "statKey": "charmres"
+    },
+    "253": {
+      "enumName": "amnesiares",
+      "statKey": "amnesiares"
+    },
+    "254": {
+      "enumName": "lullabyres",
+      "statKey": "lullabyres"
+    },
+    "255": {
+      "enumName": "deathres",
+      "statKey": "deathres"
+    },
+    "256": {
+      "enumName": "aftermath",
+      "statKey": "aftermath"
+    },
+    "257": {
+      "enumName": "paralyze",
+      "statKey": "paralyze"
+    },
+    "258": {
+      "enumName": "mijin_reraise",
+      "statKey": "mijinReraise"
+    },
+    "259": {
+      "enumName": "dual_wield",
+      "statKey": "dualWield"
+    },
+    "260": {
+      "enumName": "cure_potency_ii",
+      "statKey": "curePotencyIi"
+    },
+    "261": {
+      "enumName": "sleep_immunobreak",
+      "statKey": "sleepImmunobreak"
+    },
+    "262": {
+      "enumName": "poison_immunobreak",
+      "statKey": "poisonImmunobreak"
+    },
+    "263": {
+      "enumName": "paralyze_immunobreak",
+      "statKey": "paralyzeImmunobreak"
+    },
+    "264": {
+      "enumName": "blind_immunobreak",
+      "statKey": "blindImmunobreak"
+    },
+    "265": {
+      "enumName": "silence_immunobreak",
+      "statKey": "silenceImmunobreak"
+    },
+    "266": {
+      "enumName": "petrify_immunobreak",
+      "statKey": "petrifyImmunobreak"
+    },
+    "267": {
+      "enumName": "bind_immunobreak",
+      "statKey": "bindImmunobreak"
+    },
+    "268": {
+      "enumName": "gravity_immunobreak",
+      "statKey": "gravityImmunobreak"
+    },
+    "269": {
+      "enumName": "slow_immunobreak",
+      "statKey": "slowImmunobreak"
+    },
+    "270": {
+      "enumName": "addle_immunobreak",
+      "statKey": "addleImmunobreak"
+    },
+    "271": {
+      "enumName": "tandem_strike_power",
+      "statKey": "tandemStrikePower"
+    },
+    "272": {
+      "enumName": "tandem_blow_power",
+      "statKey": "tandemBlowPower"
+    },
+    "273": {
+      "enumName": "call_beast_delay",
+      "statKey": "callBeastDelay"
+    },
+    "274": {
+      "enumName": "magic_burst_bonus_uncapped",
+      "statKey": "magicBurstBonusUncapped"
+    },
+    "275": {
+      "enumName": "enhances_diabolic_eye",
+      "statKey": "enhancesDiabolicEye"
+    },
+    "276": {
+      "enumName": "equipment_only_race",
+      "statKey": "equipmentOnlyRace"
+    },
+    "277": {
+      "enumName": "augments_sleight_of_sword",
+      "statKey": "augmentsSleightOfSword"
+    },
+    "278": {
+      "enumName": "item_addeffect_lvadjust",
+      "statKey": "itemAddeffectLvadjust"
+    },
+    "279": {
+      "enumName": "item_addeffect_placehld",
+      "statKey": "itemAddeffectPlacehld"
+    },
+    "280": {
+      "enumName": "item_addeffect_dstat",
+      "statKey": "itemAddeffectDstat"
+    },
+    "281": {
+      "enumName": "enhances_spirit_link",
+      "statKey": "enhancesSpiritLink"
+    },
+    "282": {
+      "enumName": "enhances_strafe",
+      "statKey": "enhancesStrafe"
+    },
+    "283": {
+      "enumName": "enhance_deep_breathing",
+      "statKey": "enhanceDeepBreathing"
+    },
+    "284": {
+      "enumName": "uncapped_wyvern_breath",
+      "statKey": "uncappedWyvernBreath"
+    },
+    "285": {
+      "enumName": "jump_spirit_tp_bonus",
+      "statKey": "jumpSpiritTpBonus"
+    },
+    "286": {
+      "enumName": "jump_soul_spirit_att_bonus",
+      "statKey": "jumpSoulSpiritAttBonus"
+    },
+    "287": {
+      "enumName": "dmg_rating",
+      "statKey": "dmgRating"
+    },
+    "288": {
+      "enumName": "double_attack",
+      "statKey": "doubleAttack"
+    },
+    "289": {
+      "enumName": "subtle_blow",
+      "statKey": "subtleBlow"
+    },
+    "290": {
+      "enumName": "enf_mag_potency",
+      "statKey": "enfMagPotency"
+    },
+    "291": {
+      "enumName": "counter",
+      "statKey": "counter"
+    },
+    "292": {
+      "enumName": "kick_attack_rate",
+      "statKey": "kickAttackRate"
+    },
+    "293": {
+      "enumName": "afflatus_solace",
+      "statKey": "afflatusSolace"
+    },
+    "294": {
+      "enumName": "afflatus_misery",
+      "statKey": "afflatusMisery"
+    },
+    "295": {
+      "enumName": "clear_mind",
+      "statKey": "clearMind"
+    },
+    "296": {
+      "enumName": "conserve_mp",
+      "statKey": "conserveMp"
+    },
+    "297": {
+      "enumName": "enhances_saboteur",
+      "statKey": "enhancesSaboteur"
+    },
+    "298": {
+      "enumName": "steal",
+      "statKey": "steal"
+    },
+    "299": {
+      "enumName": "blink",
+      "statKey": "blink"
+    },
+    "300": {
+      "enumName": "mining_result_hq",
+      "statKey": "miningResultHq"
+    },
+    "301": {
+      "enumName": "phalanx",
+      "statKey": "phalanx"
+    },
+    "302": {
+      "enumName": "triple_attack",
+      "statKey": "tripleAttack"
+    },
+    "303": {
+      "enumName": "treasure_hunter",
+      "statKey": "treasureHunter"
+    },
+    "304": {
+      "enumName": "tame",
+      "statKey": "tame"
+    },
+    "305": {
+      "enumName": "recycle",
+      "statKey": "recycle"
+    },
+    "306": {
+      "enumName": "zanshin",
+      "statKey": "zanshin"
+    },
+    "307": {
+      "enumName": "utsusemi",
+      "statKey": "utsusemi"
+    },
+    "308": {
+      "enumName": "ninja_tool",
+      "statKey": "ninjaTool"
+    },
+    "309": {
+      "enumName": "blue_points",
+      "statKey": "bluePoints"
+    },
+    "310": {
+      "enumName": "enhances_cursna",
+      "statKey": "enhancesCursna"
+    },
+    "311": {
+      "enumName": "magic_damage",
+      "statKey": "magicDamage"
+    },
+    "312": {
+      "enumName": "scavenge_effect",
+      "statKey": "scavengeEffect"
+    },
+    "313": {
+      "enumName": "dia_dot",
+      "statKey": "diaDot"
+    },
+    "314": {
+      "enumName": "sharpshot",
+      "statKey": "sharpshot"
+    },
+    "315": {
+      "enumName": "enh_drain_aspir",
+      "statKey": "enhDrainAspir"
+    },
+    "316": {
+      "enumName": "dmg_reflect",
+      "statKey": "dmgReflect"
+    },
+    "317": {
+      "enumName": "roll_rogues",
+      "statKey": "rollRogues"
+    },
+    "318": {
+      "enumName": "roll_gallants",
+      "statKey": "rollGallants"
+    },
+    "319": {
+      "enumName": "roll_chaos",
+      "statKey": "rollChaos"
+    },
+    "320": {
+      "enumName": "roll_beast",
+      "statKey": "rollBeast"
+    },
+    "321": {
+      "enumName": "roll_choral",
+      "statKey": "rollChoral"
+    },
+    "322": {
+      "enumName": "roll_hunters",
+      "statKey": "rollHunters"
+    },
+    "323": {
+      "enumName": "roll_samurai",
+      "statKey": "rollSamurai"
+    },
+    "324": {
+      "enumName": "roll_ninja",
+      "statKey": "rollNinja"
+    },
+    "325": {
+      "enumName": "roll_drachen",
+      "statKey": "rollDrachen"
+    },
+    "326": {
+      "enumName": "roll_evokers",
+      "statKey": "rollEvokers"
+    },
+    "327": {
+      "enumName": "roll_magus",
+      "statKey": "rollMagus"
+    },
+    "328": {
+      "enumName": "roll_corsairs",
+      "statKey": "rollCorsairs"
+    },
+    "329": {
+      "enumName": "roll_puppet",
+      "statKey": "rollPuppet"
+    },
+    "330": {
+      "enumName": "roll_dancers",
+      "statKey": "rollDancers"
+    },
+    "331": {
+      "enumName": "roll_scholars",
+      "statKey": "rollScholars"
+    },
+    "332": {
+      "enumName": "bust",
+      "statKey": "bust"
+    },
+    "333": {
+      "enumName": "finishing_moves",
+      "statKey": "finishingMoves"
+    },
+    "334": {
+      "enumName": "light_arts_effect",
+      "statKey": "lightArtsEffect"
+    },
+    "335": {
+      "enumName": "dark_arts_effect",
+      "statKey": "darkArtsEffect"
+    },
+    "336": {
+      "enumName": "light_arts_skill",
+      "statKey": "lightArtsSkill"
+    },
+    "337": {
+      "enumName": "dark_arts_skill",
+      "statKey": "darkArtsSkill"
+    },
+    "338": {
+      "enumName": "light_arts_regen",
+      "statKey": "lightArtsRegen"
+    },
+    "339": {
+      "enumName": "regen_duration",
+      "statKey": "regenDuration"
+    },
+    "340": {
+      "enumName": "widescan",
+      "statKey": "widescan"
+    },
+    "341": {
+      "enumName": "enspell",
+      "statKey": "enspell"
+    },
+    "342": {
+      "enumName": "spikes",
+      "statKey": "spikes"
+    },
+    "343": {
+      "enumName": "enspell_dmg",
+      "statKey": "enspellDmg"
+    },
+    "344": {
+      "enumName": "spikes_dmg",
+      "statKey": "spikesDmg"
+    },
+    "345": {
+      "enumName": "tp_bonus",
+      "statKey": "tpBonus"
+    },
+    "346": {
+      "enumName": "perpetuation_reduction",
+      "statKey": "perpetuationReduction"
+    },
+    "347": {
+      "enumName": "fire_staff_bonus",
+      "statKey": "fireStaffBonus"
+    },
+    "348": {
+      "enumName": "ice_staff_bonus",
+      "statKey": "iceStaffBonus"
+    },
+    "349": {
+      "enumName": "wind_staff_bonus",
+      "statKey": "windStaffBonus"
+    },
+    "350": {
+      "enumName": "earth_staff_bonus",
+      "statKey": "earthStaffBonus"
+    },
+    "351": {
+      "enumName": "thunder_staff_bonus",
+      "statKey": "thunderStaffBonus"
+    },
+    "352": {
+      "enumName": "water_staff_bonus",
+      "statKey": "waterStaffBonus"
+    },
+    "353": {
+      "enumName": "light_staff_bonus",
+      "statKey": "lightStaffBonus"
+    },
+    "354": {
+      "enumName": "dark_staff_bonus",
+      "statKey": "darkStaffBonus"
+    },
+    "355": {
+      "enumName": "adds_weaponskill",
+      "statKey": "addsWeaponskill"
+    },
+    "356": {
+      "enumName": "half_perpetuation_carbuncle",
+      "statKey": "halfPerpetuationCarbuncle"
+    },
+    "357": {
+      "enumName": "bp_delay",
+      "statKey": "bpDelay"
+    },
+    "358": {
+      "enumName": "stealth",
+      "statKey": "stealth"
+    },
+    "359": {
+      "enumName": "rapid_shot",
+      "statKey": "rapidShot"
+    },
+    "360": {
+      "enumName": "charm_time",
+      "statKey": "charmTime"
+    },
+    "361": {
+      "enumName": "jump_tp_bonus",
+      "statKey": "jumpTpBonus"
+    },
+    "362": {
+      "enumName": "jump_att_bonus",
+      "statKey": "jumpAttBonus"
+    },
+    "363": {
+      "enumName": "high_jump_enmity_reduction",
+      "statKey": "highJumpEnmityReduction"
+    },
+    "364": {
+      "enumName": "reward_hp_bonus",
+      "statKey": "rewardHpBonus"
+    },
+    "365": {
+      "enumName": "snapshot",
+      "statKey": "snapshot"
+    },
+    "366": {
+      "enumName": "main_dmg_rating",
+      "statKey": "mainDmgRating"
+    },
+    "367": {
+      "enumName": "sub_dmg_rating",
+      "statKey": "subDmgRating"
+    },
+    "368": {
+      "enumName": "regain",
+      "statKey": "regain"
+    },
+    "369": {
+      "enumName": "refresh",
+      "statKey": "refresh"
+    },
+    "370": {
+      "enumName": "regen",
+      "statKey": "regen"
+    },
+    "371": {
+      "enumName": "avatar_perpetuation",
+      "statKey": "avatarPerpetuation"
+    },
+    "372": {
+      "enumName": "weather_reduction",
+      "statKey": "weatherReduction"
+    },
+    "373": {
+      "enumName": "day_reduction",
+      "statKey": "dayReduction"
+    },
+    "374": {
+      "enumName": "cure_potency",
+      "statKey": "curePotency"
+    },
+    "375": {
+      "enumName": "cure_potency_rcvd",
+      "statKey": "curePotencyRcvd"
+    },
+    "376": {
+      "enumName": "ranged_dmg_rating",
+      "statKey": "rangedDmgRating"
+    },
+    "377": {
+      "enumName": "main_dmg_rank",
+      "statKey": "mainDmgRank"
+    },
+    "379": {
+      "enumName": "ranged_dmg_rank",
+      "statKey": "rangedDmgRank"
+    },
+    "380": {
+      "enumName": "delayp",
+      "statKey": "delayp"
+    },
+    "381": {
+      "enumName": "ranged_delayp",
+      "statKey": "rangedDelayp"
+    },
+    "382": {
+      "enumName": "exp_bonus",
+      "statKey": "expBonus"
+    },
+    "383": {
+      "enumName": "haste_ability",
+      "statKey": "hasteAbility"
+    },
+    "384": {
+      "enumName": "haste_gear",
+      "statKey": "hasteGear"
+    },
+    "385": {
+      "enumName": "shield_bash",
+      "statKey": "shieldBash"
+    },
+    "386": {
+      "enumName": "kick_dmg",
+      "statKey": "kickDmg"
+    },
+    "387": {
+      "enumName": "udmgphys",
+      "statKey": "udmgphys"
+    },
+    "388": {
+      "enumName": "udmgbreath",
+      "statKey": "udmgbreath"
+    },
+    "389": {
+      "enumName": "udmgmagic",
+      "statKey": "udmgmagic"
+    },
+    "390": {
+      "enumName": "udmgrange",
+      "statKey": "udmgrange"
+    },
+    "391": {
+      "enumName": "charm_chance",
+      "statKey": "charmChance"
+    },
+    "392": {
+      "enumName": "weapon_bash",
+      "statKey": "weaponBash"
+    },
+    "393": {
+      "enumName": "black_magic_cost",
+      "statKey": "blackMagicCost"
+    },
+    "394": {
+      "enumName": "white_magic_cost",
+      "statKey": "whiteMagicCost"
+    },
+    "395": {
+      "enumName": "black_magic_cast",
+      "statKey": "blackMagicCast"
+    },
+    "396": {
+      "enumName": "white_magic_cast",
+      "statKey": "whiteMagicCast"
+    },
+    "397": {
+      "enumName": "black_magic_recast",
+      "statKey": "blackMagicRecast"
+    },
+    "398": {
+      "enumName": "white_magic_recast",
+      "statKey": "whiteMagicRecast"
+    },
+    "399": {
+      "enumName": "alacrity_celerity_effect",
+      "statKey": "alacrityCelerityEffect"
+    },
+    "400": {
+      "enumName": "stormsurge_effect",
+      "statKey": "stormsurgeEffect"
+    },
+    "401": {
+      "enumName": "sublimation_bonus",
+      "statKey": "sublimationBonus"
+    },
+    "402": {
+      "enumName": "wyvern_breath",
+      "statKey": "wyvernBreath"
+    },
+    "403": {
+      "enumName": "step_accuracy",
+      "statKey": "stepAccuracy"
+    },
+    "404": {
+      "enumName": "regen_down",
+      "statKey": "regenDown"
+    },
+    "405": {
+      "enumName": "refresh_down",
+      "statKey": "refreshDown"
+    },
+    "406": {
+      "enumName": "regain_down",
+      "statKey": "regainDown"
+    },
+    "407": {
+      "enumName": "ufastcast",
+      "statKey": "ufastcast"
+    },
+    "408": {
+      "enumName": "da_double_dmg_rate",
+      "statKey": "daDoubleDmgRate"
+    },
+    "409": {
+      "enumName": "ta_triple_dmg_rate",
+      "statKey": "taTripleDmgRate"
+    },
+    "410": {
+      "enumName": "zanshin_double_damage",
+      "statKey": "zanshinDoubleDamage"
+    },
+    "411": {
+      "enumName": "quick_draw_dmg",
+      "statKey": "quickDrawDmg"
+    },
+    "412": {
+      "enumName": "eat_raw_fish",
+      "statKey": "eatRawFish"
+    },
+    "413": {
+      "enumName": "eat_raw_meat",
+      "statKey": "eatRawMeat"
+    },
+    "414": {
+      "enumName": "retaliation",
+      "statKey": "retaliation"
+    },
+    "415": {
+      "enumName": "samba_double_damage",
+      "statKey": "sambaDoubleDamage"
+    },
+    "416": {
+      "enumName": "null_physical_damage",
+      "statKey": "nullPhysicalDamage"
+    },
+    "417": {
+      "enumName": "quick_draw_triple_damage",
+      "statKey": "quickDrawTripleDamage"
+    },
+    "418": {
+      "enumName": "bar_element_null_chance",
+      "statKey": "barElementNullChance"
+    },
+    "419": {
+      "enumName": "grimoire_instant_cast",
+      "statKey": "grimoireInstantCast"
+    },
+    "420": {
+      "enumName": "barrage_acc",
+      "statKey": "barrageAcc"
+    },
+    "421": {
+      "enumName": "crit_dmg_increase",
+      "statKey": "critDmgIncrease"
+    },
+    "422": {
+      "enumName": "double_shot_rate",
+      "statKey": "doubleShotRate"
+    },
+    "423": {
+      "enumName": "velocity_snapshot_bonus",
+      "statKey": "velocitySnapshotBonus"
+    },
+    "424": {
+      "enumName": "velocity_ratt_bonus",
+      "statKey": "velocityRattBonus"
+    },
+    "425": {
+      "enumName": "shadow_bind_ext",
+      "statKey": "shadowBindExt"
+    },
+    "426": {
+      "enumName": "absorb_physdmg_to_mp",
+      "statKey": "absorbPhysdmgToMp"
+    },
+    "427": {
+      "enumName": "enmity_loss_reduction",
+      "statKey": "enmityLossReduction"
+    },
+    "428": {
+      "enumName": "perfect_counter_att",
+      "statKey": "perfectCounterAtt"
+    },
+    "429": {
+      "enumName": "footwork_att_bonus",
+      "statKey": "footworkAttBonus"
+    },
+    "430": {
+      "enumName": "quad_attack",
+      "statKey": "quadAttack"
+    },
+    "431": {
+      "enumName": "item_addeffect_type",
+      "statKey": "itemAddeffectType"
+    },
+    "432": {
+      "enumName": "enspell_dmg_bonus",
+      "statKey": "enspellDmgBonus"
+    },
+    "433": {
+      "enumName": "minne_effect",
+      "statKey": "minneEffect"
+    },
+    "434": {
+      "enumName": "minuet_effect",
+      "statKey": "minuetEffect"
+    },
+    "435": {
+      "enumName": "paeon_effect",
+      "statKey": "paeonEffect"
+    },
+    "436": {
+      "enumName": "requiem_effect",
+      "statKey": "requiemEffect"
+    },
+    "437": {
+      "enumName": "threnody_effect",
+      "statKey": "threnodyEffect"
+    },
+    "438": {
+      "enumName": "madrigal_effect",
+      "statKey": "madrigalEffect"
+    },
+    "439": {
+      "enumName": "mambo_effect",
+      "statKey": "mamboEffect"
+    },
+    "440": {
+      "enumName": "lullaby_effect",
+      "statKey": "lullabyEffect"
+    },
+    "441": {
+      "enumName": "etude_effect",
+      "statKey": "etudeEffect"
+    },
+    "442": {
+      "enumName": "ballad_effect",
+      "statKey": "balladEffect"
+    },
+    "443": {
+      "enumName": "march_effect",
+      "statKey": "marchEffect"
+    },
+    "444": {
+      "enumName": "finale_effect",
+      "statKey": "finaleEffect"
+    },
+    "445": {
+      "enumName": "carol_effect",
+      "statKey": "carolEffect"
+    },
+    "446": {
+      "enumName": "mazurka_effect",
+      "statKey": "mazurkaEffect"
+    },
+    "447": {
+      "enumName": "elegy_effect",
+      "statKey": "elegyEffect"
+    },
+    "448": {
+      "enumName": "prelude_effect",
+      "statKey": "preludeEffect"
+    },
+    "449": {
+      "enumName": "hymnus_effect",
+      "statKey": "hymnusEffect"
+    },
+    "450": {
+      "enumName": "virelai_effect",
+      "statKey": "virelaiEffect"
+    },
+    "451": {
+      "enumName": "scherzo_effect",
+      "statKey": "scherzoEffect"
+    },
+    "452": {
+      "enumName": "all_songs_effect",
+      "statKey": "allSongsEffect"
+    },
+    "453": {
+      "enumName": "maximum_songs_bonus",
+      "statKey": "maximumSongsBonus"
+    },
+    "454": {
+      "enumName": "song_duration_bonus",
+      "statKey": "songDurationBonus"
+    },
+    "455": {
+      "enumName": "song_spellcasting_time",
+      "statKey": "songSpellcastingTime"
+    },
+    "456": {
+      "enumName": "reraise_i",
+      "statKey": "reraiseI"
+    },
+    "457": {
+      "enumName": "reraise_ii",
+      "statKey": "reraiseIi"
+    },
+    "458": {
+      "enumName": "reraise_iii",
+      "statKey": "reraiseIii"
+    },
+    "459": {
+      "enumName": "fire_absorb",
+      "statKey": "fireAbsorb"
+    },
+    "460": {
+      "enumName": "ice_absorb",
+      "statKey": "iceAbsorb"
+    },
+    "461": {
+      "enumName": "wind_absorb",
+      "statKey": "windAbsorb"
+    },
+    "462": {
+      "enumName": "earth_absorb",
+      "statKey": "earthAbsorb"
+    },
+    "463": {
+      "enumName": "ltng_absorb",
+      "statKey": "ltngAbsorb"
+    },
+    "464": {
+      "enumName": "water_absorb",
+      "statKey": "waterAbsorb"
+    },
+    "465": {
+      "enumName": "light_absorb",
+      "statKey": "lightAbsorb"
+    },
+    "466": {
+      "enumName": "dark_absorb",
+      "statKey": "darkAbsorb"
+    },
+    "467": {
+      "enumName": "fire_null",
+      "statKey": "fireNull"
+    },
+    "468": {
+      "enumName": "ice_null",
+      "statKey": "iceNull"
+    },
+    "469": {
+      "enumName": "wind_null",
+      "statKey": "windNull"
+    },
+    "470": {
+      "enumName": "earth_null",
+      "statKey": "earthNull"
+    },
+    "471": {
+      "enumName": "ltng_null",
+      "statKey": "ltngNull"
+    },
+    "472": {
+      "enumName": "water_null",
+      "statKey": "waterNull"
+    },
+    "473": {
+      "enumName": "light_null",
+      "statKey": "lightNull"
+    },
+    "474": {
+      "enumName": "dark_null",
+      "statKey": "darkNull"
+    },
+    "475": {
+      "enumName": "magic_absorb",
+      "statKey": "magicAbsorb"
+    },
+    "476": {
+      "enumName": "null_magical_damage",
+      "statKey": "nullMagicalDamage"
+    },
+    "477": {
+      "enumName": "helix_duration",
+      "statKey": "helixDuration"
+    },
+    "478": {
+      "enumName": "helix_effect",
+      "statKey": "helixEffect"
+    },
+    "479": {
+      "enumName": "rapid_shot_double_damage",
+      "statKey": "rapidShotDoubleDamage"
+    },
+    "480": {
+      "enumName": "absorb_dmg_chance",
+      "statKey": "absorbDmgChance"
+    },
+    "481": {
+      "enumName": "extra_dual_wield_attack",
+      "statKey": "extraDualWieldAttack"
+    },
+    "482": {
+      "enumName": "extra_kick_attack",
+      "statKey": "extraKickAttack"
+    },
+    "483": {
+      "enumName": "warcry_duration",
+      "statKey": "warcryDuration"
+    },
+    "484": {
+      "enumName": "auspice_effect",
+      "statKey": "auspiceEffect"
+    },
+    "485": {
+      "enumName": "shield_mastery_tp",
+      "statKey": "shieldMasteryTp"
+    },
+    "486": {
+      "enumName": "tactical_parry",
+      "statKey": "tacticalParry"
+    },
+    "487": {
+      "enumName": "magic_burst_bonus_capped",
+      "statKey": "magicBurstBonusCapped"
+    },
+    "488": {
+      "enumName": "inhibit_tp",
+      "statKey": "inhibitTp"
+    },
+    "489": {
+      "enumName": "grimoire_spellcasting",
+      "statKey": "grimoireSpellcasting"
+    },
+    "490": {
+      "enumName": "samba_duration",
+      "statKey": "sambaDuration"
+    },
+    "491": {
+      "enumName": "waltz_potency",
+      "statKey": "waltzPotency"
+    },
+    "492": {
+      "enumName": "jig_duration",
+      "statKey": "jigDuration"
+    },
+    "493": {
+      "enumName": "vflourish_macc",
+      "statKey": "vflourishMacc"
+    },
+    "494": {
+      "enumName": "step_finish",
+      "statKey": "stepFinish"
+    },
+    "495": {
+      "enumName": "enhances_holywater",
+      "statKey": "enhancesHolywater"
+    },
+    "496": {
+      "enumName": "gov_clears",
+      "statKey": "govClears"
+    },
+    "497": {
+      "enumName": "waltz_delay",
+      "statKey": "waltzDelay"
+    },
+    "498": {
+      "enumName": "samba_pduration",
+      "statKey": "sambaPduration"
+    },
+    "499": {
+      "enumName": "item_subeffect",
+      "statKey": "itemSubeffect"
+    },
+    "500": {
+      "enumName": "item_addeffect_dmg",
+      "statKey": "itemAddeffectDmg"
+    },
+    "501": {
+      "enumName": "item_addeffect_chance",
+      "statKey": "itemAddeffectChance"
+    },
+    "502": {
+      "enumName": "augments_feint",
+      "statKey": "augmentsFeint"
+    },
+    "503": {
+      "enumName": "feral_howl_duration",
+      "statKey": "feralHowlDuration"
+    },
+    "504": {
+      "enumName": "maneuver_bonus",
+      "statKey": "maneuverBonus"
+    },
+    "505": {
+      "enumName": "overload_thresh",
+      "statKey": "overloadThresh"
+    },
+    "506": {
+      "enumName": "extra_dmg_chance",
+      "statKey": "extraDmgChance"
+    },
+    "507": {
+      "enumName": "occ_do_extra_dmg",
+      "statKey": "occDoExtraDmg"
+    },
+    "508": {
+      "enumName": "third_eye_counter_rate",
+      "statKey": "thirdEyeCounterRate"
+    },
+    "509": {
+      "enumName": "clamming_improved_results",
+      "statKey": "clammingImprovedResults"
+    },
+    "510": {
+      "enumName": "clamming_reduced_incidents",
+      "statKey": "clammingReducedIncidents"
+    },
+    "511": {
+      "enumName": "chocobo_riding_time",
+      "statKey": "chocoboRidingTime"
+    },
+    "512": {
+      "enumName": "phys_absorb",
+      "statKey": "physAbsorb"
+    },
+    "513": {
+      "enumName": "harvesting_result_nq",
+      "statKey": "harvestingResultNq"
+    },
+    "514": {
+      "enumName": "logging_result_nq",
+      "statKey": "loggingResultNq"
+    },
+    "515": {
+      "enumName": "mining_result_nq",
+      "statKey": "miningResultNq"
+    },
+    "516": {
+      "enumName": "absorb_dmg_to_mp",
+      "statKey": "absorbDmgToMp"
+    },
+    "517": {
+      "enumName": "egghelm",
+      "statKey": "egghelm"
+    },
+    "518": {
+      "enumName": "shieldblockrate",
+      "statKey": "shieldblockrate"
+    },
+    "519": {
+      "enumName": "cure_cast_time",
+      "statKey": "cureCastTime"
+    },
+    "520": {
+      "enumName": "trick_atk_agi",
+      "statKey": "trickAtkAgi"
+    },
+    "521": {
+      "enumName": "augments_absorb_liberator",
+      "statKey": "augmentsAbsorbLiberator"
+    },
+    "522": {
+      "enumName": "nin_nuke_bonus_gear",
+      "statKey": "ninNukeBonusGear"
+    },
+    "523": {
+      "enumName": "ammo_swing",
+      "statKey": "ammoSwing"
+    },
+    "524": {
+      "enumName": "aoe_na",
+      "statKey": "aoeNa"
+    },
+    "525": {
+      "enumName": "augments_convert",
+      "statKey": "augmentsConvert"
+    },
+    "526": {
+      "enumName": "augments_sa",
+      "statKey": "augmentsSa"
+    },
+    "527": {
+      "enumName": "augments_ta",
+      "statKey": "augmentsTa"
+    },
+    "528": {
+      "enumName": "roll_range",
+      "statKey": "rollRange"
+    },
+    "529": {
+      "enumName": "enhances_refresh",
+      "statKey": "enhancesRefresh"
+    },
+    "530": {
+      "enumName": "no_spell_mp_depletion",
+      "statKey": "noSpellMpDepletion"
+    },
+    "531": {
+      "enumName": "force_fire_dwbonus",
+      "statKey": "forceFireDwbonus"
+    },
+    "532": {
+      "enumName": "force_ice_dwbonus",
+      "statKey": "forceIceDwbonus"
+    },
+    "533": {
+      "enumName": "force_wind_dwbonus",
+      "statKey": "forceWindDwbonus"
+    },
+    "534": {
+      "enumName": "force_earth_dwbonus",
+      "statKey": "forceEarthDwbonus"
+    },
+    "535": {
+      "enumName": "force_lightning_dwbonus",
+      "statKey": "forceLightningDwbonus"
+    },
+    "536": {
+      "enumName": "force_water_dwbonus",
+      "statKey": "forceWaterDwbonus"
+    },
+    "537": {
+      "enumName": "force_light_dwbonus",
+      "statKey": "forceLightDwbonus"
+    },
+    "538": {
+      "enumName": "force_dark_dwbonus",
+      "statKey": "forceDarkDwbonus"
+    },
+    "539": {
+      "enumName": "stoneskin_bonus_hp",
+      "statKey": "stoneskinBonusHp"
+    },
+    "540": {
+      "enumName": "enhances_elemental_siphon",
+      "statKey": "enhancesElementalSiphon"
+    },
+    "541": {
+      "enumName": "bp_delay_ii",
+      "statKey": "bpDelayIi"
+    },
+    "542": {
+      "enumName": "job_bonus_chance",
+      "statKey": "jobBonusChance"
+    },
+    "543": {
+      "enumName": "counterstance_effect",
+      "statKey": "counterstanceEffect"
+    },
+    "544": {
+      "enumName": "fire_ftp_bonus",
+      "statKey": "fireFtpBonus"
+    },
+    "545": {
+      "enumName": "ice_ftp_bonus",
+      "statKey": "iceFtpBonus"
+    },
+    "546": {
+      "enumName": "wind_ftp_bonus",
+      "statKey": "windFtpBonus"
+    },
+    "547": {
+      "enumName": "earth_ftp_bonus",
+      "statKey": "earthFtpBonus"
+    },
+    "548": {
+      "enumName": "thunder_ftp_bonus",
+      "statKey": "thunderFtpBonus"
+    },
+    "549": {
+      "enumName": "water_ftp_bonus",
+      "statKey": "waterFtpBonus"
+    },
+    "550": {
+      "enumName": "light_ftp_bonus",
+      "statKey": "lightFtpBonus"
+    },
+    "551": {
+      "enumName": "dark_ftp_bonus",
+      "statKey": "darkFtpBonus"
+    },
+    "552": {
+      "enumName": "dodge_effect",
+      "statKey": "dodgeEffect"
+    },
+    "553": {
+      "enumName": "fire_affinity_perp",
+      "statKey": "fireAffinityPerp"
+    },
+    "554": {
+      "enumName": "ice_affinity_perp",
+      "statKey": "iceAffinityPerp"
+    },
+    "555": {
+      "enumName": "wind_affinity_perp",
+      "statKey": "windAffinityPerp"
+    },
+    "556": {
+      "enumName": "earth_affinity_perp",
+      "statKey": "earthAffinityPerp"
+    },
+    "557": {
+      "enumName": "thunder_affinity_perp",
+      "statKey": "thunderAffinityPerp"
+    },
+    "558": {
+      "enumName": "water_affinity_perp",
+      "statKey": "waterAffinityPerp"
+    },
+    "559": {
+      "enumName": "light_affinity_perp",
+      "statKey": "lightAffinityPerp"
+    },
+    "560": {
+      "enumName": "dark_affinity_perp",
+      "statKey": "darkAffinityPerp"
+    },
+    "561": {
+      "enumName": "focus_effect",
+      "statKey": "focusEffect"
+    },
+    "562": {
+      "enumName": "magic_crithitrate",
+      "statKey": "magicCrithitrate"
+    },
+    "563": {
+      "enumName": "magic_crit_dmg_increase",
+      "statKey": "magicCritDmgIncrease"
+    },
+    "564": {
+      "enumName": "jug_level_range",
+      "statKey": "jugLevelRange"
+    },
+    "565": {
+      "enumName": "day_nuke_bonus",
+      "statKey": "dayNukeBonus"
+    },
+    "566": {
+      "enumName": "iridescence",
+      "statKey": "iridescence"
+    },
+    "567": {
+      "enumName": "barspell_amount",
+      "statKey": "barspellAmount"
+    },
+    "568": {
+      "enumName": "rapture_amount",
+      "statKey": "raptureAmount"
+    },
+    "569": {
+      "enumName": "ebullience_amount",
+      "statKey": "ebullienceAmount"
+    },
+    "570": {
+      "enumName": "weaponskill_damage_base",
+      "statKey": "weaponskillDamageBase"
+    },
+    "571": {
+      "enumName": "wsdmg_combo",
+      "statKey": "wsdmgCombo"
+    },
+    "572": {
+      "enumName": "wsdmg_shoulder_tackle",
+      "statKey": "wsdmgShoulderTackle"
+    },
+    "573": {
+      "enumName": "wsdmg_one_inch_punch",
+      "statKey": "wsdmgOneInchPunch"
+    },
+    "574": {
+      "enumName": "wsdmg_backhand_blow",
+      "statKey": "wsdmgBackhandBlow"
+    },
+    "575": {
+      "enumName": "wsdmg_raging_fists",
+      "statKey": "wsdmgRagingFists"
+    },
+    "576": {
+      "enumName": "wsdmg_spinning_attack",
+      "statKey": "wsdmgSpinningAttack"
+    },
+    "577": {
+      "enumName": "wsdmg_howling_fist",
+      "statKey": "wsdmgHowlingFist"
+    },
+    "578": {
+      "enumName": "wsdmg_dragon_kick",
+      "statKey": "wsdmgDragonKick"
+    },
+    "579": {
+      "enumName": "wsdmg_asuran_fists",
+      "statKey": "wsdmgAsuranFists"
+    },
+    "580": {
+      "enumName": "wsdmg_final_heaven",
+      "statKey": "wsdmgFinalHeaven"
+    },
+    "581": {
+      "enumName": "wsdmg_ascetics_fury",
+      "statKey": "wsdmgAsceticsFury"
+    },
+    "582": {
+      "enumName": "wsdmg_stringing_pummel",
+      "statKey": "wsdmgStringingPummel"
+    },
+    "583": {
+      "enumName": "wsdmg_tornado_kick",
+      "statKey": "wsdmgTornadoKick"
+    },
+    "584": {
+      "enumName": "wsdmg_victory_smite",
+      "statKey": "wsdmgVictorySmite"
+    },
+    "585": {
+      "enumName": "wsdmg_shijin_spiral",
+      "statKey": "wsdmgShijinSpiral"
+    },
+    "586": {
+      "enumName": "wsdmg_wasp_sting",
+      "statKey": "wsdmgWaspSting"
+    },
+    "587": {
+      "enumName": "wsdmg_viper_bite",
+      "statKey": "wsdmgViperBite"
+    },
+    "588": {
+      "enumName": "wsdmg_shadowstitch",
+      "statKey": "wsdmgShadowstitch"
+    },
+    "589": {
+      "enumName": "wsdmg_gust_slash",
+      "statKey": "wsdmgGustSlash"
+    },
+    "590": {
+      "enumName": "wsdmg_cyclone",
+      "statKey": "wsdmgCyclone"
+    },
+    "591": {
+      "enumName": "wsdmg_energy_steal",
+      "statKey": "wsdmgEnergySteal"
+    },
+    "592": {
+      "enumName": "wsdmg_energy_drain",
+      "statKey": "wsdmgEnergyDrain"
+    },
+    "593": {
+      "enumName": "wsdmg_dancing_edge",
+      "statKey": "wsdmgDancingEdge"
+    },
+    "594": {
+      "enumName": "wsdmg_shark_bite",
+      "statKey": "wsdmgSharkBite"
+    },
+    "595": {
+      "enumName": "wsdmg_evisceration",
+      "statKey": "wsdmgEvisceration"
+    },
+    "596": {
+      "enumName": "wsdmg_mercy_stroke",
+      "statKey": "wsdmgMercyStroke"
+    },
+    "597": {
+      "enumName": "wsdmg_mandalic_stab",
+      "statKey": "wsdmgMandalicStab"
+    },
+    "598": {
+      "enumName": "wsdmg_mordant_rime",
+      "statKey": "wsdmgMordantRime"
+    },
+    "599": {
+      "enumName": "wsdmg_pyrrhic_kleos",
+      "statKey": "wsdmgPyrrhicKleos"
+    },
+    "600": {
+      "enumName": "wsdmg_aeolian_edge",
+      "statKey": "wsdmgAeolianEdge"
+    },
+    "601": {
+      "enumName": "wsdmg_rudras_storm",
+      "statKey": "wsdmgRudrasStorm"
+    },
+    "602": {
+      "enumName": "wsdmg_fast_blade",
+      "statKey": "wsdmgFastBlade"
+    },
+    "603": {
+      "enumName": "wsdmg_burning_blade",
+      "statKey": "wsdmgBurningBlade"
+    },
+    "604": {
+      "enumName": "wsdmg_red_lotus_blade",
+      "statKey": "wsdmgRedLotusBlade"
+    },
+    "605": {
+      "enumName": "wsdmg_flat_blade",
+      "statKey": "wsdmgFlatBlade"
+    },
+    "606": {
+      "enumName": "wsdmg_shining_blade",
+      "statKey": "wsdmgShiningBlade"
+    },
+    "607": {
+      "enumName": "wsdmg_seraph_blade",
+      "statKey": "wsdmgSeraphBlade"
+    },
+    "608": {
+      "enumName": "wsdmg_circle_blade",
+      "statKey": "wsdmgCircleBlade"
+    },
+    "609": {
+      "enumName": "wsdmg_spirits_within",
+      "statKey": "wsdmgSpiritsWithin"
+    },
+    "610": {
+      "enumName": "wsdmg_vorpal_blade",
+      "statKey": "wsdmgVorpalBlade"
+    },
+    "611": {
+      "enumName": "wsdmg_swift_blade",
+      "statKey": "wsdmgSwiftBlade"
+    },
+    "612": {
+      "enumName": "wsdmg_savage_blade",
+      "statKey": "wsdmgSavageBlade"
+    },
+    "613": {
+      "enumName": "wsdmg_knights_of_round",
+      "statKey": "wsdmgKnightsOfRound"
+    },
+    "614": {
+      "enumName": "wsdmg_death_blossom",
+      "statKey": "wsdmgDeathBlossom"
+    },
+    "615": {
+      "enumName": "wsdmg_atonement",
+      "statKey": "wsdmgAtonement"
+    },
+    "616": {
+      "enumName": "wsdmg_expiacion",
+      "statKey": "wsdmgExpiacion"
+    },
+    "617": {
+      "enumName": "wsdmg_sanguine_blade",
+      "statKey": "wsdmgSanguineBlade"
+    },
+    "618": {
+      "enumName": "wsdmg_hard_slash",
+      "statKey": "wsdmgHardSlash"
+    },
+    "619": {
+      "enumName": "wsdmg_power_slash",
+      "statKey": "wsdmgPowerSlash"
+    },
+    "620": {
+      "enumName": "wsdmg_frostbite",
+      "statKey": "wsdmgFrostbite"
+    },
+    "621": {
+      "enumName": "wsdmg_freezebite",
+      "statKey": "wsdmgFreezebite"
+    },
+    "622": {
+      "enumName": "wsdmg_shockwave",
+      "statKey": "wsdmgShockwave"
+    },
+    "623": {
+      "enumName": "wsdmg_crescent_moon",
+      "statKey": "wsdmgCrescentMoon"
+    },
+    "624": {
+      "enumName": "wsdmg_sickle_moon",
+      "statKey": "wsdmgSickleMoon"
+    },
+    "625": {
+      "enumName": "wsdmg_spinning_slash",
+      "statKey": "wsdmgSpinningSlash"
+    },
+    "626": {
+      "enumName": "wsdmg_ground_strike",
+      "statKey": "wsdmgGroundStrike"
+    },
+    "627": {
+      "enumName": "wsdmg_scourge",
+      "statKey": "wsdmgScourge"
+    },
+    "628": {
+      "enumName": "wsdmg_herculean_slash",
+      "statKey": "wsdmgHerculeanSlash"
+    },
+    "629": {
+      "enumName": "wsdmg_torcleaver",
+      "statKey": "wsdmgTorcleaver"
+    },
+    "630": {
+      "enumName": "wsdmg_resolution",
+      "statKey": "wsdmgResolution"
+    },
+    "631": {
+      "enumName": "wsdmg_dimidiation",
+      "statKey": "wsdmgDimidiation"
+    },
+    "632": {
+      "enumName": "wsdmg_fimbulvetr",
+      "statKey": "wsdmgFimbulvetr"
+    },
+    "634": {
+      "enumName": "wsdmg_raging_axe",
+      "statKey": "wsdmgRagingAxe"
+    },
+    "635": {
+      "enumName": "wsdmg_smash_axe",
+      "statKey": "wsdmgSmashAxe"
+    },
+    "636": {
+      "enumName": "wsdmg_gale_axe",
+      "statKey": "wsdmgGaleAxe"
+    },
+    "637": {
+      "enumName": "wsdmg_avalanche_axe",
+      "statKey": "wsdmgAvalancheAxe"
+    },
+    "638": {
+      "enumName": "wsdmg_spinning_axe",
+      "statKey": "wsdmgSpinningAxe"
+    },
+    "639": {
+      "enumName": "wsdmg_rampage",
+      "statKey": "wsdmgRampage"
+    },
+    "640": {
+      "enumName": "wsdmg_calamity",
+      "statKey": "wsdmgCalamity"
+    },
+    "641": {
+      "enumName": "wsdmg_mistral_axe",
+      "statKey": "wsdmgMistralAxe"
+    },
+    "642": {
+      "enumName": "wsdmg_decimation",
+      "statKey": "wsdmgDecimation"
+    },
+    "643": {
+      "enumName": "wsdmg_onslaught",
+      "statKey": "wsdmgOnslaught"
+    },
+    "644": {
+      "enumName": "wsdmg_primal_rend",
+      "statKey": "wsdmgPrimalRend"
+    },
+    "645": {
+      "enumName": "wsdmg_bora_axe",
+      "statKey": "wsdmgBoraAxe"
+    },
+    "646": {
+      "enumName": "wsdmg_cloudsplitter",
+      "statKey": "wsdmgCloudsplitter"
+    },
+    "647": {
+      "enumName": "wsdmg_ruinator",
+      "statKey": "wsdmgRuinator"
+    },
+    "648": {
+      "enumName": "wsdmg_blitz",
+      "statKey": "wsdmgBlitz"
+    },
+    "650": {
+      "enumName": "wsdmg_shield_break",
+      "statKey": "wsdmgShieldBreak"
+    },
+    "651": {
+      "enumName": "wsdmg_iron_tempest",
+      "statKey": "wsdmgIronTempest"
+    },
+    "652": {
+      "enumName": "wsdmg_sturmwind",
+      "statKey": "wsdmgSturmwind"
+    },
+    "653": {
+      "enumName": "wsdmg_armor_break",
+      "statKey": "wsdmgArmorBreak"
+    },
+    "654": {
+      "enumName": "wsdmg_keen_edge",
+      "statKey": "wsdmgKeenEdge"
+    },
+    "655": {
+      "enumName": "wsdmg_weapon_break",
+      "statKey": "wsdmgWeaponBreak"
+    },
+    "656": {
+      "enumName": "wsdmg_raging_rush",
+      "statKey": "wsdmgRagingRush"
+    },
+    "657": {
+      "enumName": "wsdmg_full_break",
+      "statKey": "wsdmgFullBreak"
+    },
+    "658": {
+      "enumName": "wsdmg_steel_cyclone",
+      "statKey": "wsdmgSteelCyclone"
+    },
+    "659": {
+      "enumName": "wsdmg_metatron_torment",
+      "statKey": "wsdmgMetatronTorment"
+    },
+    "660": {
+      "enumName": "wsdmg_kings_justice",
+      "statKey": "wsdmgKingsJustice"
+    },
+    "661": {
+      "enumName": "wsdmg_fell_cleave",
+      "statKey": "wsdmgFellCleave"
+    },
+    "662": {
+      "enumName": "wsdmg_ukkos_fury",
+      "statKey": "wsdmgUkkosFury"
+    },
+    "663": {
+      "enumName": "wsdmg_upheaval",
+      "statKey": "wsdmgUpheaval"
+    },
+    "664": {
+      "enumName": "wsdmg_disaster",
+      "statKey": "wsdmgDisaster"
+    },
+    "666": {
+      "enumName": "wsdmg_slice",
+      "statKey": "wsdmgSlice"
+    },
+    "667": {
+      "enumName": "wsdmg_dark_harvest",
+      "statKey": "wsdmgDarkHarvest"
+    },
+    "668": {
+      "enumName": "wsdmg_shadow_of_death",
+      "statKey": "wsdmgShadowOfDeath"
+    },
+    "669": {
+      "enumName": "wsdmg_nightmare_scythe",
+      "statKey": "wsdmgNightmareScythe"
+    },
+    "670": {
+      "enumName": "wsdmg_spinning_scythe",
+      "statKey": "wsdmgSpinningScythe"
+    },
+    "671": {
+      "enumName": "wsdmg_vorpal_scythe",
+      "statKey": "wsdmgVorpalScythe"
+    },
+    "672": {
+      "enumName": "wsdmg_guillotine",
+      "statKey": "wsdmgGuillotine"
+    },
+    "673": {
+      "enumName": "wsdmg_cross_reaper",
+      "statKey": "wsdmgCrossReaper"
+    },
+    "674": {
+      "enumName": "wsdmg_spiral_hell",
+      "statKey": "wsdmgSpiralHell"
+    },
+    "675": {
+      "enumName": "wsdmg_catastrophe",
+      "statKey": "wsdmgCatastrophe"
+    },
+    "676": {
+      "enumName": "wsdmg_insurgency",
+      "statKey": "wsdmgInsurgency"
+    },
+    "677": {
+      "enumName": "wsdmg_infernal_scythe",
+      "statKey": "wsdmgInfernalScythe"
+    },
+    "678": {
+      "enumName": "wsdmg_quietus",
+      "statKey": "wsdmgQuietus"
+    },
+    "679": {
+      "enumName": "wsdmg_entropy",
+      "statKey": "wsdmgEntropy"
+    },
+    "680": {
+      "enumName": "wsdmg_origin",
+      "statKey": "wsdmgOrigin"
+    },
+    "682": {
+      "enumName": "wsdmg_double_thrust",
+      "statKey": "wsdmgDoubleThrust"
+    },
+    "683": {
+      "enumName": "wsdmg_thunder_thrust",
+      "statKey": "wsdmgThunderThrust"
+    },
+    "684": {
+      "enumName": "wsdmg_raiden_thrust",
+      "statKey": "wsdmgRaidenThrust"
+    },
+    "685": {
+      "enumName": "wsdmg_leg_sweep",
+      "statKey": "wsdmgLegSweep"
+    },
+    "686": {
+      "enumName": "wsdmg_penta_thrust",
+      "statKey": "wsdmgPentaThrust"
+    },
+    "687": {
+      "enumName": "wsdmg_vorpal_thrust",
+      "statKey": "wsdmgVorpalThrust"
+    },
+    "688": {
+      "enumName": "wsdmg_skewer",
+      "statKey": "wsdmgSkewer"
+    },
+    "689": {
+      "enumName": "wsdmg_wheeling_thrust",
+      "statKey": "wsdmgWheelingThrust"
+    },
+    "690": {
+      "enumName": "wsdmg_impulse_drive",
+      "statKey": "wsdmgImpulseDrive"
+    },
+    "691": {
+      "enumName": "wsdmg_geirskogul",
+      "statKey": "wsdmgGeirskogul"
+    },
+    "692": {
+      "enumName": "wsdmg_drakesbane",
+      "statKey": "wsdmgDrakesbane"
+    },
+    "693": {
+      "enumName": "wsdmg_sonic_thrust",
+      "statKey": "wsdmgSonicThrust"
+    },
+    "694": {
+      "enumName": "wsdmg_camlanns_torment",
+      "statKey": "wsdmgCamlannsTorment"
+    },
+    "695": {
+      "enumName": "wsdmg_stardiver",
+      "statKey": "wsdmgStardiver"
+    },
+    "696": {
+      "enumName": "wsdmg_diarmuid",
+      "statKey": "wsdmgDiarmuid"
+    },
+    "698": {
+      "enumName": "wsdmg_blade_rin",
+      "statKey": "wsdmgBladeRin"
+    },
+    "699": {
+      "enumName": "wsdmg_blade_retsu",
+      "statKey": "wsdmgBladeRetsu"
+    },
+    "700": {
+      "enumName": "wsdmg_blade_teki",
+      "statKey": "wsdmgBladeTeki"
+    },
+    "701": {
+      "enumName": "wsdmg_blade_to",
+      "statKey": "wsdmgBladeTo"
+    },
+    "702": {
+      "enumName": "wsdmg_blade_chi",
+      "statKey": "wsdmgBladeChi"
+    },
+    "703": {
+      "enumName": "wsdmg_blade_ei",
+      "statKey": "wsdmgBladeEi"
+    },
+    "704": {
+      "enumName": "wsdmg_blade_jin",
+      "statKey": "wsdmgBladeJin"
+    },
+    "705": {
+      "enumName": "wsdmg_blade_ten",
+      "statKey": "wsdmgBladeTen"
+    },
+    "706": {
+      "enumName": "wsdmg_blade_ku",
+      "statKey": "wsdmgBladeKu"
+    },
+    "707": {
+      "enumName": "wsdmg_blade_metsu",
+      "statKey": "wsdmgBladeMetsu"
+    },
+    "708": {
+      "enumName": "wsdmg_blade_kamu",
+      "statKey": "wsdmgBladeKamu"
+    },
+    "709": {
+      "enumName": "wsdmg_blade_yu",
+      "statKey": "wsdmgBladeYu"
+    },
+    "710": {
+      "enumName": "wsdmg_blade_hi",
+      "statKey": "wsdmgBladeHi"
+    },
+    "711": {
+      "enumName": "wsdmg_blade_shun",
+      "statKey": "wsdmgBladeShun"
+    },
+    "712": {
+      "enumName": "wsdmg_jijin_kaimetsu",
+      "statKey": "wsdmgJijinKaimetsu"
+    },
+    "714": {
+      "enumName": "wsdmg_tachi_enpi",
+      "statKey": "wsdmgTachiEnpi"
+    },
+    "715": {
+      "enumName": "wsdmg_tachi_hobaku",
+      "statKey": "wsdmgTachiHobaku"
+    },
+    "716": {
+      "enumName": "wsdmg_tachi_goten",
+      "statKey": "wsdmgTachiGoten"
+    },
+    "717": {
+      "enumName": "wsdmg_tachi_kagero",
+      "statKey": "wsdmgTachiKagero"
+    },
+    "718": {
+      "enumName": "wsdmg_tachi_jinpu",
+      "statKey": "wsdmgTachiJinpu"
+    },
+    "719": {
+      "enumName": "wsdmg_tachi_koki",
+      "statKey": "wsdmgTachiKoki"
+    },
+    "720": {
+      "enumName": "wsdmg_tachi_yukikaze",
+      "statKey": "wsdmgTachiYukikaze"
+    },
+    "721": {
+      "enumName": "wsdmg_tachi_gekko",
+      "statKey": "wsdmgTachiGekko"
+    },
+    "722": {
+      "enumName": "wsdmg_tachi_kasha",
+      "statKey": "wsdmgTachiKasha"
+    },
+    "723": {
+      "enumName": "wsdmg_tachi_kaiten",
+      "statKey": "wsdmgTachiKaiten"
+    },
+    "724": {
+      "enumName": "wsdmg_tachi_rana",
+      "statKey": "wsdmgTachiRana"
+    },
+    "725": {
+      "enumName": "wsdmg_tachi_ageha",
+      "statKey": "wsdmgTachiAgeha"
+    },
+    "726": {
+      "enumName": "wsdmg_tachi_fudo",
+      "statKey": "wsdmgTachiFudo"
+    },
+    "727": {
+      "enumName": "wsdmg_tachi_shoha",
+      "statKey": "wsdmgTachiShoha"
+    },
+    "728": {
+      "enumName": "wsdmg_tachi_suikawari",
+      "statKey": "wsdmgTachiSuikawari"
+    },
+    "729": {
+      "enumName": "wsdmg_tachi_mumei",
+      "statKey": "wsdmgTachiMumei"
+    },
+    "730": {
+      "enumName": "wsdmg_shining_strike",
+      "statKey": "wsdmgShiningStrike"
+    },
+    "731": {
+      "enumName": "wsdmg_seraph_strike",
+      "statKey": "wsdmgSeraphStrike"
+    },
+    "732": {
+      "enumName": "wsdmg_brainshaker",
+      "statKey": "wsdmgBrainshaker"
+    },
+    "733": {
+      "enumName": "wsdmg_starlight",
+      "statKey": "wsdmgStarlight"
+    },
+    "734": {
+      "enumName": "wsdmg_moonlight",
+      "statKey": "wsdmgMoonlight"
+    },
+    "735": {
+      "enumName": "wsdmg_skullbreaker",
+      "statKey": "wsdmgSkullbreaker"
+    },
+    "736": {
+      "enumName": "wsdmg_true_strike",
+      "statKey": "wsdmgTrueStrike"
+    },
+    "737": {
+      "enumName": "wsdmg_judgment",
+      "statKey": "wsdmgJudgment"
+    },
+    "738": {
+      "enumName": "wsdmg_hexa_strike",
+      "statKey": "wsdmgHexaStrike"
+    },
+    "739": {
+      "enumName": "wsdmg_black_halo",
+      "statKey": "wsdmgBlackHalo"
+    },
+    "740": {
+      "enumName": "wsdmg_randgrith",
+      "statKey": "wsdmgRandgrith"
+    },
+    "741": {
+      "enumName": "wsdmg_mystic_boon",
+      "statKey": "wsdmgMysticBoon"
+    },
+    "742": {
+      "enumName": "wsdmg_flash_nova",
+      "statKey": "wsdmgFlashNova"
+    },
+    "743": {
+      "enumName": "wsdmg_dagan",
+      "statKey": "wsdmgDagan"
+    },
+    "744": {
+      "enumName": "wsdmg_realmrazer",
+      "statKey": "wsdmgRealmrazer"
+    },
+    "745": {
+      "enumName": "wsdmg_exudation",
+      "statKey": "wsdmgExudation"
+    },
+    "746": {
+      "enumName": "wsdmg_heavy_swing",
+      "statKey": "wsdmgHeavySwing"
+    },
+    "747": {
+      "enumName": "wsdmg_rock_crusher",
+      "statKey": "wsdmgRockCrusher"
+    },
+    "748": {
+      "enumName": "wsdmg_earth_crusher",
+      "statKey": "wsdmgEarthCrusher"
+    },
+    "749": {
+      "enumName": "wsdmg_starburst",
+      "statKey": "wsdmgStarburst"
+    },
+    "750": {
+      "enumName": "wsdmg_sunburst",
+      "statKey": "wsdmgSunburst"
+    },
+    "751": {
+      "enumName": "wsdmg_shell_crusher",
+      "statKey": "wsdmgShellCrusher"
+    },
+    "752": {
+      "enumName": "wsdmg_full_swing",
+      "statKey": "wsdmgFullSwing"
+    },
+    "753": {
+      "enumName": "wsdmg_spirit_taker",
+      "statKey": "wsdmgSpiritTaker"
+    },
+    "754": {
+      "enumName": "wsdmg_retribution",
+      "statKey": "wsdmgRetribution"
+    },
+    "755": {
+      "enumName": "wsdmg_gate_of_tartarus",
+      "statKey": "wsdmgGateOfTartarus"
+    },
+    "756": {
+      "enumName": "wsdmg_vidohunir",
+      "statKey": "wsdmgVidohunir"
+    },
+    "757": {
+      "enumName": "wsdmg_garland_of_bliss",
+      "statKey": "wsdmgGarlandOfBliss"
+    },
+    "758": {
+      "enumName": "wsdmg_omniscience",
+      "statKey": "wsdmgOmniscience"
+    },
+    "759": {
+      "enumName": "wsdmg_cataclysm",
+      "statKey": "wsdmgCataclysm"
+    },
+    "760": {
+      "enumName": "wsdmg_myrkr",
+      "statKey": "wsdmgMyrkr"
+    },
+    "761": {
+      "enumName": "wsdmg_shattersoul",
+      "statKey": "wsdmgShattersoul"
+    },
+    "762": {
+      "enumName": "wsdmg_flaming_arrow",
+      "statKey": "wsdmgFlamingArrow"
+    },
+    "763": {
+      "enumName": "wsdmg_piercing_arrow",
+      "statKey": "wsdmgPiercingArrow"
+    },
+    "764": {
+      "enumName": "wsdmg_dulling_arrow",
+      "statKey": "wsdmgDullingArrow"
+    },
+    "766": {
+      "enumName": "wsdmg_sidewinder",
+      "statKey": "wsdmgSidewinder"
+    },
+    "767": {
+      "enumName": "wsdmg_blast_arrow",
+      "statKey": "wsdmgBlastArrow"
+    },
+    "768": {
+      "enumName": "wsdmg_arching_arrow",
+      "statKey": "wsdmgArchingArrow"
+    },
+    "769": {
+      "enumName": "wsdmg_empyreal_arrow",
+      "statKey": "wsdmgEmpyrealArrow"
+    },
+    "770": {
+      "enumName": "wsdmg_namas_arrow",
+      "statKey": "wsdmgNamasArrow"
+    },
+    "771": {
+      "enumName": "wsdmg_refulgent_arrow",
+      "statKey": "wsdmgRefulgentArrow"
+    },
+    "772": {
+      "enumName": "wsdmg_jishnus_radiance",
+      "statKey": "wsdmgJishnusRadiance"
+    },
+    "773": {
+      "enumName": "wsdmg_apex_arrow",
+      "statKey": "wsdmgApexArrow"
+    },
+    "774": {
+      "enumName": "wsdmg_sarv",
+      "statKey": "wsdmgSarv"
+    },
+    "778": {
+      "enumName": "wsdmg_hot_shot",
+      "statKey": "wsdmgHotShot"
+    },
+    "779": {
+      "enumName": "wsdmg_split_shot",
+      "statKey": "wsdmgSplitShot"
+    },
+    "780": {
+      "enumName": "wsdmg_sniper_shot",
+      "statKey": "wsdmgSniperShot"
+    },
+    "782": {
+      "enumName": "wsdmg_slug_shot",
+      "statKey": "wsdmgSlugShot"
+    },
+    "783": {
+      "enumName": "wsdmg_blast_shot",
+      "statKey": "wsdmgBlastShot"
+    },
+    "784": {
+      "enumName": "wsdmg_heavy_shot",
+      "statKey": "wsdmgHeavyShot"
+    },
+    "785": {
+      "enumName": "wsdmg_detonator",
+      "statKey": "wsdmgDetonator"
+    },
+    "786": {
+      "enumName": "wsdmg_coronach",
+      "statKey": "wsdmgCoronach"
+    },
+    "787": {
+      "enumName": "wsdmg_trueflight",
+      "statKey": "wsdmgTrueflight"
+    },
+    "788": {
+      "enumName": "wsdmg_leaden_salute",
+      "statKey": "wsdmgLeadenSalute"
+    },
+    "789": {
+      "enumName": "wsdmg_numbing_shot",
+      "statKey": "wsdmgNumbingShot"
+    },
+    "790": {
+      "enumName": "wsdmg_wildfire",
+      "statKey": "wsdmgWildfire"
+    },
+    "791": {
+      "enumName": "wsdmg_last_stand",
+      "statKey": "wsdmgLastStand"
+    },
+    "792": {
+      "enumName": "wsdmg_terminus",
+      "statKey": "wsdmgTerminus"
+    },
+    "794": {
+      "enumName": "wsdmg_exenterator",
+      "statKey": "wsdmgExenterator"
+    },
+    "795": {
+      "enumName": "wsdmg_chant_du_cygne",
+      "statKey": "wsdmgChantDuCygne"
+    },
+    "796": {
+      "enumName": "wsdmg_requiescat",
+      "statKey": "wsdmgRequiescat"
+    },
+    "797": {
+      "enumName": "wsdmg_knights_of_rotund",
+      "statKey": "wsdmgKnightsOfRotund"
+    },
+    "798": {
+      "enumName": "wsdmg_final_paradise",
+      "statKey": "wsdmgFinalParadise"
+    },
+    "799": {
+      "enumName": "wsdmg_fast_blade_ii",
+      "statKey": "wsdmgFastBladeIi"
+    },
+    "800": {
+      "enumName": "wsdmg_dragon_blow",
+      "statKey": "wsdmgDragonBlow"
+    },
+    "801": {
+      "enumName": "wsdmg_maru_kala",
+      "statKey": "wsdmgMaruKala"
+    },
+    "802": {
+      "enumName": "wsdmg_merciless_strike",
+      "statKey": "wsdmgMercilessStrike"
+    },
+    "803": {
+      "enumName": "wsdmg_imperator",
+      "statKey": "wsdmgImperator"
+    },
+    "804": {
+      "enumName": "wsdmg_dagda",
+      "statKey": "wsdmgDagda"
+    },
+    "805": {
+      "enumName": "wsdmg_oshala",
+      "statKey": "wsdmgOshala"
+    },
+    "808": {
+      "enumName": "wsdmg_uriel_blade",
+      "statKey": "wsdmgUrielBlade"
+    },
+    "809": {
+      "enumName": "wsdmg_glory_slash",
+      "statKey": "wsdmgGlorySlash"
+    },
+    "810": {
+      "enumName": "wsdmg_tartarus_torpor",
+      "statKey": "wsdmgTartarusTorpor"
+    },
+    "826": {
+      "enumName": "bounty_shot_th_bonus",
+      "statKey": "bountyShotThBonus"
+    },
+    "827": {
+      "enumName": "barspell_mdef_bonus",
+      "statKey": "barspellMdefBonus"
+    },
+    "828": {
+      "enumName": "force_jump_crit",
+      "statKey": "forceJumpCrit"
+    },
+    "829": {
+      "enumName": "wyvern_effective_breath",
+      "statKey": "wyvernEffectiveBreath"
+    },
+    "830": {
+      "enumName": "sneak_atk_dex",
+      "statKey": "sneakAtkDex"
+    },
+    "831": {
+      "enumName": "dmgmagic_ii",
+      "statKey": "dmgmagicIi"
+    },
+    "832": {
+      "enumName": "aquaveil_count",
+      "statKey": "aquaveilCount"
+    },
+    "833": {
+      "enumName": "song_recast_delay",
+      "statKey": "songRecastDelay"
+    },
+    "834": {
+      "enumName": "quick_draw_dmg_percent",
+      "statKey": "quickDrawDmgPercent"
+    },
+    "835": {
+      "enumName": "mug_effect",
+      "statKey": "mugEffect"
+    },
+    "836": {
+      "enumName": "reverse_flourish_effect",
+      "statKey": "reverseFlourishEffect"
+    },
+    "837": {
+      "enumName": "sentinel_effect",
+      "statKey": "sentinelEffect"
+    },
+    "838": {
+      "enumName": "regen_multiplier",
+      "statKey": "regenMultiplier"
+    },
+    "839": {
+      "enumName": "third_eye_retention_rate",
+      "statKey": "thirdEyeRetentionRate"
+    },
+    "840": {
+      "enumName": "all_wsdmg_all_hits",
+      "statKey": "allWsdmgAllHits"
+    },
+    "841": {
+      "enumName": "all_wsdmg_first_hit",
+      "statKey": "allWsdmgFirstHit"
+    },
+    "842": {
+      "enumName": "auto_decision_delay",
+      "statKey": "autoDecisionDelay"
+    },
+    "843": {
+      "enumName": "auto_shield_bash_delay",
+      "statKey": "autoShieldBashDelay"
+    },
+    "844": {
+      "enumName": "auto_magic_cooldown",
+      "statKey": "autoMagicCooldown"
+    },
+    "845": {
+      "enumName": "auto_healing_delay",
+      "statKey": "autoHealingDelay"
+    },
+    "846": {
+      "enumName": "auto_healing_threshold",
+      "statKey": "autoHealingThreshold"
+    },
+    "847": {
+      "enumName": "burden_decay",
+      "statKey": "burdenDecay"
+    },
+    "848": {
+      "enumName": "auto_shield_bash_slow",
+      "statKey": "autoShieldBashSlow"
+    },
+    "849": {
+      "enumName": "auto_tp_efficiency",
+      "statKey": "autoTpEfficiency"
+    },
+    "850": {
+      "enumName": "auto_scan_resists",
+      "statKey": "autoScanResists"
+    },
+    "851": {
+      "enumName": "synth_success_rate",
+      "statKey": "synthSuccessRate"
+    },
+    "852": {
+      "enumName": "synth_skill_gain",
+      "statKey": "synthSkillGain"
+    },
+    "853": {
+      "enumName": "repair_effect",
+      "statKey": "repairEffect"
+    },
+    "854": {
+      "enumName": "repair_potency",
+      "statKey": "repairPotency"
+    },
+    "855": {
+      "enumName": "prevent_overload",
+      "statKey": "preventOverload"
+    },
+    "856": {
+      "enumName": "enspell_chance",
+      "statKey": "enspellChance"
+    },
+    "857": {
+      "enumName": "holy_circle_duration",
+      "statKey": "holyCircleDuration"
+    },
+    "858": {
+      "enumName": "arcane_circle_duration",
+      "statKey": "arcaneCircleDuration"
+    },
+    "859": {
+      "enumName": "ancient_circle_duration",
+      "statKey": "ancientCircleDuration"
+    },
+    "860": {
+      "enumName": "cure2mp_percent",
+      "statKey": "cure2mpPercent"
+    },
+    "861": {
+      "enumName": "synth_material_loss",
+      "statKey": "synthMaterialLoss"
+    },
+    "862": {
+      "enumName": "synth_hq_rate",
+      "statKey": "synthHqRate"
+    },
+    "863": {
+      "enumName": "rem_occ_do_double_dmg",
+      "statKey": "remOccDoDoubleDmg"
+    },
+    "864": {
+      "enumName": "rem_occ_do_triple_dmg",
+      "statKey": "remOccDoTripleDmg"
+    },
+    "865": {
+      "enumName": "mythic_occ_att_twice",
+      "statKey": "mythicOccAttTwice"
+    },
+    "866": {
+      "enumName": "mythic_occ_att_thrice",
+      "statKey": "mythicOccAttThrice"
+    },
+    "867": {
+      "enumName": "rem_occ_do_double_dmg_ranged",
+      "statKey": "remOccDoDoubleDmgRanged"
+    },
+    "868": {
+      "enumName": "rem_occ_do_triple_dmg_ranged",
+      "statKey": "remOccDoTripleDmgRanged"
+    },
+    "869": {
+      "enumName": "roll_bolters",
+      "statKey": "rollBolters"
+    },
+    "870": {
+      "enumName": "roll_casters",
+      "statKey": "rollCasters"
+    },
+    "871": {
+      "enumName": "roll_coursers",
+      "statKey": "rollCoursers"
+    },
+    "872": {
+      "enumName": "roll_blitzers",
+      "statKey": "rollBlitzers"
+    },
+    "873": {
+      "enumName": "roll_tacticians",
+      "statKey": "rollTacticians"
+    },
+    "874": {
+      "enumName": "roll_allies",
+      "statKey": "rollAllies"
+    },
+    "875": {
+      "enumName": "roll_misers",
+      "statKey": "rollMisers"
+    },
+    "876": {
+      "enumName": "roll_companions",
+      "statKey": "rollCompanions"
+    },
+    "877": {
+      "enumName": "roll_avengers",
+      "statKey": "rollAvengers"
+    },
+    "878": {
+      "enumName": "roll_naturalists",
+      "statKey": "rollNaturalists"
+    },
+    "879": {
+      "enumName": "roll_runeists",
+      "statKey": "rollRuneists"
+    },
+    "880": {
+      "enumName": "savetp",
+      "statKey": "savetp"
+    },
+    "881": {
+      "enumName": "phantom_roll",
+      "statKey": "phantomRoll"
+    },
+    "882": {
+      "enumName": "phantom_duration",
+      "statKey": "phantomDuration"
+    },
+    "883": {
+      "enumName": "perfect_dodge",
+      "statKey": "perfectDodge"
+    },
+    "884": {
+      "enumName": "acc_collab_effect",
+      "statKey": "accCollabEffect"
+    },
+    "885": {
+      "enumName": "hide_duration",
+      "statKey": "hideDuration"
+    },
+    "886": {
+      "enumName": "augments_assassins_charge",
+      "statKey": "augmentsAssassinsCharge"
+    },
+    "887": {
+      "enumName": "augments_ambush",
+      "statKey": "augmentsAmbush"
+    },
+    "888": {
+      "enumName": "jump_double_attack",
+      "statKey": "jumpDoubleAttack"
+    },
+    "889": {
+      "enumName": "augments_aura_steal",
+      "statKey": "augmentsAuraSteal"
+    },
+    "890": {
+      "enumName": "enh_magic_duration",
+      "statKey": "enhMagicDuration"
+    },
+    "891": {
+      "enumName": "enhances_coursers_roll",
+      "statKey": "enhancesCoursersRoll"
+    },
+    "892": {
+      "enumName": "enhances_casters_roll",
+      "statKey": "enhancesCastersRoll"
+    },
+    "893": {
+      "enumName": "enhances_blitzers_roll",
+      "statKey": "enhancesBlitzersRoll"
+    },
+    "894": {
+      "enumName": "enhances_allies_roll",
+      "statKey": "enhancesAlliesRoll"
+    },
+    "895": {
+      "enumName": "enhances_tacticians_roll",
+      "statKey": "enhancesTacticiansRoll"
+    },
+    "896": {
+      "enumName": "despoil",
+      "statKey": "despoil"
+    },
+    "897": {
+      "enumName": "gilfinder",
+      "statKey": "gilfinder"
+    },
+    "898": {
+      "enumName": "smite",
+      "statKey": "smite"
+    },
+    "899": {
+      "enumName": "tactical_guard",
+      "statKey": "tacticalGuard"
+    },
+    "900": {
+      "enumName": "utsusemi_bonus",
+      "statKey": "utsusemiBonus"
+    },
+    "901": {
+      "enumName": "elemental_celerity",
+      "statKey": "elementalCelerity"
+    },
+    "902": {
+      "enumName": "occult_acumen",
+      "statKey": "occultAcumen"
+    },
+    "903": {
+      "enumName": "fencer_tp_bonus",
+      "statKey": "fencerTpBonus"
+    },
+    "904": {
+      "enumName": "fencer_crithitrate",
+      "statKey": "fencerCrithitrate"
+    },
+    "905": {
+      "enumName": "shield_def_bonus",
+      "statKey": "shieldDefBonus"
+    },
+    "906": {
+      "enumName": "desperate_blows",
+      "statKey": "desperateBlows"
+    },
+    "907": {
+      "enumName": "stalwart_soul",
+      "statKey": "stalwartSoul"
+    },
+    "908": {
+      "enumName": "crit_def_bonus",
+      "statKey": "critDefBonus"
+    },
+    "909": {
+      "enumName": "quick_magic",
+      "statKey": "quickMagic"
+    },
+    "910": {
+      "enumName": "divine_benison",
+      "statKey": "divineBenison"
+    },
+    "911": {
+      "enumName": "daken",
+      "statKey": "daken"
+    },
+    "912": {
+      "enumName": "augments_conspirator",
+      "statKey": "augmentsConspirator"
+    },
+    "913": {
+      "enumName": "blood_boon",
+      "statKey": "bloodBoon"
+    },
+    "914": {
+      "enumName": "experience_retained",
+      "statKey": "experienceRetained"
+    },
+    "915": {
+      "enumName": "capacity_bonus",
+      "statKey": "capacityBonus"
+    },
+    "916": {
+      "enumName": "synth_success_rate_desynthesis",
+      "statKey": "synthSuccessRateDesynthesis"
+    },
+    "917": {
+      "enumName": "synth_material_loss_fire",
+      "statKey": "synthMaterialLossFire"
+    },
+    "918": {
+      "enumName": "synth_material_loss_ice",
+      "statKey": "synthMaterialLossIce"
+    },
+    "919": {
+      "enumName": "synth_material_loss_wind",
+      "statKey": "synthMaterialLossWind"
+    },
+    "920": {
+      "enumName": "synth_material_loss_earth",
+      "statKey": "synthMaterialLossEarth"
+    },
+    "921": {
+      "enumName": "synth_material_loss_thunder",
+      "statKey": "synthMaterialLossThunder"
+    },
+    "922": {
+      "enumName": "synth_material_loss_water",
+      "statKey": "synthMaterialLossWater"
+    },
+    "923": {
+      "enumName": "synth_material_loss_light",
+      "statKey": "synthMaterialLossLight"
+    },
+    "924": {
+      "enumName": "synth_material_loss_dark",
+      "statKey": "synthMaterialLossDark"
+    },
+    "925": {
+      "enumName": "synth_material_loss_woodworking",
+      "statKey": "synthMaterialLossWoodworking"
+    },
+    "926": {
+      "enumName": "synth_material_loss_smithing",
+      "statKey": "synthMaterialLossSmithing"
+    },
+    "927": {
+      "enumName": "synth_material_loss_goldsmithing",
+      "statKey": "synthMaterialLossGoldsmithing"
+    },
+    "928": {
+      "enumName": "synth_material_loss_clothcraft",
+      "statKey": "synthMaterialLossClothcraft"
+    },
+    "929": {
+      "enumName": "synth_material_loss_leathercraft",
+      "statKey": "synthMaterialLossLeathercraft"
+    },
+    "930": {
+      "enumName": "synth_material_loss_bonecraft",
+      "statKey": "synthMaterialLossBonecraft"
+    },
+    "931": {
+      "enumName": "synth_material_loss_alchemy",
+      "statKey": "synthMaterialLossAlchemy"
+    },
+    "932": {
+      "enumName": "synth_material_loss_cooking",
+      "statKey": "synthMaterialLossCooking"
+    },
+    "933": {
+      "enumName": "conquest_bonus",
+      "statKey": "conquestBonus"
+    },
+    "934": {
+      "enumName": "conquest_region_bonus",
+      "statKey": "conquestRegionBonus"
+    },
+    "935": {
+      "enumName": "campaign_bonus",
+      "statKey": "campaignBonus"
+    },
+    "936": {
+      "enumName": "jump_acc_bonus",
+      "statKey": "jumpAccBonus"
+    },
+    "937": {
+      "enumName": "food_duration",
+      "statKey": "foodDuration"
+    },
+    "938": {
+      "enumName": "enspell_duration",
+      "statKey": "enspellDuration"
+    },
+    "939": {
+      "enumName": "auto_steam_jacket_reduction",
+      "statKey": "autoSteamJacketReduction"
+    },
+    "940": {
+      "enumName": "auto_schurzen",
+      "statKey": "autoSchurzen"
+    },
+    "941": {
+      "enumName": "auto_equalizer",
+      "statKey": "autoEqualizer"
+    },
+    "942": {
+      "enumName": "auto_performance_boost",
+      "statKey": "autoPerformanceBoost"
+    },
+    "943": {
+      "enumName": "auto_analyzer",
+      "statKey": "autoAnalyzer"
+    },
+    "944": {
+      "enumName": "conserve_tp",
+      "statKey": "conserveTp"
+    },
+    "945": {
+      "enumName": "blue_learn_chance",
+      "statKey": "blueLearnChance"
+    },
+    "946": {
+      "enumName": "sneak_duration",
+      "statKey": "sneakDuration"
+    },
+    "947": {
+      "enumName": "invisible_duration",
+      "statKey": "invisibleDuration"
+    },
+    "948": {
+      "enumName": "berserk_potency",
+      "statKey": "berserkPotency"
+    },
+    "949": {
+      "enumName": "ws_no_deplete",
+      "statKey": "wsNoDeplete"
+    },
+    "950": {
+      "enumName": "item_addeffect_element",
+      "statKey": "itemAddeffectElement"
+    },
+    "951": {
+      "enumName": "item_addeffect_status",
+      "statKey": "itemAddeffectStatus"
+    },
+    "952": {
+      "enumName": "item_addeffect_power",
+      "statKey": "itemAddeffectPower"
+    },
+    "953": {
+      "enumName": "item_addeffect_duration",
+      "statKey": "itemAddeffectDuration"
+    },
+    "954": {
+      "enumName": "berserk_duration",
+      "statKey": "berserkDuration"
+    },
+    "955": {
+      "enumName": "aggressor_duration",
+      "statKey": "aggressorDuration"
+    },
+    "956": {
+      "enumName": "defender_duration",
+      "statKey": "defenderDuration"
+    },
+    "957": {
+      "enumName": "ws_dex_bonus",
+      "statKey": "wsDexBonus"
+    },
+    "958": {
+      "enumName": "statusres",
+      "statKey": "statusres"
+    },
+    "959": {
+      "enumName": "cardinal_chant",
+      "statKey": "cardinalChant"
+    },
+    "960": {
+      "enumName": "indi_duration",
+      "statKey": "indiDuration"
+    },
+    "961": {
+      "enumName": "geomancy_bonus",
+      "statKey": "geomancyBonus"
+    },
+    "962": {
+      "enumName": "widened_compass",
+      "statKey": "widenedCompass"
+    },
+    "963": {
+      "enumName": "inquartata",
+      "statKey": "inquartata"
+    },
+    "964": {
+      "enumName": "ranged_crit_dmg_increase",
+      "statKey": "rangedCritDmgIncrease"
+    },
+    "965": {
+      "enumName": "cover_to_mp",
+      "statKey": "coverToMp"
+    },
+    "966": {
+      "enumName": "cover_magic_and_ranged",
+      "statKey": "coverMagicAndRanged"
+    },
+    "967": {
+      "enumName": "cover_duration",
+      "statKey": "coverDuration"
+    },
+    "968": {
+      "enumName": "mending_halation",
+      "statKey": "mendingHalation"
+    },
+    "969": {
+      "enumName": "radial_arcana",
+      "statKey": "radialArcana"
+    },
+    "970": {
+      "enumName": "curative_recantation",
+      "statKey": "curativeRecantation"
+    },
+    "971": {
+      "enumName": "primeval_zeal",
+      "statKey": "primevalZeal"
+    },
+    "972": {
+      "enumName": "mount_move",
+      "statKey": "mountMove"
+    },
+    "973": {
+      "enumName": "subtle_blow_ii",
+      "statKey": "subtleBlowIi"
+    },
+    "974": {
+      "enumName": "wyvern_subjob_traits",
+      "statKey": "wyvernSubjobTraits"
+    },
+    "975": {
+      "enumName": "gardening_wilt_bonus",
+      "statKey": "gardeningWiltBonus"
+    },
+    "976": {
+      "enumName": "guard_percent",
+      "statKey": "guardPercent"
+    },
+    "977": {
+      "enumName": "enhances_prot_shell_rcvd",
+      "statKey": "enhancesProtShellRcvd"
+    },
+    "978": {
+      "enumName": "max_swings",
+      "statKey": "maxSwings"
+    },
+    "979": {
+      "enumName": "additional_swing_chance",
+      "statKey": "additionalSwingChance"
+    },
+    "980": {
+      "enumName": "ws_str_bonus",
+      "statKey": "wsStrBonus"
+    },
+    "981": {
+      "enumName": "ws_vit_bonus",
+      "statKey": "wsVitBonus"
+    },
+    "982": {
+      "enumName": "ws_agi_bonus",
+      "statKey": "wsAgiBonus"
+    },
+    "983": {
+      "enumName": "ws_int_bonus",
+      "statKey": "wsIntBonus"
+    },
+    "984": {
+      "enumName": "ws_mnd_bonus",
+      "statKey": "wsMndBonus"
+    },
+    "985": {
+      "enumName": "ws_chr_bonus",
+      "statKey": "wsChrBonus"
+    },
+    "986": {
+      "enumName": "wyvern_breath_macc",
+      "statKey": "wyvernBreathMacc"
+    },
+    "987": {
+      "enumName": "auto_elem_capacity",
+      "statKey": "autoElemCapacity"
+    },
+    "988": {
+      "enumName": "max_finishing_move_bonus",
+      "statKey": "maxFinishingMoveBonus"
+    },
+    "989": {
+      "enumName": "regen_bonus",
+      "statKey": "regenBonus"
+    },
+    "990": {
+      "enumName": "pet_atk_def",
+      "statKey": "petAtkDef"
+    },
+    "991": {
+      "enumName": "pet_acc_eva",
+      "statKey": "petAccEva"
+    },
+    "992": {
+      "enumName": "pet_mab_mdb",
+      "statKey": "petMabMdb"
+    },
+    "993": {
+      "enumName": "pet_macc_meva",
+      "statKey": "petMaccMeva"
+    },
+    "994": {
+      "enumName": "pet_attr_bonus",
+      "statKey": "petAttrBonus"
+    },
+    "995": {
+      "enumName": "pet_tp_bonus",
+      "statKey": "petTpBonus"
+    },
+    "996": {
+      "enumName": "one_hour_recast",
+      "statKey": "oneHourRecast"
+    },
+    "997": {
+      "enumName": "superior_level",
+      "statKey": "superiorLevel"
+    },
+    "998": {
+      "enumName": "dread_spikes_effect",
+      "statKey": "dreadSpikesEffect"
+    },
+    "999": {
+      "enumName": "triple_shot_rate",
+      "statKey": "tripleShotRate"
+    },
+    "1000": {
+      "enumName": "ninjutsu_duration",
+      "statKey": "ninjutsuDuration"
+    },
+    "1001": {
+      "enumName": "auto_ranged_delay",
+      "statKey": "autoRangedDelay"
+    },
+    "1002": {
+      "enumName": "auto_ranged_damagep",
+      "statKey": "autoRangedDamagep"
+    },
+    "1003": {
+      "enumName": "augment_song_stat",
+      "statKey": "augmentSongStat"
+    },
+    "1004": {
+      "enumName": "enhances_battuta",
+      "statKey": "enhancesBattuta"
+    },
+    "1005": {
+      "enumName": "enhances_elemental_sforzo",
+      "statKey": "enhancesElementalSforzo"
+    },
+    "1006": {
+      "enumName": "enhances_sleight_of_sword",
+      "statKey": "enhancesSleightOfSword"
+    },
+    "1007": {
+      "enumName": "enhances_inspiration",
+      "statKey": "enhancesInspiration"
+    },
+    "1008": {
+      "enumName": "swordplay",
+      "statKey": "swordplay"
+    },
+    "1009": {
+      "enumName": "liement",
+      "statKey": "liement"
+    },
+    "1010": {
+      "enumName": "valiance_vallation_duration",
+      "statKey": "valianceVallationDuration"
+    },
+    "1011": {
+      "enumName": "pflug",
+      "statKey": "pflug"
+    },
+    "1012": {
+      "enumName": "vivacious_pulse_potency",
+      "statKey": "vivaciousPulsePotency"
+    },
+    "1013": {
+      "enumName": "augments_vivacious_pulse",
+      "statKey": "augmentsVivaciousPulse"
+    },
+    "1014": {
+      "enumName": "rayke_duration",
+      "statKey": "raykeDuration"
+    },
+    "1015": {
+      "enumName": "odyllic_subterfuge_duration",
+      "statKey": "odyllicSubterfugeDuration"
+    },
+    "1016": {
+      "enumName": "swipe",
+      "statKey": "swipe"
+    },
+    "1017": {
+      "enumName": "liement_duration",
+      "statKey": "liementDuration"
+    },
+    "1018": {
+      "enumName": "gambit_duration",
+      "statKey": "gambitDuration"
+    },
+    "1019": {
+      "enumName": "embolden_duration",
+      "statKey": "emboldenDuration"
+    },
+    "1020": {
+      "enumName": "liement_extends_to_area",
+      "statKey": "liementExtendsToArea"
+    },
+    "1021": {
+      "enumName": "inspiration_fast_cast",
+      "statKey": "inspirationFastCast"
+    },
+    "1022": {
+      "enumName": "parry_spikes",
+      "statKey": "parrySpikes"
+    },
+    "1023": {
+      "enumName": "parry_spikes_dmg",
+      "statKey": "parrySpikesDmg"
+    },
+    "1024": {
+      "enumName": "special_attack_evasion",
+      "statKey": "specialAttackEvasion"
+    },
+    "1025": {
+      "enumName": "full_circle",
+      "statKey": "fullCircle"
+    },
+    "1026": {
+      "enumName": "chakra_mult",
+      "statKey": "chakraMult"
+    },
+    "1027": {
+      "enumName": "chakra_removal",
+      "statKey": "chakraRemoval"
+    },
+    "1028": {
+      "enumName": "bolster_effect",
+      "statKey": "bolsterEffect"
+    },
+    "1029": {
+      "enumName": "life_cycle_effect",
+      "statKey": "lifeCycleEffect"
+    },
+    "1030": {
+      "enumName": "aura_size",
+      "statKey": "auraSize"
+    },
+    "1031": {
+      "enumName": "augment_conserve_mp",
+      "statKey": "augmentConserveMp"
+    },
+    "1032": {
+      "enumName": "augment_composure",
+      "statKey": "augmentComposure"
+    },
+    "1033": {
+      "enumName": "augment_damage_hp",
+      "statKey": "augmentDamageHp"
+    },
+    "1034": {
+      "enumName": "augment_damage_pet_hp",
+      "statKey": "augmentDamagePetHp"
+    },
+    "1035": {
+      "enumName": "augment_blood_boon",
+      "statKey": "augmentBloodBoon"
+    },
+    "1036": {
+      "enumName": "augment_blu_magic",
+      "statKey": "augmentBluMagic"
+    },
+    "1037": {
+      "enumName": "geomancy_mp_no_deplete",
+      "statKey": "geomancyMpNoDeplete"
+    },
+    "1038": {
+      "enumName": "double_attack_dmg",
+      "statKey": "doubleAttackDmg"
+    },
+    "1039": {
+      "enumName": "triple_attack_dmg",
+      "statKey": "tripleAttackDmg"
+    },
+    "1040": {
+      "enumName": "avatar_lvl_bonus",
+      "statKey": "avatarLvlBonus"
+    },
+    "1041": {
+      "enumName": "carbuncle_lvl_bonus",
+      "statKey": "carbuncleLvlBonus"
+    },
+    "1042": {
+      "enumName": "cait_sith_lvl_bonus",
+      "statKey": "caitSithLvlBonus"
+    },
+    "1043": {
+      "enumName": "wyvern_lvl_bonus",
+      "statKey": "wyvernLvlBonus"
+    },
+    "1044": {
+      "enumName": "automaton_lvl_bonus",
+      "statKey": "automatonLvlBonus"
+    },
+    "1045": {
+      "enumName": "enhances_restraint",
+      "statKey": "enhancesRestraint"
+    },
+    "1046": {
+      "enumName": "enhances_blood_rage",
+      "statKey": "enhancesBloodRage"
+    },
+    "1047": {
+      "enumName": "counter_damage",
+      "statKey": "counterDamage"
+    },
+    "1048": {
+      "enumName": "treasure_hunter_proc",
+      "statKey": "treasureHunterProc"
+    },
+    "1049": {
+      "enumName": "treasure_hunter_cap",
+      "statKey": "treasureHunterCap"
+    },
+    "1050": {
+      "enumName": "enhances_prot_rcvd",
+      "statKey": "enhancesProtRcvd"
+    },
+    "1051": {
+      "enumName": "cure_potency_bonus",
+      "statKey": "curePotencyBonus"
+    },
+    "1052": {
+      "enumName": "sic_ready_recast",
+      "statKey": "sicReadyRecast"
+    },
+    "1053": {
+      "enumName": "true_shot_effect",
+      "statKey": "trueShotEffect"
+    },
+    "1054": {
+      "enumName": "dead_aim_effect",
+      "statKey": "deadAimEffect"
+    },
+    "1055": {
+      "enumName": "third_eye_bonus",
+      "statKey": "thirdEyeBonus"
+    },
+    "1056": {
+      "enumName": "wyvern_attribute_da",
+      "statKey": "wyvernAttributeDa"
+    },
+    "1057": {
+      "enumName": "dragoon_breath_recast",
+      "statKey": "dragoonBreathRecast"
+    },
+    "1058": {
+      "enumName": "blue_job_trait_bonus",
+      "statKey": "blueJobTraitBonus"
+    },
+    "1059": {
+      "enumName": "blue_magic_effect",
+      "statKey": "blueMagicEffect"
+    },
+    "1060": {
+      "enumName": "quick_draw_recast",
+      "statKey": "quickDrawRecast"
+    },
+    "1061": {
+      "enumName": "enhances_chivalry",
+      "statKey": "enhancesChivalry"
+    },
+    "1062": {
+      "enumName": "enhances_divine_emblem",
+      "statKey": "enhancesDivineEmblem"
+    },
+    "1063": {
+      "enumName": "enhances_fealty",
+      "statKey": "enhancesFealty"
+    },
+    "1064": {
+      "enumName": "enhances_iron_will",
+      "statKey": "enhancesIronWill"
+    },
+    "1065": {
+      "enumName": "enhances_guardian",
+      "statKey": "enhancesGuardian"
+    },
+    "1066": {
+      "enumName": "palisade_block_bonus",
+      "statKey": "palisadeBlockBonus"
+    },
+    "1067": {
+      "enumName": "reprisal_block_bonus",
+      "statKey": "reprisalBlockBonus"
+    },
+    "1068": {
+      "enumName": "reprisal_spikes_bonus",
+      "statKey": "reprisalSpikesBonus"
+    },
+    "1069": {
+      "enumName": "arcane_circle_potency",
+      "statKey": "arcaneCirclePotency"
+    },
+    "1070": {
+      "enumName": "enhances_blood_weapon",
+      "statKey": "enhancesBloodWeapon"
+    },
+    "1071": {
+      "enumName": "dark_magic_cast",
+      "statKey": "darkMagicCast"
+    },
+    "1072": {
+      "enumName": "dark_magic_duration",
+      "statKey": "darkMagicDuration"
+    },
+    "1073": {
+      "enumName": "enhances_dark_seal",
+      "statKey": "enhancesDarkSeal"
+    },
+    "1074": {
+      "enumName": "dig_bypass_fatigue",
+      "statKey": "digBypassFatigue"
+    },
+    "1075": {
+      "enumName": "breath_dmg_dealt",
+      "statKey": "breathDmgDealt"
+    },
+    "1076": {
+      "enumName": "phantom_recast",
+      "statKey": "phantomRecast"
+    },
+    "1077": {
+      "enumName": "step_tp_consumed",
+      "statKey": "stepTpConsumed"
+    },
+    "1078": {
+      "enumName": "summoning_magic_cast",
+      "statKey": "summoningMagicCast"
+    },
+    "1079": {
+      "enumName": "spikes_dmg_bonus",
+      "statKey": "spikesDmgBonus"
+    },
+    "1080": {
+      "enumName": "damage_limit",
+      "statKey": "damageLimit"
+    },
+    "1081": {
+      "enumName": "damage_limitp",
+      "statKey": "damageLimitp"
+    },
+    "1082": {
+      "enumName": "shield_barrier",
+      "statKey": "shieldBarrier"
+    },
+    "1083": {
+      "enumName": "enhances_nether_void",
+      "statKey": "enhancesNetherVoid"
+    },
+    "1084": {
+      "enumName": "enhances_muted_soul",
+      "statKey": "enhancesMutedSoul"
+    },
+    "1085": {
+      "enumName": "move_speed_flee",
+      "statKey": "moveSpeedFlee"
+    },
+    "1086": {
+      "enumName": "move_speed_bolters_roll",
+      "statKey": "moveSpeedBoltersRoll"
+    },
+    "1087": {
+      "enumName": "move_speed_cheer",
+      "statKey": "moveSpeedCheer"
+    },
+    "1088": {
+      "enumName": "sengikori_sc_dmg_debuff",
+      "statKey": "sengikoriScDmgDebuff"
+    },
+    "1089": {
+      "enumName": "sengikori_mb_dmg_debuff",
+      "statKey": "sengikoriMbDmgDebuff"
+    },
+    "1090": {
+      "enumName": "sengikori_bonus",
+      "statKey": "sengikoriBonus"
+    },
+    "1091": {
+      "enumName": "enhances_sange",
+      "statKey": "enhancesSange"
+    },
+    "1092": {
+      "enumName": "additive_guard",
+      "statKey": "additiveGuard"
+    },
+    "1093": {
+      "enumName": "weakness_pct",
+      "statKey": "weaknessPct"
+    },
+    "1094": {
+      "enumName": "curse_pct",
+      "statKey": "cursePct"
+    },
+    "1095": {
+      "enumName": "base_hp",
+      "statKey": "baseHp"
+    },
+    "1096": {
+      "enumName": "base_mp",
+      "statKey": "baseMp"
+    },
+    "1097": {
+      "enumName": "augments_impetus",
+      "statKey": "augmentsImpetus"
+    },
+    "1098": {
+      "enumName": "synth_success_rate_woodworking",
+      "statKey": "synthSuccessRateWoodworking"
+    },
+    "1099": {
+      "enumName": "synth_success_rate_smithing",
+      "statKey": "synthSuccessRateSmithing"
+    },
+    "1100": {
+      "enumName": "synth_success_rate_goldsmithing",
+      "statKey": "synthSuccessRateGoldsmithing"
+    },
+    "1101": {
+      "enumName": "synth_success_rate_clothcraft",
+      "statKey": "synthSuccessRateClothcraft"
+    },
+    "1102": {
+      "enumName": "synth_success_rate_leathercraft",
+      "statKey": "synthSuccessRateLeathercraft"
+    },
+    "1103": {
+      "enumName": "synth_success_rate_bonecraft",
+      "statKey": "synthSuccessRateBonecraft"
+    },
+    "1104": {
+      "enumName": "synth_success_rate_alchemy",
+      "statKey": "synthSuccessRateAlchemy"
+    },
+    "1105": {
+      "enumName": "synth_success_rate_cooking",
+      "statKey": "synthSuccessRateCooking"
+    },
+    "1106": {
+      "enumName": "synth_speed_woodworking",
+      "statKey": "synthSpeedWoodworking"
+    },
+    "1107": {
+      "enumName": "synth_speed_smithing",
+      "statKey": "synthSpeedSmithing"
+    },
+    "1108": {
+      "enumName": "synth_speed_goldsmithing",
+      "statKey": "synthSpeedGoldsmithing"
+    },
+    "1109": {
+      "enumName": "synth_speed_clothcraft",
+      "statKey": "synthSpeedClothcraft"
+    },
+    "1110": {
+      "enumName": "synth_speed_leathercraft",
+      "statKey": "synthSpeedLeathercraft"
+    },
+    "1111": {
+      "enumName": "synth_speed_bonecraft",
+      "statKey": "synthSpeedBonecraft"
+    },
+    "1112": {
+      "enumName": "synth_speed_alchemy",
+      "statKey": "synthSpeedAlchemy"
+    },
+    "1113": {
+      "enumName": "synth_speed_cooking",
+      "statKey": "synthSpeedCooking"
+    },
+    "1114": {
+      "enumName": "synth_anti_nq_woodworking",
+      "statKey": "synthAntiNqWoodworking"
+    },
+    "1115": {
+      "enumName": "synth_anti_nq_smithing",
+      "statKey": "synthAntiNqSmithing"
+    },
+    "1116": {
+      "enumName": "synth_anti_nq_goldsmithing",
+      "statKey": "synthAntiNqGoldsmithing"
+    },
+    "1117": {
+      "enumName": "synth_anti_nq_clothcraft",
+      "statKey": "synthAntiNqClothcraft"
+    },
+    "1118": {
+      "enumName": "synth_anti_nq_leathercraft",
+      "statKey": "synthAntiNqLeathercraft"
+    },
+    "1119": {
+      "enumName": "synth_anti_nq_bonecraft",
+      "statKey": "synthAntiNqBonecraft"
+    },
+    "1120": {
+      "enumName": "synth_anti_nq_alchemy",
+      "statKey": "synthAntiNqAlchemy"
+    },
+    "1121": {
+      "enumName": "synth_anti_nq_cooking",
+      "statKey": "synthAntiNqCooking"
+    },
+    "1122": {
+      "enumName": "synth_hq_rate_woodworking",
+      "statKey": "synthHqRateWoodworking"
+    },
+    "1123": {
+      "enumName": "synth_hq_rate_smithing",
+      "statKey": "synthHqRateSmithing"
+    },
+    "1124": {
+      "enumName": "synth_hq_rate_goldsmithing",
+      "statKey": "synthHqRateGoldsmithing"
+    },
+    "1125": {
+      "enumName": "synth_hq_rate_clothcraft",
+      "statKey": "synthHqRateClothcraft"
+    },
+    "1126": {
+      "enumName": "synth_hq_rate_leathercraft",
+      "statKey": "synthHqRateLeathercraft"
+    },
+    "1127": {
+      "enumName": "synth_hq_rate_bonecraft",
+      "statKey": "synthHqRateBonecraft"
+    },
+    "1128": {
+      "enumName": "synth_hq_rate_alchemy",
+      "statKey": "synthHqRateAlchemy"
+    },
+    "1129": {
+      "enumName": "synth_hq_rate_cooking",
+      "statKey": "synthHqRateCooking"
+    },
+    "1130": {
+      "enumName": "food_hp",
+      "statKey": "foodHp"
+    },
+    "1131": {
+      "enumName": "food_mp",
+      "statKey": "foodMp"
+    },
+    "1132": {
+      "enumName": "cardinal_chant_bonus",
+      "statKey": "cardinalChantBonus"
+    },
+    "1133": {
+      "enumName": "dig_rare_ability",
+      "statKey": "digRareAbility"
+    },
+    "1134": {
+      "enumName": "despawn_time_reduction",
+      "statKey": "despawnTimeReduction"
+    },
+    "1135": {
+      "enumName": "parry_hp_recovery",
+      "statKey": "parryHpRecovery"
+    },
+    "1136": {
+      "enumName": "enhances_absorb_effects",
+      "statKey": "enhancesAbsorbEffects"
+    },
+    "1137": {
+      "enumName": "augments_absorb",
+      "statKey": "augmentsAbsorb"
+    },
+    "1138": {
+      "enumName": "absorb_effect_duration",
+      "statKey": "absorbEffectDuration"
+    },
+    "1139": {
+      "enumName": "enhances_burst_affinity",
+      "statKey": "enhancesBurstAffinity"
+    },
+    "1140": {
+      "enumName": "enhances_chain_affinity",
+      "statKey": "enhancesChainAffinity"
+    },
+    "1141": {
+      "enumName": "holy_circle_potency",
+      "statKey": "holyCirclePotency"
+    },
+    "1142": {
+      "enumName": "ancient_circle_potency",
+      "statKey": "ancientCirclePotency"
+    },
+    "1143": {
+      "enumName": "warding_circle_potency",
+      "statKey": "wardingCirclePotency"
+    },
+    "1144": {
+      "enumName": "any_ftp_bonus",
+      "statKey": "anyFtpBonus"
+    },
+    "1145": {
+      "enumName": "day_ftp_bonus",
+      "statKey": "dayFtpBonus"
+    },
+    "1146": {
+      "enumName": "elemental_magic_recast",
+      "statKey": "elementalMagicRecast"
+    },
+    "1147": {
+      "enumName": "blue_magic_recast",
+      "statKey": "blueMagicRecast"
+    },
+    "1148": {
+      "enumName": "enhances_futae",
+      "statKey": "enhancesFutae"
+    },
+    "1149": {
+      "enumName": "enhances_elemental_seal",
+      "statKey": "enhancesElementalSeal"
+    },
+    "1150": {
+      "enumName": "elemental_debuff_effect",
+      "statKey": "elementalDebuffEffect"
+    },
+    "1151": {
+      "enumName": "enf_mag_duration",
+      "statKey": "enfMagDuration"
+    },
+    "1152": {
+      "enumName": "reward_recast",
+      "statKey": "rewardRecast"
+    },
+    "1153": {
+      "enumName": "augments_absorb_tp",
+      "statKey": "augmentsAbsorbTp"
+    },
+    "1154": {
+      "enumName": "avatars_favor_enhance",
+      "statKey": "avatarsFavorEnhance"
+    },
+    "1155": {
+      "enumName": "enhances_monster_correlation",
+      "statKey": "enhancesMonsterCorrelation"
+    },
+    "1156": {
+      "enumName": "force_dw_bonus_penalty",
+      "statKey": "forceDwBonusPenalty"
+    },
+    "1157": {
+      "enumName": "enhances_spur",
+      "statKey": "enhancesSpur"
+    },
+    "1158": {
+      "enumName": "moghancement_gil_bonus_p",
+      "statKey": "moghancementGilBonusP"
+    },
+    "1159": {
+      "enumName": "stratagem_recast",
+      "statKey": "stratagemRecast"
+    },
+    "1160": {
+      "enumName": "paralyze_res_rank",
+      "statKey": "paralyzeResRank"
+    },
+    "1161": {
+      "enumName": "bind_res_rank",
+      "statKey": "bindResRank"
+    },
+    "1162": {
+      "enumName": "silence_res_rank",
+      "statKey": "silenceResRank"
+    },
+    "1163": {
+      "enumName": "slow_res_rank",
+      "statKey": "slowResRank"
+    },
+    "1164": {
+      "enumName": "poison_res_rank",
+      "statKey": "poisonResRank"
+    },
+    "1165": {
+      "enumName": "light_sleep_res_rank",
+      "statKey": "lightSleepResRank"
+    },
+    "1166": {
+      "enumName": "dark_sleep_res_rank",
+      "statKey": "darkSleepResRank"
+    },
+    "1167": {
+      "enumName": "blind_res_rank",
+      "statKey": "blindResRank"
+    },
+    "1168": {
+      "enumName": "magic_crithitrate_ii",
+      "statKey": "magicCrithitrateIi"
+    },
+    "1169": {
+      "enumName": "familiar_bonus",
+      "statKey": "familiarBonus"
+    },
+    "1170": {
+      "enumName": "half_perpetuation_day",
+      "statKey": "halfPerpetuationDay"
+    },
+    "1171": {
+      "enumName": "half_perpetuation_weather",
+      "statKey": "halfPerpetuationWeather"
+    },
+    "1172": {
+      "enumName": "knockback_reduction",
+      "statKey": "knockbackReduction"
+    },
+    "1173": {
+      "enumName": "power_multiplier_basic_attack",
+      "statKey": "powerMultiplierBasicAttack"
+    },
+    "1174": {
+      "enumName": "power_multiplier_basic_ranged",
+      "statKey": "powerMultiplierBasicRanged"
+    },
+    "1175": {
+      "enumName": "power_multiplier_spell",
+      "statKey": "powerMultiplierSpell"
+    },
+    "1176": {
+      "enumName": "power_multiplier_weaponskill",
+      "statKey": "powerMultiplierWeaponskill"
+    },
+    "1177": {
+      "enumName": "power_multiplier_job_ability",
+      "statKey": "powerMultiplierJobAbility"
+    },
+    "1178": {
+      "enumName": "power_multiplier_mobskill",
+      "statKey": "powerMultiplierMobskill"
+    },
+    "1179": {
+      "enumName": "utsusemi_aoe",
+      "statKey": "utsusemiAoe"
+    },
+    "1180": {
+      "enumName": "item_addeffect_priority",
+      "statKey": "itemAddeffectPriority"
+    },
+    "1181": {
+      "enumName": "item_addeffect_scripted",
+      "statKey": "itemAddeffectScripted"
+    },
+    "1182": {
+      "enumName": "phalanx_received",
+      "statKey": "phalanxReceived"
+    },
+    "1183": {
+      "enumName": "healing_magic_recast",
+      "statKey": "healingMagicRecast"
+    },
+    "1184": {
+      "enumName": "enfeebling_magic_recast",
+      "statKey": "enfeeblingMagicRecast"
+    },
+    "1185": {
+      "enumName": "enhancing_magic_recast",
+      "statKey": "enhancingMagicRecast"
+    },
+    "1186": {
+      "enumName": "stun_res_rank",
+      "statKey": "stunResRank"
+    },
+    "1187": {
+      "enumName": "hasso_zanshin_bonus",
+      "statKey": "hassoZanshinBonus"
+    },
+    "1188": {
+      "enumName": "seigan_counter_bonus",
+      "statKey": "seiganCounterBonus"
+    },
+    "1189": {
+      "enumName": "retain_camouflage",
+      "statKey": "retainCamouflage"
+    },
+    "1190": {
+      "enumName": "retain_unlimited_shot",
+      "statKey": "retainUnlimitedShot"
+    },
+    "1191": {
+      "enumName": "ra_ignore_lvl_diff",
+      "statKey": "raIgnoreLvlDiff"
+    },
+    "1192": {
+      "enumName": "yonin_utsusemi_enmity",
+      "statKey": "yoninUtsusemiEnmity"
+    },
+    "1193": {
+      "enumName": "sange_multi_hit",
+      "statKey": "sangeMultiHit"
+    },
+    "1194": {
+      "enumName": "day_weather_proc_bonus",
+      "statKey": "dayWeatherProcBonus"
+    },
+    "1195": {
+      "enumName": "enspell_dmg_pct",
+      "statKey": "enspellDmgPct"
+    },
+    "1196": {
+      "enumName": "exp_lvl_mod",
+      "statKey": "expLvlMod"
+    },
+    "1197": {
+      "enumName": "mp_cost_reduction",
+      "statKey": "mpCostReduction"
+    },
+    "1198": {
+      "enumName": "volt_gun_potency",
+      "statKey": "voltGunPotency"
+    },
+    "1199": {
+      "enumName": "tactical_switch_tp_bonus",
+      "statKey": "tacticalSwitchTpBonus"
+    },
+    "1200": {
+      "enumName": "overdrive_bonus_duration",
+      "statKey": "overdriveBonusDuration"
+    },
+    "1201": {
+      "enumName": "augment_killer_effects",
+      "statKey": "augmentKillerEffects"
+    },
+    "1202": {
+      "enumName": "arcana_dmg_multiplier",
+      "statKey": "arcanaDmgMultiplier"
+    },
+    "1203": {
+      "enumName": "demon_dmg_multiplier",
+      "statKey": "demonDmgMultiplier"
+    },
+    "1204": {
+      "enumName": "dragon_dmg_multiplier",
+      "statKey": "dragonDmgMultiplier"
+    },
+    "1205": {
+      "enumName": "undead_dmg_multiplier",
+      "statKey": "undeadDmgMultiplier"
+    },
+    "1206": {
+      "enumName": "arcana_res_multiplier",
+      "statKey": "arcanaResMultiplier"
+    },
+    "1207": {
+      "enumName": "demon_res_multiplier",
+      "statKey": "demonResMultiplier"
+    },
+    "1208": {
+      "enumName": "dragon_res_multiplier",
+      "statKey": "dragonResMultiplier"
+    },
+    "1209": {
+      "enumName": "undead_res_multiplier",
+      "statKey": "undeadResMultiplier"
+    },
+    "1210": {
+      "enumName": "gravity_res_rank",
+      "statKey": "gravityResRank"
+    },
+    "1211": {
+      "enumName": "wyvern_show_readying",
+      "statKey": "wyvernShowReadying"
+    },
+    "1212": {
+      "enumName": "harvesting_result_hq",
+      "statKey": "harvestingResultHq"
+    },
+    "1213": {
+      "enumName": "logging_result_hq",
+      "statKey": "loggingResultHq"
+    },
+    "1214": {
+      "enumName": "eva_percent",
+      "statKey": "evaPercent"
+    }
+  },
+  "statKeyToModId": {
+    "none": 0,
+    "DEF": 1,
+    "HP": 2,
+    "HPP": 3,
+    "convmptohp": 4,
+    "MP": 5,
+    "MPP": 6,
+    "convhptomp": 7,
+    "STR": 8,
+    "DEX": 9,
+    "VIT": 10,
+    "AGI": 11,
+    "INT": 12,
+    "MND": 13,
+    "CHR": 14,
+    "fireMeva": 15,
+    "iceMeva": 16,
+    "windMeva": 17,
+    "earthMeva": 18,
+    "thunderMeva": 19,
+    "waterMeva": 20,
+    "lightMeva": 21,
+    "darkMeva": 22,
+    "ATT": 23,
+    "RATT": 24,
+    "ACC": 25,
+    "RACC": 26,
+    "enmity": 27,
+    "MATT": 28,
+    "MDEF": 29,
+    "MACC": 30,
+    "MEVA": 31,
+    "fireMab": 32,
+    "iceMab": 33,
+    "windMab": 34,
+    "earthMab": 35,
+    "thunderMab": 36,
+    "waterMab": 37,
+    "lightMab": 38,
+    "darkMab": 39,
+    "fireMacc": 40,
+    "iceMacc": 41,
+    "windMacc": 42,
+    "earthMacc": 43,
+    "thunderMacc": 44,
+    "waterMacc": 45,
+    "lightMacc": 46,
+    "darkMacc": 47,
+    "wsacc": 48,
+    "slashSdt": 49,
+    "pierceSdt": 50,
+    "impactSdt": 51,
+    "hthSdt": 52,
+    "souleaterEffectIi": 53,
+    "fireSdt": 54,
+    "iceSdt": 55,
+    "windSdt": 56,
+    "earthSdt": 57,
+    "thunderSdt": 58,
+    "waterSdt": 59,
+    "lightSdt": 60,
+    "darkSdt": 61,
+    "attp": 62,
+    "defp": 63,
+    "combatSkillupRate": 64,
+    "magicSkillupRate": 65,
+    "rattp": 66,
+    "enhancesCursnaRcvd": 67,
+    "EVA": 68,
+    "RDEF": 69,
+    "reva": 70,
+    "mpheal": 71,
+    "hpheal": 72,
+    "storetp": 73,
+    "enhancesManaCede": 74,
+    "moveSpeedStackable": 75,
+    "moveSpeedGearBonus": 76,
+    "moveSpeedWeightPenalty": 77,
+    "moveSpeedQuickening": 78,
+    "moveSpeedMazurka": 79,
+    "hth": 80,
+    "dagger": 81,
+    "sword": 82,
+    "gsword": 83,
+    "axe": 84,
+    "gaxe": 85,
+    "scythe": 86,
+    "polearm": 87,
+    "katana": 88,
+    "gkatana": 89,
+    "club": 90,
+    "staff": 91,
+    "rampartDuration": 92,
+    "fleeDuration": 93,
+    "meditateDuration": 94,
+    "wardingCircleDuration": 95,
+    "souleaterEffect": 96,
+    "boostEffect": 97,
+    "camouflageDuration": 98,
+    "foodMaccp": 99,
+    "foodMaccCap": 100,
+    "autoMeleeSkill": 101,
+    "autoRangedSkill": 102,
+    "autoMagicSkill": 103,
+    "archery": 104,
+    "marksman": 105,
+    "throw": 106,
+    "guard": 107,
+    "evasion": 108,
+    "shield": 109,
+    "parry": 110,
+    "divine": 111,
+    "healing": 112,
+    "enhance": 113,
+    "enfeeble": 114,
+    "elem": 115,
+    "dark": 116,
+    "summoning": 117,
+    "ninjutsu": 118,
+    "singing": 119,
+    "string": 120,
+    "wind": 121,
+    "blue": 122,
+    "geomancySkill": 123,
+    "handbellSkill": 124,
+    "suppressOverload": 125,
+    "bpDamage": 126,
+    "fish": 127,
+    "wood": 128,
+    "smith": 129,
+    "goldsmith": 130,
+    "cloth": 131,
+    "leather": 132,
+    "bone": 133,
+    "alchemy": 134,
+    "cook": 135,
+    "synergy": 136,
+    "riding": 137,
+    "barrageCount": 138,
+    "waltzCost": 139,
+    "spiritCastReduction": 140,
+    "crithitrateOnlyWep": 141,
+    "nullDamage": 142,
+    "nullBreathDamage": 143,
+    "synthAntiHqWoodworking": 144,
+    "synthAntiHqSmithing": 145,
+    "synthAntiHqGoldsmithing": 146,
+    "synthAntiHqClothcraft": 147,
+    "synthAntiHqLeathercraft": 148,
+    "synthAntiHqBonecraft": 149,
+    "synthAntiHqAlchemy": 150,
+    "synthAntiHqCooking": 151,
+    "penguinRingEffect": 152,
+    "albatrossRingEffect": 153,
+    "pelicanRingEffect": 154,
+    "fishingSkillGain": 155,
+    "appreciateGysahlGreens": 156,
+    "autoMabCoefficient": 157,
+    "dmgAoe": 158,
+    "drinkDistilled": 159,
+    "dmg": 160,
+    "dmgphys": 161,
+    "dmgbreath": 162,
+    "dmgmagic": 163,
+    "dmgrange": 164,
+    "crithitrate": 165,
+    "criticalHitEvasion": 166,
+    "hasteMagic": 167,
+    "spellinterrupt": 168,
+    "moveSpeedOverride": 169,
+    "fastcast": 170,
+    "delay": 171,
+    "rangedDelay": 172,
+    "martialArts": 173,
+    "skillchainbonus": 174,
+    "skillchaindmg": 175,
+    "foodHpp": 176,
+    "foodHpCap": 177,
+    "foodMpp": 178,
+    "foodMpCap": 179,
+    "foodAttp": 180,
+    "foodAttCap": 181,
+    "foodDefp": 182,
+    "foodDefCap": 183,
+    "foodAccp": 184,
+    "foodAccCap": 185,
+    "foodRattp": 186,
+    "foodRattCap": 187,
+    "foodRaccp": 188,
+    "foodRaccCap": 189,
+    "dmgphysIi": 190,
+    "quickDrawMacc": 191,
+    "fireResRank": 192,
+    "iceResRank": 193,
+    "windResRank": 194,
+    "earthResRank": 195,
+    "thunderResRank": 196,
+    "waterResRank": 197,
+    "lightResRank": 198,
+    "darkResRank": 199,
+    "sleepMeva": 200,
+    "poisonMeva": 201,
+    "paralyzeMeva": 202,
+    "blindMeva": 203,
+    "silenceMeva": 204,
+    "virusMeva": 205,
+    "petrifyMeva": 206,
+    "bindMeva": 207,
+    "curseMeva": 208,
+    "gravityMeva": 209,
+    "slowMeva": 210,
+    "stunMeva": 211,
+    "charmMeva": 212,
+    "amnesiaMeva": 213,
+    "lullabyMeva": 214,
+    "deathMeva": 215,
+    "statusMeva": 216,
+    "twohandHasteAbility": 217,
+    "twohandStr": 218,
+    "twohandAcc": 219,
+    "randomDealBonus": 220,
+    "receivedDamageCap": 221,
+    "receivedDamageVariant": 222,
+    "ninNukeBonusInnin": 223,
+    "verminKiller": 224,
+    "birdKiller": 225,
+    "amorphKiller": 226,
+    "lizardKiller": 227,
+    "aquanKiller": 228,
+    "plantoidKiller": 229,
+    "beastKiller": 230,
+    "undeadKiller": 231,
+    "arcanaKiller": 232,
+    "dragonKiller": 233,
+    "demonKiller": 234,
+    "emptyKiller": 235,
+    "humanoidKiller": 236,
+    "luminianKiller": 237,
+    "luminionKiller": 238,
+    "nullRangedDamage": 239,
+    "sleepres": 240,
+    "poisonres": 241,
+    "paralyzeres": 242,
+    "blindres": 243,
+    "silenceres": 244,
+    "virusres": 245,
+    "petrifyres": 246,
+    "bindres": 247,
+    "curseres": 248,
+    "gravityres": 249,
+    "slowres": 250,
+    "stunres": 251,
+    "charmres": 252,
+    "amnesiares": 253,
+    "lullabyres": 254,
+    "deathres": 255,
+    "aftermath": 256,
+    "paralyze": 257,
+    "mijinReraise": 258,
+    "dualWield": 259,
+    "curePotencyIi": 260,
+    "sleepImmunobreak": 261,
+    "poisonImmunobreak": 262,
+    "paralyzeImmunobreak": 263,
+    "blindImmunobreak": 264,
+    "silenceImmunobreak": 265,
+    "petrifyImmunobreak": 266,
+    "bindImmunobreak": 267,
+    "gravityImmunobreak": 268,
+    "slowImmunobreak": 269,
+    "addleImmunobreak": 270,
+    "tandemStrikePower": 271,
+    "tandemBlowPower": 272,
+    "callBeastDelay": 273,
+    "magicBurstBonusUncapped": 274,
+    "enhancesDiabolicEye": 275,
+    "equipmentOnlyRace": 276,
+    "augmentsSleightOfSword": 277,
+    "itemAddeffectLvadjust": 278,
+    "itemAddeffectPlacehld": 279,
+    "itemAddeffectDstat": 280,
+    "enhancesSpiritLink": 281,
+    "enhancesStrafe": 282,
+    "enhanceDeepBreathing": 283,
+    "uncappedWyvernBreath": 284,
+    "jumpSpiritTpBonus": 285,
+    "jumpSoulSpiritAttBonus": 286,
+    "dmgRating": 287,
+    "doubleAttack": 288,
+    "subtleBlow": 289,
+    "enfMagPotency": 290,
+    "counter": 291,
+    "kickAttackRate": 292,
+    "afflatusSolace": 293,
+    "afflatusMisery": 294,
+    "clearMind": 295,
+    "conserveMp": 296,
+    "enhancesSaboteur": 297,
+    "steal": 298,
+    "blink": 299,
+    "miningResultHq": 300,
+    "phalanx": 301,
+    "tripleAttack": 302,
+    "treasureHunter": 303,
+    "tame": 304,
+    "recycle": 305,
+    "zanshin": 306,
+    "utsusemi": 307,
+    "ninjaTool": 308,
+    "bluePoints": 309,
+    "enhancesCursna": 310,
+    "magicDamage": 311,
+    "scavengeEffect": 312,
+    "diaDot": 313,
+    "sharpshot": 314,
+    "enhDrainAspir": 315,
+    "dmgReflect": 316,
+    "rollRogues": 317,
+    "rollGallants": 318,
+    "rollChaos": 319,
+    "rollBeast": 320,
+    "rollChoral": 321,
+    "rollHunters": 322,
+    "rollSamurai": 323,
+    "rollNinja": 324,
+    "rollDrachen": 325,
+    "rollEvokers": 326,
+    "rollMagus": 327,
+    "rollCorsairs": 328,
+    "rollPuppet": 329,
+    "rollDancers": 330,
+    "rollScholars": 331,
+    "bust": 332,
+    "finishingMoves": 333,
+    "lightArtsEffect": 334,
+    "darkArtsEffect": 335,
+    "lightArtsSkill": 336,
+    "darkArtsSkill": 337,
+    "lightArtsRegen": 338,
+    "regenDuration": 339,
+    "widescan": 340,
+    "enspell": 341,
+    "spikes": 342,
+    "enspellDmg": 343,
+    "spikesDmg": 344,
+    "tpBonus": 345,
+    "perpetuationReduction": 346,
+    "fireStaffBonus": 347,
+    "iceStaffBonus": 348,
+    "windStaffBonus": 349,
+    "earthStaffBonus": 350,
+    "thunderStaffBonus": 351,
+    "waterStaffBonus": 352,
+    "lightStaffBonus": 353,
+    "darkStaffBonus": 354,
+    "addsWeaponskill": 355,
+    "halfPerpetuationCarbuncle": 356,
+    "bpDelay": 357,
+    "stealth": 358,
+    "rapidShot": 359,
+    "charmTime": 360,
+    "jumpTpBonus": 361,
+    "jumpAttBonus": 362,
+    "highJumpEnmityReduction": 363,
+    "rewardHpBonus": 364,
+    "snapshot": 365,
+    "mainDmgRating": 366,
+    "subDmgRating": 367,
+    "regain": 368,
+    "refresh": 369,
+    "regen": 370,
+    "avatarPerpetuation": 371,
+    "weatherReduction": 372,
+    "dayReduction": 373,
+    "curePotency": 374,
+    "curePotencyRcvd": 375,
+    "rangedDmgRating": 376,
+    "mainDmgRank": 377,
+    "rangedDmgRank": 379,
+    "delayp": 380,
+    "rangedDelayp": 381,
+    "expBonus": 382,
+    "hasteAbility": 383,
+    "hasteGear": 384,
+    "shieldBash": 385,
+    "kickDmg": 386,
+    "udmgphys": 387,
+    "udmgbreath": 388,
+    "udmgmagic": 389,
+    "udmgrange": 390,
+    "charmChance": 391,
+    "weaponBash": 392,
+    "blackMagicCost": 393,
+    "whiteMagicCost": 394,
+    "blackMagicCast": 395,
+    "whiteMagicCast": 396,
+    "blackMagicRecast": 397,
+    "whiteMagicRecast": 398,
+    "alacrityCelerityEffect": 399,
+    "stormsurgeEffect": 400,
+    "sublimationBonus": 401,
+    "wyvernBreath": 402,
+    "stepAccuracy": 403,
+    "regenDown": 404,
+    "refreshDown": 405,
+    "regainDown": 406,
+    "ufastcast": 407,
+    "daDoubleDmgRate": 408,
+    "taTripleDmgRate": 409,
+    "zanshinDoubleDamage": 410,
+    "quickDrawDmg": 411,
+    "eatRawFish": 412,
+    "eatRawMeat": 413,
+    "retaliation": 414,
+    "sambaDoubleDamage": 415,
+    "nullPhysicalDamage": 416,
+    "quickDrawTripleDamage": 417,
+    "barElementNullChance": 418,
+    "grimoireInstantCast": 419,
+    "barrageAcc": 420,
+    "critDmgIncrease": 421,
+    "doubleShotRate": 422,
+    "velocitySnapshotBonus": 423,
+    "velocityRattBonus": 424,
+    "shadowBindExt": 425,
+    "absorbPhysdmgToMp": 426,
+    "enmityLossReduction": 427,
+    "perfectCounterAtt": 428,
+    "footworkAttBonus": 429,
+    "quadAttack": 430,
+    "itemAddeffectType": 431,
+    "enspellDmgBonus": 432,
+    "minneEffect": 433,
+    "minuetEffect": 434,
+    "paeonEffect": 435,
+    "requiemEffect": 436,
+    "threnodyEffect": 437,
+    "madrigalEffect": 438,
+    "mamboEffect": 439,
+    "lullabyEffect": 440,
+    "etudeEffect": 441,
+    "balladEffect": 442,
+    "marchEffect": 443,
+    "finaleEffect": 444,
+    "carolEffect": 445,
+    "mazurkaEffect": 446,
+    "elegyEffect": 447,
+    "preludeEffect": 448,
+    "hymnusEffect": 449,
+    "virelaiEffect": 450,
+    "scherzoEffect": 451,
+    "allSongsEffect": 452,
+    "maximumSongsBonus": 453,
+    "songDurationBonus": 454,
+    "songSpellcastingTime": 455,
+    "reraiseI": 456,
+    "reraiseIi": 457,
+    "reraiseIii": 458,
+    "fireAbsorb": 459,
+    "iceAbsorb": 460,
+    "windAbsorb": 461,
+    "earthAbsorb": 462,
+    "ltngAbsorb": 463,
+    "waterAbsorb": 464,
+    "lightAbsorb": 465,
+    "darkAbsorb": 466,
+    "fireNull": 467,
+    "iceNull": 468,
+    "windNull": 469,
+    "earthNull": 470,
+    "ltngNull": 471,
+    "waterNull": 472,
+    "lightNull": 473,
+    "darkNull": 474,
+    "magicAbsorb": 475,
+    "nullMagicalDamage": 476,
+    "helixDuration": 477,
+    "helixEffect": 478,
+    "rapidShotDoubleDamage": 479,
+    "absorbDmgChance": 480,
+    "extraDualWieldAttack": 481,
+    "extraKickAttack": 482,
+    "warcryDuration": 483,
+    "auspiceEffect": 484,
+    "shieldMasteryTp": 485,
+    "tacticalParry": 486,
+    "magicBurstBonusCapped": 487,
+    "inhibitTp": 488,
+    "grimoireSpellcasting": 489,
+    "sambaDuration": 490,
+    "waltzPotency": 491,
+    "jigDuration": 492,
+    "vflourishMacc": 493,
+    "stepFinish": 494,
+    "enhancesHolywater": 495,
+    "govClears": 496,
+    "waltzDelay": 497,
+    "sambaPduration": 498,
+    "itemSubeffect": 499,
+    "itemAddeffectDmg": 500,
+    "itemAddeffectChance": 501,
+    "augmentsFeint": 502,
+    "feralHowlDuration": 503,
+    "maneuverBonus": 504,
+    "overloadThresh": 505,
+    "extraDmgChance": 506,
+    "occDoExtraDmg": 507,
+    "thirdEyeCounterRate": 508,
+    "clammingImprovedResults": 509,
+    "clammingReducedIncidents": 510,
+    "chocoboRidingTime": 511,
+    "physAbsorb": 512,
+    "harvestingResultNq": 513,
+    "loggingResultNq": 514,
+    "miningResultNq": 515,
+    "absorbDmgToMp": 516,
+    "egghelm": 517,
+    "shieldblockrate": 518,
+    "cureCastTime": 519,
+    "trickAtkAgi": 520,
+    "augmentsAbsorbLiberator": 521,
+    "ninNukeBonusGear": 522,
+    "ammoSwing": 523,
+    "aoeNa": 524,
+    "augmentsConvert": 525,
+    "augmentsSa": 526,
+    "augmentsTa": 527,
+    "rollRange": 528,
+    "enhancesRefresh": 529,
+    "noSpellMpDepletion": 530,
+    "forceFireDwbonus": 531,
+    "forceIceDwbonus": 532,
+    "forceWindDwbonus": 533,
+    "forceEarthDwbonus": 534,
+    "forceLightningDwbonus": 535,
+    "forceWaterDwbonus": 536,
+    "forceLightDwbonus": 537,
+    "forceDarkDwbonus": 538,
+    "stoneskinBonusHp": 539,
+    "enhancesElementalSiphon": 540,
+    "bpDelayIi": 541,
+    "jobBonusChance": 542,
+    "counterstanceEffect": 543,
+    "fireFtpBonus": 544,
+    "iceFtpBonus": 545,
+    "windFtpBonus": 546,
+    "earthFtpBonus": 547,
+    "thunderFtpBonus": 548,
+    "waterFtpBonus": 549,
+    "lightFtpBonus": 550,
+    "darkFtpBonus": 551,
+    "dodgeEffect": 552,
+    "fireAffinityPerp": 553,
+    "iceAffinityPerp": 554,
+    "windAffinityPerp": 555,
+    "earthAffinityPerp": 556,
+    "thunderAffinityPerp": 557,
+    "waterAffinityPerp": 558,
+    "lightAffinityPerp": 559,
+    "darkAffinityPerp": 560,
+    "focusEffect": 561,
+    "magicCrithitrate": 562,
+    "magicCritDmgIncrease": 563,
+    "jugLevelRange": 564,
+    "dayNukeBonus": 565,
+    "iridescence": 566,
+    "barspellAmount": 567,
+    "raptureAmount": 568,
+    "ebullienceAmount": 569,
+    "weaponskillDamageBase": 570,
+    "wsdmgCombo": 571,
+    "wsdmgShoulderTackle": 572,
+    "wsdmgOneInchPunch": 573,
+    "wsdmgBackhandBlow": 574,
+    "wsdmgRagingFists": 575,
+    "wsdmgSpinningAttack": 576,
+    "wsdmgHowlingFist": 577,
+    "wsdmgDragonKick": 578,
+    "wsdmgAsuranFists": 579,
+    "wsdmgFinalHeaven": 580,
+    "wsdmgAsceticsFury": 581,
+    "wsdmgStringingPummel": 582,
+    "wsdmgTornadoKick": 583,
+    "wsdmgVictorySmite": 584,
+    "wsdmgShijinSpiral": 585,
+    "wsdmgWaspSting": 586,
+    "wsdmgViperBite": 587,
+    "wsdmgShadowstitch": 588,
+    "wsdmgGustSlash": 589,
+    "wsdmgCyclone": 590,
+    "wsdmgEnergySteal": 591,
+    "wsdmgEnergyDrain": 592,
+    "wsdmgDancingEdge": 593,
+    "wsdmgSharkBite": 594,
+    "wsdmgEvisceration": 595,
+    "wsdmgMercyStroke": 596,
+    "wsdmgMandalicStab": 597,
+    "wsdmgMordantRime": 598,
+    "wsdmgPyrrhicKleos": 599,
+    "wsdmgAeolianEdge": 600,
+    "wsdmgRudrasStorm": 601,
+    "wsdmgFastBlade": 602,
+    "wsdmgBurningBlade": 603,
+    "wsdmgRedLotusBlade": 604,
+    "wsdmgFlatBlade": 605,
+    "wsdmgShiningBlade": 606,
+    "wsdmgSeraphBlade": 607,
+    "wsdmgCircleBlade": 608,
+    "wsdmgSpiritsWithin": 609,
+    "wsdmgVorpalBlade": 610,
+    "wsdmgSwiftBlade": 611,
+    "wsdmgSavageBlade": 612,
+    "wsdmgKnightsOfRound": 613,
+    "wsdmgDeathBlossom": 614,
+    "wsdmgAtonement": 615,
+    "wsdmgExpiacion": 616,
+    "wsdmgSanguineBlade": 617,
+    "wsdmgHardSlash": 618,
+    "wsdmgPowerSlash": 619,
+    "wsdmgFrostbite": 620,
+    "wsdmgFreezebite": 621,
+    "wsdmgShockwave": 622,
+    "wsdmgCrescentMoon": 623,
+    "wsdmgSickleMoon": 624,
+    "wsdmgSpinningSlash": 625,
+    "wsdmgGroundStrike": 626,
+    "wsdmgScourge": 627,
+    "wsdmgHerculeanSlash": 628,
+    "wsdmgTorcleaver": 629,
+    "wsdmgResolution": 630,
+    "wsdmgDimidiation": 631,
+    "wsdmgFimbulvetr": 632,
+    "wsdmgRagingAxe": 634,
+    "wsdmgSmashAxe": 635,
+    "wsdmgGaleAxe": 636,
+    "wsdmgAvalancheAxe": 637,
+    "wsdmgSpinningAxe": 638,
+    "wsdmgRampage": 639,
+    "wsdmgCalamity": 640,
+    "wsdmgMistralAxe": 641,
+    "wsdmgDecimation": 642,
+    "wsdmgOnslaught": 643,
+    "wsdmgPrimalRend": 644,
+    "wsdmgBoraAxe": 645,
+    "wsdmgCloudsplitter": 646,
+    "wsdmgRuinator": 647,
+    "wsdmgBlitz": 648,
+    "wsdmgShieldBreak": 650,
+    "wsdmgIronTempest": 651,
+    "wsdmgSturmwind": 652,
+    "wsdmgArmorBreak": 653,
+    "wsdmgKeenEdge": 654,
+    "wsdmgWeaponBreak": 655,
+    "wsdmgRagingRush": 656,
+    "wsdmgFullBreak": 657,
+    "wsdmgSteelCyclone": 658,
+    "wsdmgMetatronTorment": 659,
+    "wsdmgKingsJustice": 660,
+    "wsdmgFellCleave": 661,
+    "wsdmgUkkosFury": 662,
+    "wsdmgUpheaval": 663,
+    "wsdmgDisaster": 664,
+    "wsdmgSlice": 666,
+    "wsdmgDarkHarvest": 667,
+    "wsdmgShadowOfDeath": 668,
+    "wsdmgNightmareScythe": 669,
+    "wsdmgSpinningScythe": 670,
+    "wsdmgVorpalScythe": 671,
+    "wsdmgGuillotine": 672,
+    "wsdmgCrossReaper": 673,
+    "wsdmgSpiralHell": 674,
+    "wsdmgCatastrophe": 675,
+    "wsdmgInsurgency": 676,
+    "wsdmgInfernalScythe": 677,
+    "wsdmgQuietus": 678,
+    "wsdmgEntropy": 679,
+    "wsdmgOrigin": 680,
+    "wsdmgDoubleThrust": 682,
+    "wsdmgThunderThrust": 683,
+    "wsdmgRaidenThrust": 684,
+    "wsdmgLegSweep": 685,
+    "wsdmgPentaThrust": 686,
+    "wsdmgVorpalThrust": 687,
+    "wsdmgSkewer": 688,
+    "wsdmgWheelingThrust": 689,
+    "wsdmgImpulseDrive": 690,
+    "wsdmgGeirskogul": 691,
+    "wsdmgDrakesbane": 692,
+    "wsdmgSonicThrust": 693,
+    "wsdmgCamlannsTorment": 694,
+    "wsdmgStardiver": 695,
+    "wsdmgDiarmuid": 696,
+    "wsdmgBladeRin": 698,
+    "wsdmgBladeRetsu": 699,
+    "wsdmgBladeTeki": 700,
+    "wsdmgBladeTo": 701,
+    "wsdmgBladeChi": 702,
+    "wsdmgBladeEi": 703,
+    "wsdmgBladeJin": 704,
+    "wsdmgBladeTen": 705,
+    "wsdmgBladeKu": 706,
+    "wsdmgBladeMetsu": 707,
+    "wsdmgBladeKamu": 708,
+    "wsdmgBladeYu": 709,
+    "wsdmgBladeHi": 710,
+    "wsdmgBladeShun": 711,
+    "wsdmgJijinKaimetsu": 712,
+    "wsdmgTachiEnpi": 714,
+    "wsdmgTachiHobaku": 715,
+    "wsdmgTachiGoten": 716,
+    "wsdmgTachiKagero": 717,
+    "wsdmgTachiJinpu": 718,
+    "wsdmgTachiKoki": 719,
+    "wsdmgTachiYukikaze": 720,
+    "wsdmgTachiGekko": 721,
+    "wsdmgTachiKasha": 722,
+    "wsdmgTachiKaiten": 723,
+    "wsdmgTachiRana": 724,
+    "wsdmgTachiAgeha": 725,
+    "wsdmgTachiFudo": 726,
+    "wsdmgTachiShoha": 727,
+    "wsdmgTachiSuikawari": 728,
+    "wsdmgTachiMumei": 729,
+    "wsdmgShiningStrike": 730,
+    "wsdmgSeraphStrike": 731,
+    "wsdmgBrainshaker": 732,
+    "wsdmgStarlight": 733,
+    "wsdmgMoonlight": 734,
+    "wsdmgSkullbreaker": 735,
+    "wsdmgTrueStrike": 736,
+    "wsdmgJudgment": 737,
+    "wsdmgHexaStrike": 738,
+    "wsdmgBlackHalo": 739,
+    "wsdmgRandgrith": 740,
+    "wsdmgMysticBoon": 741,
+    "wsdmgFlashNova": 742,
+    "wsdmgDagan": 743,
+    "wsdmgRealmrazer": 744,
+    "wsdmgExudation": 745,
+    "wsdmgHeavySwing": 746,
+    "wsdmgRockCrusher": 747,
+    "wsdmgEarthCrusher": 748,
+    "wsdmgStarburst": 749,
+    "wsdmgSunburst": 750,
+    "wsdmgShellCrusher": 751,
+    "wsdmgFullSwing": 752,
+    "wsdmgSpiritTaker": 753,
+    "wsdmgRetribution": 754,
+    "wsdmgGateOfTartarus": 755,
+    "wsdmgVidohunir": 756,
+    "wsdmgGarlandOfBliss": 757,
+    "wsdmgOmniscience": 758,
+    "wsdmgCataclysm": 759,
+    "wsdmgMyrkr": 760,
+    "wsdmgShattersoul": 761,
+    "wsdmgFlamingArrow": 762,
+    "wsdmgPiercingArrow": 763,
+    "wsdmgDullingArrow": 764,
+    "wsdmgSidewinder": 766,
+    "wsdmgBlastArrow": 767,
+    "wsdmgArchingArrow": 768,
+    "wsdmgEmpyrealArrow": 769,
+    "wsdmgNamasArrow": 770,
+    "wsdmgRefulgentArrow": 771,
+    "wsdmgJishnusRadiance": 772,
+    "wsdmgApexArrow": 773,
+    "wsdmgSarv": 774,
+    "wsdmgHotShot": 778,
+    "wsdmgSplitShot": 779,
+    "wsdmgSniperShot": 780,
+    "wsdmgSlugShot": 782,
+    "wsdmgBlastShot": 783,
+    "wsdmgHeavyShot": 784,
+    "wsdmgDetonator": 785,
+    "wsdmgCoronach": 786,
+    "wsdmgTrueflight": 787,
+    "wsdmgLeadenSalute": 788,
+    "wsdmgNumbingShot": 789,
+    "wsdmgWildfire": 790,
+    "wsdmgLastStand": 791,
+    "wsdmgTerminus": 792,
+    "wsdmgExenterator": 794,
+    "wsdmgChantDuCygne": 795,
+    "wsdmgRequiescat": 796,
+    "wsdmgKnightsOfRotund": 797,
+    "wsdmgFinalParadise": 798,
+    "wsdmgFastBladeIi": 799,
+    "wsdmgDragonBlow": 800,
+    "wsdmgMaruKala": 801,
+    "wsdmgMercilessStrike": 802,
+    "wsdmgImperator": 803,
+    "wsdmgDagda": 804,
+    "wsdmgOshala": 805,
+    "wsdmgUrielBlade": 808,
+    "wsdmgGlorySlash": 809,
+    "wsdmgTartarusTorpor": 810,
+    "bountyShotThBonus": 826,
+    "barspellMdefBonus": 827,
+    "forceJumpCrit": 828,
+    "wyvernEffectiveBreath": 829,
+    "sneakAtkDex": 830,
+    "dmgmagicIi": 831,
+    "aquaveilCount": 832,
+    "songRecastDelay": 833,
+    "quickDrawDmgPercent": 834,
+    "mugEffect": 835,
+    "reverseFlourishEffect": 836,
+    "sentinelEffect": 837,
+    "regenMultiplier": 838,
+    "thirdEyeRetentionRate": 839,
+    "allWsdmgAllHits": 840,
+    "allWsdmgFirstHit": 841,
+    "autoDecisionDelay": 842,
+    "autoShieldBashDelay": 843,
+    "autoMagicCooldown": 844,
+    "autoHealingDelay": 845,
+    "autoHealingThreshold": 846,
+    "burdenDecay": 847,
+    "autoShieldBashSlow": 848,
+    "autoTpEfficiency": 849,
+    "autoScanResists": 850,
+    "synthSuccessRate": 851,
+    "synthSkillGain": 852,
+    "repairEffect": 853,
+    "repairPotency": 854,
+    "preventOverload": 855,
+    "enspellChance": 856,
+    "holyCircleDuration": 857,
+    "arcaneCircleDuration": 858,
+    "ancientCircleDuration": 859,
+    "cure2mpPercent": 860,
+    "synthMaterialLoss": 861,
+    "synthHqRate": 862,
+    "remOccDoDoubleDmg": 863,
+    "remOccDoTripleDmg": 864,
+    "mythicOccAttTwice": 865,
+    "mythicOccAttThrice": 866,
+    "remOccDoDoubleDmgRanged": 867,
+    "remOccDoTripleDmgRanged": 868,
+    "rollBolters": 869,
+    "rollCasters": 870,
+    "rollCoursers": 871,
+    "rollBlitzers": 872,
+    "rollTacticians": 873,
+    "rollAllies": 874,
+    "rollMisers": 875,
+    "rollCompanions": 876,
+    "rollAvengers": 877,
+    "rollNaturalists": 878,
+    "rollRuneists": 879,
+    "savetp": 880,
+    "phantomRoll": 881,
+    "phantomDuration": 882,
+    "perfectDodge": 883,
+    "accCollabEffect": 884,
+    "hideDuration": 885,
+    "augmentsAssassinsCharge": 886,
+    "augmentsAmbush": 887,
+    "jumpDoubleAttack": 888,
+    "augmentsAuraSteal": 889,
+    "enhMagicDuration": 890,
+    "enhancesCoursersRoll": 891,
+    "enhancesCastersRoll": 892,
+    "enhancesBlitzersRoll": 893,
+    "enhancesAlliesRoll": 894,
+    "enhancesTacticiansRoll": 895,
+    "despoil": 896,
+    "gilfinder": 897,
+    "smite": 898,
+    "tacticalGuard": 899,
+    "utsusemiBonus": 900,
+    "elementalCelerity": 901,
+    "occultAcumen": 902,
+    "fencerTpBonus": 903,
+    "fencerCrithitrate": 904,
+    "shieldDefBonus": 905,
+    "desperateBlows": 906,
+    "stalwartSoul": 907,
+    "critDefBonus": 908,
+    "quickMagic": 909,
+    "divineBenison": 910,
+    "daken": 911,
+    "augmentsConspirator": 912,
+    "bloodBoon": 913,
+    "experienceRetained": 914,
+    "capacityBonus": 915,
+    "synthSuccessRateDesynthesis": 916,
+    "synthMaterialLossFire": 917,
+    "synthMaterialLossIce": 918,
+    "synthMaterialLossWind": 919,
+    "synthMaterialLossEarth": 920,
+    "synthMaterialLossThunder": 921,
+    "synthMaterialLossWater": 922,
+    "synthMaterialLossLight": 923,
+    "synthMaterialLossDark": 924,
+    "synthMaterialLossWoodworking": 925,
+    "synthMaterialLossSmithing": 926,
+    "synthMaterialLossGoldsmithing": 927,
+    "synthMaterialLossClothcraft": 928,
+    "synthMaterialLossLeathercraft": 929,
+    "synthMaterialLossBonecraft": 930,
+    "synthMaterialLossAlchemy": 931,
+    "synthMaterialLossCooking": 932,
+    "conquestBonus": 933,
+    "conquestRegionBonus": 934,
+    "campaignBonus": 935,
+    "jumpAccBonus": 936,
+    "foodDuration": 937,
+    "enspellDuration": 938,
+    "autoSteamJacketReduction": 939,
+    "autoSchurzen": 940,
+    "autoEqualizer": 941,
+    "autoPerformanceBoost": 942,
+    "autoAnalyzer": 943,
+    "conserveTp": 944,
+    "blueLearnChance": 945,
+    "sneakDuration": 946,
+    "invisibleDuration": 947,
+    "berserkPotency": 948,
+    "wsNoDeplete": 949,
+    "itemAddeffectElement": 950,
+    "itemAddeffectStatus": 951,
+    "itemAddeffectPower": 952,
+    "itemAddeffectDuration": 953,
+    "berserkDuration": 954,
+    "aggressorDuration": 955,
+    "defenderDuration": 956,
+    "wsDexBonus": 957,
+    "statusres": 958,
+    "cardinalChant": 959,
+    "indiDuration": 960,
+    "geomancyBonus": 961,
+    "widenedCompass": 962,
+    "inquartata": 963,
+    "rangedCritDmgIncrease": 964,
+    "coverToMp": 965,
+    "coverMagicAndRanged": 966,
+    "coverDuration": 967,
+    "mendingHalation": 968,
+    "radialArcana": 969,
+    "curativeRecantation": 970,
+    "primevalZeal": 971,
+    "mountMove": 972,
+    "subtleBlowIi": 973,
+    "wyvernSubjobTraits": 974,
+    "gardeningWiltBonus": 975,
+    "guardPercent": 976,
+    "enhancesProtShellRcvd": 977,
+    "maxSwings": 978,
+    "additionalSwingChance": 979,
+    "wsStrBonus": 980,
+    "wsVitBonus": 981,
+    "wsAgiBonus": 982,
+    "wsIntBonus": 983,
+    "wsMndBonus": 984,
+    "wsChrBonus": 985,
+    "wyvernBreathMacc": 986,
+    "autoElemCapacity": 987,
+    "maxFinishingMoveBonus": 988,
+    "regenBonus": 989,
+    "petAtkDef": 990,
+    "petAccEva": 991,
+    "petMabMdb": 992,
+    "petMaccMeva": 993,
+    "petAttrBonus": 994,
+    "petTpBonus": 995,
+    "oneHourRecast": 996,
+    "superiorLevel": 997,
+    "dreadSpikesEffect": 998,
+    "tripleShotRate": 999,
+    "ninjutsuDuration": 1000,
+    "autoRangedDelay": 1001,
+    "autoRangedDamagep": 1002,
+    "augmentSongStat": 1003,
+    "enhancesBattuta": 1004,
+    "enhancesElementalSforzo": 1005,
+    "enhancesSleightOfSword": 1006,
+    "enhancesInspiration": 1007,
+    "swordplay": 1008,
+    "liement": 1009,
+    "valianceVallationDuration": 1010,
+    "pflug": 1011,
+    "vivaciousPulsePotency": 1012,
+    "augmentsVivaciousPulse": 1013,
+    "raykeDuration": 1014,
+    "odyllicSubterfugeDuration": 1015,
+    "swipe": 1016,
+    "liementDuration": 1017,
+    "gambitDuration": 1018,
+    "emboldenDuration": 1019,
+    "liementExtendsToArea": 1020,
+    "inspirationFastCast": 1021,
+    "parrySpikes": 1022,
+    "parrySpikesDmg": 1023,
+    "specialAttackEvasion": 1024,
+    "fullCircle": 1025,
+    "chakraMult": 1026,
+    "chakraRemoval": 1027,
+    "bolsterEffect": 1028,
+    "lifeCycleEffect": 1029,
+    "auraSize": 1030,
+    "augmentConserveMp": 1031,
+    "augmentComposure": 1032,
+    "augmentDamageHp": 1033,
+    "augmentDamagePetHp": 1034,
+    "augmentBloodBoon": 1035,
+    "augmentBluMagic": 1036,
+    "geomancyMpNoDeplete": 1037,
+    "doubleAttackDmg": 1038,
+    "tripleAttackDmg": 1039,
+    "avatarLvlBonus": 1040,
+    "carbuncleLvlBonus": 1041,
+    "caitSithLvlBonus": 1042,
+    "wyvernLvlBonus": 1043,
+    "automatonLvlBonus": 1044,
+    "enhancesRestraint": 1045,
+    "enhancesBloodRage": 1046,
+    "counterDamage": 1047,
+    "treasureHunterProc": 1048,
+    "treasureHunterCap": 1049,
+    "enhancesProtRcvd": 1050,
+    "curePotencyBonus": 1051,
+    "sicReadyRecast": 1052,
+    "trueShotEffect": 1053,
+    "deadAimEffect": 1054,
+    "thirdEyeBonus": 1055,
+    "wyvernAttributeDa": 1056,
+    "dragoonBreathRecast": 1057,
+    "blueJobTraitBonus": 1058,
+    "blueMagicEffect": 1059,
+    "quickDrawRecast": 1060,
+    "enhancesChivalry": 1061,
+    "enhancesDivineEmblem": 1062,
+    "enhancesFealty": 1063,
+    "enhancesIronWill": 1064,
+    "enhancesGuardian": 1065,
+    "palisadeBlockBonus": 1066,
+    "reprisalBlockBonus": 1067,
+    "reprisalSpikesBonus": 1068,
+    "arcaneCirclePotency": 1069,
+    "enhancesBloodWeapon": 1070,
+    "darkMagicCast": 1071,
+    "darkMagicDuration": 1072,
+    "enhancesDarkSeal": 1073,
+    "digBypassFatigue": 1074,
+    "breathDmgDealt": 1075,
+    "phantomRecast": 1076,
+    "stepTpConsumed": 1077,
+    "summoningMagicCast": 1078,
+    "spikesDmgBonus": 1079,
+    "damageLimit": 1080,
+    "damageLimitp": 1081,
+    "shieldBarrier": 1082,
+    "enhancesNetherVoid": 1083,
+    "enhancesMutedSoul": 1084,
+    "moveSpeedFlee": 1085,
+    "moveSpeedBoltersRoll": 1086,
+    "moveSpeedCheer": 1087,
+    "sengikoriScDmgDebuff": 1088,
+    "sengikoriMbDmgDebuff": 1089,
+    "sengikoriBonus": 1090,
+    "enhancesSange": 1091,
+    "additiveGuard": 1092,
+    "weaknessPct": 1093,
+    "cursePct": 1094,
+    "baseHp": 1095,
+    "baseMp": 1096,
+    "augmentsImpetus": 1097,
+    "synthSuccessRateWoodworking": 1098,
+    "synthSuccessRateSmithing": 1099,
+    "synthSuccessRateGoldsmithing": 1100,
+    "synthSuccessRateClothcraft": 1101,
+    "synthSuccessRateLeathercraft": 1102,
+    "synthSuccessRateBonecraft": 1103,
+    "synthSuccessRateAlchemy": 1104,
+    "synthSuccessRateCooking": 1105,
+    "synthSpeedWoodworking": 1106,
+    "synthSpeedSmithing": 1107,
+    "synthSpeedGoldsmithing": 1108,
+    "synthSpeedClothcraft": 1109,
+    "synthSpeedLeathercraft": 1110,
+    "synthSpeedBonecraft": 1111,
+    "synthSpeedAlchemy": 1112,
+    "synthSpeedCooking": 1113,
+    "synthAntiNqWoodworking": 1114,
+    "synthAntiNqSmithing": 1115,
+    "synthAntiNqGoldsmithing": 1116,
+    "synthAntiNqClothcraft": 1117,
+    "synthAntiNqLeathercraft": 1118,
+    "synthAntiNqBonecraft": 1119,
+    "synthAntiNqAlchemy": 1120,
+    "synthAntiNqCooking": 1121,
+    "synthHqRateWoodworking": 1122,
+    "synthHqRateSmithing": 1123,
+    "synthHqRateGoldsmithing": 1124,
+    "synthHqRateClothcraft": 1125,
+    "synthHqRateLeathercraft": 1126,
+    "synthHqRateBonecraft": 1127,
+    "synthHqRateAlchemy": 1128,
+    "synthHqRateCooking": 1129,
+    "foodHp": 1130,
+    "foodMp": 1131,
+    "cardinalChantBonus": 1132,
+    "digRareAbility": 1133,
+    "despawnTimeReduction": 1134,
+    "parryHpRecovery": 1135,
+    "enhancesAbsorbEffects": 1136,
+    "augmentsAbsorb": 1137,
+    "absorbEffectDuration": 1138,
+    "enhancesBurstAffinity": 1139,
+    "enhancesChainAffinity": 1140,
+    "holyCirclePotency": 1141,
+    "ancientCirclePotency": 1142,
+    "wardingCirclePotency": 1143,
+    "anyFtpBonus": 1144,
+    "dayFtpBonus": 1145,
+    "elementalMagicRecast": 1146,
+    "blueMagicRecast": 1147,
+    "enhancesFutae": 1148,
+    "enhancesElementalSeal": 1149,
+    "elementalDebuffEffect": 1150,
+    "enfMagDuration": 1151,
+    "rewardRecast": 1152,
+    "augmentsAbsorbTp": 1153,
+    "avatarsFavorEnhance": 1154,
+    "enhancesMonsterCorrelation": 1155,
+    "forceDwBonusPenalty": 1156,
+    "enhancesSpur": 1157,
+    "moghancementGilBonusP": 1158,
+    "stratagemRecast": 1159,
+    "paralyzeResRank": 1160,
+    "bindResRank": 1161,
+    "silenceResRank": 1162,
+    "slowResRank": 1163,
+    "poisonResRank": 1164,
+    "lightSleepResRank": 1165,
+    "darkSleepResRank": 1166,
+    "blindResRank": 1167,
+    "magicCrithitrateIi": 1168,
+    "familiarBonus": 1169,
+    "halfPerpetuationDay": 1170,
+    "halfPerpetuationWeather": 1171,
+    "knockbackReduction": 1172,
+    "powerMultiplierBasicAttack": 1173,
+    "powerMultiplierBasicRanged": 1174,
+    "powerMultiplierSpell": 1175,
+    "powerMultiplierWeaponskill": 1176,
+    "powerMultiplierJobAbility": 1177,
+    "powerMultiplierMobskill": 1178,
+    "utsusemiAoe": 1179,
+    "itemAddeffectPriority": 1180,
+    "itemAddeffectScripted": 1181,
+    "phalanxReceived": 1182,
+    "healingMagicRecast": 1183,
+    "enfeeblingMagicRecast": 1184,
+    "enhancingMagicRecast": 1185,
+    "stunResRank": 1186,
+    "hassoZanshinBonus": 1187,
+    "seiganCounterBonus": 1188,
+    "retainCamouflage": 1189,
+    "retainUnlimitedShot": 1190,
+    "raIgnoreLvlDiff": 1191,
+    "yoninUtsusemiEnmity": 1192,
+    "sangeMultiHit": 1193,
+    "dayWeatherProcBonus": 1194,
+    "enspellDmgPct": 1195,
+    "expLvlMod": 1196,
+    "mpCostReduction": 1197,
+    "voltGunPotency": 1198,
+    "tacticalSwitchTpBonus": 1199,
+    "overdriveBonusDuration": 1200,
+    "augmentKillerEffects": 1201,
+    "arcanaDmgMultiplier": 1202,
+    "demonDmgMultiplier": 1203,
+    "dragonDmgMultiplier": 1204,
+    "undeadDmgMultiplier": 1205,
+    "arcanaResMultiplier": 1206,
+    "demonResMultiplier": 1207,
+    "dragonResMultiplier": 1208,
+    "undeadResMultiplier": 1209,
+    "gravityResRank": 1210,
+    "wyvernShowReadying": 1211,
+    "harvestingResultHq": 1212,
+    "loggingResultHq": 1213,
+    "evaPercent": 1214
+  },
+  "valueEncodingNotes": {
+    "hasteGear": "1/100 of a percent (375 = 3.75%; 10000 = 100%)",
+    "attp/defp": "percent",
+    "regain": "x10 (30 = +3 TP/tick)",
+    "curePotency": "percent",
+    "dmg/dmgphys/dmgbreath/dmgmagic/dmgrange": "1/100 of a percent damage taken (-500 = -5%)",
+    "delay(weapon)": "Hand-to-hand weapons store delay + 480",
+    "equipmentOnlyRace": "race bitmask restriction (mod 276); 0/absent = all races"
+  },
+  "summary": {
+    "totalItems": 15527,
+    "weapons": 5225,
+    "armor": 10302,
+    "itemsWithStats": 11259,
+    "itemsWithoutStats": 4268,
+    "itemsWithLatents": 866,
+    "itemsWithPetStats": 485,
+    "itemLevelGear": 4076,
+    "rareItems": 8957,
+    "exclusiveItems": 8978,
+    "weaponsWithoutWeaponRow": 0,
+    "armorWithWeaponRow": 2,
+    "skipped": {
+      "slotZero": 0,
+      "noItemBasicRow": 0,
+      "nonEquipmentType": 0
+    },
+    "sourceRowCounts": {
+      "item_basic": 23536,
+      "item_equipment": 15527,
+      "item_weapon": 5227,
+      "item_mods": 62349,
+      "item_latents": 1981,
+      "item_mods_pet": 992
+    },
+    "bySlot": {
+      "Main": 3899,
+      "Sub": 2301,
+      "Ranged": 661,
+      "Ammo": 537,
+      "Head": 1528,
+      "Body": 1607,
+      "Hands": 1384,
+      "Legs": 1386,
+      "Feet": 1339,
+      "Neck": 535,
+      "Waist": 456,
+      "Ear1": 641,
+      "Ear2": 641,
+      "Ring1": 657,
+      "Ring2": 657,
+      "Back": 438
+    },
+    "byJob": {
+      "WAR": 6774,
+      "DRK": 6629,
+      "PLD": 6458,
+      "RDM": 6371,
+      "BST": 5955,
+      "BRD": 5918,
+      "RNG": 5876,
+      "RUN": 5798,
+      "THF": 5791,
+      "BLU": 5715,
+      "NIN": 5660,
+      "SAM": 5602,
+      "DRG": 5415,
+      "MNK": 5345,
+      "COR": 5236,
+      "WHM": 5235,
+      "DNC": 5221,
+      "SMN": 5206,
+      "BLM": 5065,
+      "GEO": 5036,
+      "PUP": 4962,
+      "SCH": 4953
+    },
+    "byWeaponSkill": {
+      "Sword": 504,
+      "None": 450,
+      "Dagger": 436,
+      "Staff": 436,
+      "Club": 400,
+      "Marksmanship": 349,
+      "Hand To Hand": 348,
+      "Polearm": 293,
+      "Archery": 266,
+      "Great Sword": 260,
+      "Axe": 255,
+      "Katana": 247,
+      "Great Axe": 243,
+      "Scythe": 243,
+      "Great Katana": 233,
+      "Throwing": 97,
+      "Wind Instrument": 68,
+      "Fishing": 59,
+      "String Instrument": 33,
+      "Handbell": 5,
+      "Skill 255": 2
+    },
+    "topMods": {
+      "DEF": 7024,
+      "HP": 3262,
+      "STR": 3049,
+      "MND": 2703,
+      "AGI": 2692,
+      "VIT": 2631,
+      "DEX": 2546,
+      "EVA": 2481,
+      "MP": 2425,
+      "ACC": 2424,
+      "INT": 2382,
+      "CHR": 2371,
+      "hasteGear": 2153,
+      "MEVA": 1819,
+      "MDEF": 1780,
+      "ATT": 1736,
+      "enmity": 1319,
+      "MACC": 1283,
+      "RACC": 798,
+      "MATT": 628,
+      "addsWeaponskill": 535,
+      "aftermath": 473,
+      "RATT": 472,
+      "storetp": 433,
+      "equipmentOnlyRace": 423,
+      "itemAddeffectType": 292,
+      "darkMeva": 282,
+      "magicDamage": 280,
+      "dmgphys": 278,
+      "fireMeva": 275,
+      "waterMeva": 266,
+      "subtleBlow": 265,
+      "dmgrange": 261,
+      "doubleAttack": 246,
+      "iceMeva": 240,
+      "dmg": 231,
+      "lightMeva": 231,
+      "earthMeva": 226,
+      "itemAddeffectChance": 222,
+      "itemSubeffect": 216
+    },
+    "levelDistribution": {
+      "1": 1146,
+      "2": 2,
+      "3": 1,
+      "4": 9,
+      "5": 31,
+      "6": 8,
+      "7": 49,
+      "8": 34,
+      "9": 22,
+      "10": 89,
+      "11": 42,
+      "12": 39,
+      "13": 27,
+      "14": 59,
+      "15": 116,
+      "16": 34,
+      "17": 20,
+      "18": 52,
+      "19": 20,
+      "20": 112,
+      "21": 26,
+      "22": 10,
+      "23": 36,
+      "24": 58,
+      "25": 84,
+      "26": 8,
+      "27": 43,
+      "28": 35,
+      "29": 47,
+      "30": 235,
+      "31": 53,
+      "32": 31,
+      "33": 30,
+      "34": 87,
+      "35": 70,
+      "36": 101,
+      "37": 22,
+      "38": 48,
+      "39": 26,
+      "40": 169,
+      "41": 26,
+      "42": 30,
+      "43": 70,
+      "44": 20,
+      "45": 94,
+      "46": 32,
+      "47": 26,
+      "48": 54,
+      "49": 69,
+      "50": 240,
+      "51": 44,
+      "52": 90,
+      "53": 50,
+      "54": 78,
+      "55": 112,
+      "56": 56,
+      "57": 43,
+      "58": 67,
+      "59": 76,
+      "60": 194,
+      "61": 67,
+      "62": 56,
+      "63": 52,
+      "64": 34,
+      "65": 172,
+      "66": 56,
+      "67": 83,
+      "68": 89,
+      "69": 110,
+      "70": 381,
+      "71": 418,
+      "72": 303,
+      "73": 264,
+      "74": 208,
+      "75": 653,
+      "76": 46,
+      "77": 76,
+      "78": 59,
+      "79": 41,
+      "80": 205,
+      "81": 74,
+      "82": 25,
+      "83": 92,
+      "84": 33,
+      "85": 205,
+      "86": 52,
+      "87": 206,
+      "88": 63,
+      "89": 99,
+      "90": 331,
+      "91": 3,
+      "92": 30,
+      "93": 30,
+      "94": 35,
+      "95": 155,
+      "96": 95,
+      "97": 94,
+      "98": 14,
+      "99": 5916
+    },
+    "itemLevelDistribution": {
+      "100": 56,
+      "101": 21,
+      "103": 3,
+      "105": 22,
+      "106": 47,
+      "107": 10,
+      "108": 3,
+      "109": 404,
+      "110": 15,
+      "113": 65,
+      "114": 15,
+      "115": 51,
+      "117": 60,
+      "118": 44,
+      "119": 3260
+    },
+    "unknownModIds": {},
+    "unknownLatentIds": {}
+  }
+}

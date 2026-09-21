@@ -1,0 +1,53 @@
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String              @id @default(cuid())
+  email       String              @unique
+  name        String?
+  password    String
+  role        String              @default("user")
+  createdAt   DateTime            @default(now())
+  inventories InventorySnapshot[]
+  gearSets    SavedGearSet[]
+}
+
+model InventorySnapshot {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  characterName      String
+  mainJob            String?
+  subJob             String?
+  itemCount          Int      @default(0)
+  itemIds            Json
+  cloud_storage_path String?
+  isPublic           Boolean  @default(false)
+  createdAt          DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model SavedGearSet {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  job       String
+  subJob    String?
+  context   String
+  gear      Json
+  stats     Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, job])
+}
