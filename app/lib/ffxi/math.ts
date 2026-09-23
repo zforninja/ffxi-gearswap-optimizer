@@ -1,5 +1,6 @@
 import { BUFF_BY_ID, TWO_HANDED_SKILLS, WS_BY_NAME, jobBaseStats, jobTraits, type WeaponSkillDef } from './constants';
 import { blockedSlots, unityBonus, type Aggregate, type GearDB, type GearItem, type GearSet, type Slot, type Target } from './types';
+import { MAX_JOB_POINTS, MAX_MASTER_LEVEL, combatSkill, jobPointBonuses, masterLevelBonuses } from './job-points';
 
 export const GEAR_HASTE_CAP = 0.25;
 export const MAGIC_HASTE_CAP = 0.4375;
@@ -7,7 +8,8 @@ export const JA_HASTE_CAP = 0.25;
 export const TOTAL_DELAY_REDUCTION_CAP = 0.8;
 export const DT_CAP = -50;
 export const FAST_CAST_CAP = 80;
-export const BASE_COMBAT_SKILL = 480; // level 99 A+ skill incl. merits & master levels
+/** Default weapon skill level when no Master Level is given (A+ skill, merits, ML50). */
+export const BASE_COMBAT_SKILL = combatSkill(MAX_MASTER_LEVEL);
 const WS_ALPHA = 0.83;
 const WS_ANIMATION_DELAY = 1.6;
 
@@ -18,7 +20,14 @@ export type PlayerContext = {
   target: Target;
   /** Unity Ranking (1 = best ... 11); defaults to 1 when omitted. */
   unityRank?: number;
+  /** Total job points spent on the main job (0-2100); defaults to 2100 (all gifts) when omitted. */
+  jobPoints?: number;
+  /** Master Level (0-50); defaults to 50 when omitted. */
+  masterLevel?: number;
 };
+
+export const ctxJobPoints = (ctx: PlayerContext | undefined) => ctx?.jobPoints ?? MAX_JOB_POINTS;
+export const ctxMasterLevel = (ctx: PlayerContext | undefined) => ctx?.masterLevel ?? MAX_MASTER_LEVEL;
 
 export const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v ?? 0));
 const g = (a: Aggregate, k: string) => a?.[k] ?? 0;
@@ -30,6 +39,14 @@ export function aggregate(set: GearSet, db: GearDB, ctx: PlayerContext): Aggrega
   Object.entries(traits ?? {}).forEach(([k, v]) => {
     agg[k] = (agg[k] ?? 0) + (v ?? 0);
   });
+  // Job Point gifts (ATT/ACC/DA/STP/WSD ...) and Master Level attribute bonuses
+  Object.entries(jobPointBonuses(ctx?.mainJob ?? '', ctxJobPoints(ctx))).forEach(([k, v]) => {
+    agg[k] = (agg[k] ?? 0) + (v ?? 0);
+  });
+  Object.entries(masterLevelBonuses(ctxMasterLevel(ctx))).forEach(([k, v]) => {
+    agg[k] = (agg[k] ?? 0) + (v ?? 0);
+  });
+  agg.__skill = combatSkill(ctxMasterLevel(ctx));
   for (const id of ctx?.buffIds ?? []) {
     const b = BUFF_BY_ID[id];
     if (!b) continue;
@@ -72,11 +89,11 @@ export function skillAccuracy(skill: number) {
 
 export function computeAccuracy(agg: Aggregate, ranged = false) {
   const stat = ranged ? g(agg, 'AGI') : g(agg, 'DEX');
-  return skillAccuracy(BASE_COMBAT_SKILL) + Math.floor(stat * 0.75) + g(agg, ranged ? 'RACC' : 'ACC');
+  return skillAccuracy(agg?.__skill || BASE_COMBAT_SKILL) + Math.floor(stat * 0.75) + g(agg, ranged ? 'RACC' : 'ACC');
 }
 
 export function computeAttack(agg: Aggregate, ranged = false) {
-  const base = 8 + BASE_COMBAT_SKILL + Math.floor(g(agg, 'STR') * 0.75) + g(agg, ranged ? 'RATT' : 'ATT') + g(agg, 'attackBonus');
+  const base = 8 + (agg?.__skill || BASE_COMBAT_SKILL) + Math.floor(g(agg, 'STR') * 0.75) + g(agg, ranged ? 'RATT' : 'ATT') + g(agg, 'attackBonus');
   const pct = 1 + (g(agg, 'attPct') + g(agg, 'attp')) / 100;
   return Math.floor(base * pct);
 }

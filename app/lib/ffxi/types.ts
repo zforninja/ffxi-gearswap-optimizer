@@ -220,6 +220,10 @@ export type OptimizerConfig = {
   wsNames: string[];
   /** Unity Ranking of the player's Unity (1 = best bonus ... 11). */
   unityRank?: number;
+  /** Total job points spent on the main job (0-2100). Defaults to 2100. */
+  jobPoints?: number;
+  /** Master Level (0-50). Defaults to 50. */
+  masterLevel?: number;
   /** Run the pairwise-swap refinement pass on every result (default true). */
   refine?: boolean;
 };

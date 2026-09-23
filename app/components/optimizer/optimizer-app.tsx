@@ -18,6 +18,7 @@ import { WsPanel } from './ws-panel';
 import { GearGrid } from './gear-grid';
 import { StatPanel } from './stat-panel';
 import { ExportPanel } from './export-panel';
+import { TemplatePanel } from './template-panel';
 import { InventoryDialog, type ParsedExport } from './inventory-dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -85,7 +86,7 @@ export function OptimizerApp({ user }: { user: User }) {
   }, [db, current, currentGear, overrides]);
 
   function cfg() {
-    return { mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory ?? {}, buffIds: s.buffIds ?? [], target, lockedMain: s.lockedMain, lockedSub: s.lockedSub, primaryWs: s.primaryWs, dtThreshold: s.dtThreshold, wsNames: s.wsNames ?? [], unityRank: s.unityRank ?? 1 };
+    return { mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory ?? {}, buffIds: s.buffIds ?? [], target, lockedMain: s.lockedMain, lockedSub: s.lockedSub, primaryWs: s.primaryWs, dtThreshold: s.dtThreshold, wsNames: s.wsNames ?? [], unityRank: s.unityRank ?? 1, jobPoints: s.jobPoints ?? 2100, masterLevel: s.masterLevel ?? 50 };
   }
 
   const run = async () => {
@@ -158,7 +159,7 @@ export function OptimizerApp({ user }: { user: User }) {
                   onWsNames={s.setWsNames} onPrimary={s.setPrimaryWs} onLockMain={s.setLockedMain} onLockSub={s.setLockedSub} />
               </>
             )}
-            {sidebarTab === 'buffs' && <BuffPanel buffIds={s.buffIds ?? []} onToggle={s.toggleBuff} unityRank={s.unityRank ?? 1} onUnityRank={s.setUnityRank} />}
+            {sidebarTab === 'buffs' && <BuffPanel buffIds={s.buffIds ?? []} onToggle={s.toggleBuff} unityRank={s.unityRank ?? 1} onUnityRank={s.setUnityRank} mainJob={s.mainJob} jobPoints={s.jobPoints ?? 2100} masterLevel={s.masterLevel ?? 50} onJobPoints={s.setJobPoints} onMasterLevel={s.setMasterLevel} />}
             {sidebarTab === 'target' && <MobPanel tier={s.mobTier} custom={s.customTarget} dtThreshold={s.dtThreshold} onTier={s.setMobTier} onCustom={s.setCustomTarget} onDt={s.setDtThreshold} />}
           </div>
           <Button className="w-full" size="lg" onClick={() => void run()} disabled={!db || running}>
@@ -213,6 +214,8 @@ export function OptimizerApp({ user }: { user: User }) {
           <StatPanel current={current} evaluation={evaluation} results={results} />
           <ExportPanel db={db} results={results.map((r: OptimizedSet) => (overrides[r.key] ? { ...r, gear: overrides[r.key] } : r))} current={current} currentGear={currentGear} mainJob={s.mainJob} subJob={s.subJob}
             characterName={s.characterName} targetName={target.name} loggedIn={!!user} onLoadSaved={(g: GearSet) => { if (current) setOverrides((o) => ({ ...o, [current.key]: g })); }} />
+          <TemplatePanel db={db} results={results.map((r: OptimizedSet) => (overrides[r.key] ? { ...r, gear: overrides[r.key] } : r))} mainJob={s.mainJob} subJob={s.subJob}
+            characterName={s.characterName} targetName={target.name} wsNames={s.wsNames ?? []} onWsNames={s.setWsNames} onRunOptimizer={() => void run()} optimizerRunning={running} />
         </motion.aside>
       </main>
 

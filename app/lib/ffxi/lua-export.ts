@@ -1,4 +1,4 @@
-import { SLOTS, type GearDB, type GearSet, type OptimizedSet, type Slot } from './types';
+import { SLOTS, type GearDB, type GearItem, type GearSet, type OptimizedSet, type Slot } from './types';
 
 const LUA_SLOT: Record<Slot, string> = {
   main: 'main', sub: 'sub', range: 'range', ammo: 'ammo', head: 'head', body: 'body', hands: 'hands', legs: 'legs', feet: 'feet',
@@ -9,6 +9,16 @@ function luaStr(s: string) {
   return `"${(s ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 }
 
+/** Lua value for one equipped item: `"Name"` or `{ name="Base", augments={...} }` (GearSwap matches augmented items by base name + augments). */
+export function luaItemValue(item: GearItem, db: GearDB): string {
+  const augs = (item.augments ?? []).filter((a) => a && !/^(path|rank)\s*:/i.test(a));
+  if (augs.length) {
+    const baseName = (item.baseId != null ? db?.[String(item.baseId)]?.displayName : undefined) ?? item.name ?? item.displayName ?? '';
+    return `{ name=${luaStr(baseName)}, augments={${augs.map(luaStr).join(',')}} }`;
+  }
+  return luaStr(item.displayName ?? item.name ?? '');
+}
+
 export function gearSetToLua(set: GearSet, db: GearDB, indent = '    '): string {
   const lines: string[] = [];
   for (const slot of SLOTS) {
@@ -16,14 +26,7 @@ export function gearSetToLua(set: GearSet, db: GearDB, indent = '    '): string 
     if (id == null) continue;
     const item = db?.[String(id)];
     if (!item) continue;
-    const augs = (item.augments ?? []).filter((a) => a && !/^(path|rank)\s*:/i.test(a));
-    if (augs.length) {
-      // GearSwap matches augmented items by base name + augments list
-      const baseName = (item.baseId != null ? db?.[String(item.baseId)]?.displayName : undefined) ?? item.name ?? item.displayName ?? '';
-      lines.push(`${indent}${LUA_SLOT[slot]}={ name=${luaStr(baseName)}, augments={${augs.map(luaStr).join(',')}} },`);
-    } else {
-      lines.push(`${indent}${LUA_SLOT[slot]}=${luaStr(item.displayName ?? item.name ?? '')},`);
-    }
+    lines.push(`${indent}${LUA_SLOT[slot]}=${luaItemValue(item, db)},`);
   }
   return `{\n${lines.join('\n')}\n${indent.slice(0, -4)}}`;
 }

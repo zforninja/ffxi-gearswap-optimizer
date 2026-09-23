@@ -8,7 +8,7 @@ Live app: https://gsoptimizer.abacusai.app
 
 | Folder | What it is |
 |---|---|
-| `app/` | The web application (Next.js 16, TypeScript). Optimizer engine lives in `app/lib/ffxi/` (`math.ts`, `optimizer.ts`, `constants.ts`, `types.ts`, `augments.ts`, `lua-export.ts`). Gear database ships in `app/public/data/gear_database.json`. |
+| `app/` | The web application (Next.js 16, TypeScript). Optimizer engine lives in `app/lib/ffxi/` (`math.ts`, `optimizer.ts`, `constants.ts`, `types.ts`, `augments.ts`, `lua-export.ts`, `template-fill.ts`, `template-skeleton.ts`, `job-points.ts`). Gear database ships in `app/public/data/gear_database.json`. |
 | `data_pipeline/` | Python scripts that build and enrich the gear database from LandSandBoat SQL + Windower resources (`build_gear_database.py`, `enrich_gear_database.py`). |
 | `addon/GearExport/` | Windower addon that exports your inventory (with augments) to JSON for import into the app. |
 
@@ -17,6 +17,8 @@ Live app: https://gsoptimizer.abacusai.app
 - Set contexts: TP, per-weapon-skill, Magic, Healing, Idle/DT, Fast Cast, Hybrid DT, Treasure Hunter
 - Joint TP + WS weapon search; slot-blocking gear (suits) handled; augmented items treated as distinct pieces
 - GearSwap Lua export with augments
+- Job Points (up to 2100) and Master Level (up to 50) gift bonuses applied to every set
+- **Template-driven complete job files**: load a blank Mote-Include job Lua (built-in Masin-M template, generic skeleton, or your own upload) and the optimizer fills every recognized set — see [`docs/TEMPLATE_WORKFLOW.md`](docs/TEMPLATE_WORKFLOW.md)
 
 ## Running the app locally
 ```bash

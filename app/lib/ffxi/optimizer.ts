@@ -483,7 +483,7 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
   const step = (label: string) => onProgress?.(++done, total, label);
 
   for (const tier of tiers) {
-    const ctx: PlayerContext = { mainJob: cfg.mainJob, subJob: cfg.subJob, buffIds: tierBuffIds(cfg.buffIds, tier), target: cfg.target, unityRank: cfg.unityRank ?? 1 };
+    const ctx: PlayerContext = { mainJob: cfg.mainJob, subJob: cfg.subJob, buffIds: tierBuffIds(cfg.buffIds, tier), target: cfg.target, unityRank: cfg.unityRank ?? 1, jobPoints: cfg.jobPoints, masterLevel: cfg.masterLevel };
     const push = (key: string, label: string, oc: OptimizeContext, r0: { gear: GearSet; evaluation: SetEvaluation }) => {
       const r = cfg.refine === false ? r0 : refineSet(db, cands, cfg, ctx, oc, r0);
       results.push({ key: `${key}:${tier}`, label, context: oc, tier, gear: r.gear, evaluation: r.evaluation });
@@ -586,6 +586,6 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
 
 /** Evaluate an arbitrary (possibly hand-edited) set for display. */
 export function evaluateSet(db: GearDB, cfg: OptimizerConfig, tier: BuffTier, oc: OptimizeContext, set: GearSet): SetEvaluation {
-  const ctx: PlayerContext = { mainJob: cfg.mainJob, subJob: cfg.subJob, buffIds: tierBuffIds(cfg.buffIds, tier), target: cfg.target, unityRank: cfg.unityRank ?? 1 };
+  const ctx: PlayerContext = { mainJob: cfg.mainJob, subJob: cfg.subJob, buffIds: tierBuffIds(cfg.buffIds, tier), target: cfg.target, unityRank: cfg.unityRank ?? 1, jobPoints: cfg.jobPoints, masterLevel: cfg.masterLevel };
   return scoreSet(set, db, ctx, oc, cfg.primaryWs);
 }

@@ -19,6 +19,10 @@ export type AppState = {
   dtThreshold: number;
   /** Unity Ranking (1 = highest bonus ... 11 = lowest) used to scale "Unity Ranking:" gear bonuses. */
   unityRank: number;
+  /** Total job points spent on the main job (0-2100). */
+  jobPoints: number;
+  /** Master Level (0-50). */
+  masterLevel: number;
   wsNames: string[];
   primaryWs: string | null;
   lockedMain: number | null;
@@ -37,6 +41,8 @@ export type AppState = {
   setCustomTarget: (t: Partial<Target>) => void;
   setDtThreshold: (v: number) => void;
   setUnityRank: (v: number) => void;
+  setJobPoints: (v: number) => void;
+  setMasterLevel: (v: number) => void;
   setWsNames: (names: string[]) => void;
   setPrimaryWs: (n: string | null) => void;
   setLockedMain: (id: number | null) => void;
@@ -57,6 +63,8 @@ export const useAppStore = create<AppState>()(
       customTarget: { ...MOB_TIERS.medium, name: 'Custom target' },
       dtThreshold: 30,
       unityRank: 1,
+      jobPoints: 2100,
+      masterLevel: 50,
       wsNames: ['Savage Blade'],
       primaryWs: 'Savage Blade',
       lockedMain: null,
@@ -94,6 +102,8 @@ export const useAppStore = create<AppState>()(
       setCustomTarget: (t: Partial<Target>) => set({ customTarget: { ...(get().customTarget ?? MOB_TIERS.medium), ...(t ?? {}) } }),
       setDtThreshold: (v: number) => set({ dtThreshold: v }),
       setUnityRank: (v: number) => set({ unityRank: Math.min(11, Math.max(1, Math.round(v ?? 1))) }),
+      setJobPoints: (v: number) => set({ jobPoints: Math.min(2100, Math.max(0, Math.round(Number.isFinite(v) ? v : 0))) }),
+      setMasterLevel: (v: number) => set({ masterLevel: Math.min(50, Math.max(0, Math.round(Number.isFinite(v) ? v : 0))) }),
       setWsNames: (names: string[]) => set({ wsNames: names ?? [] }),
       setPrimaryWs: (n: string | null) => set({ primaryWs: n }),
       setLockedMain: (id: number | null) => set({ lockedMain: id }),
@@ -105,7 +115,7 @@ export const useAppStore = create<AppState>()(
       storage: createJSONStorage(() => localStorage),
       partialize: (s: AppState) => ({
         mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory, extraItems: s.extraItems, characterName: s.characterName, buffIds: s.buffIds, mobTier: s.mobTier,
-        customTarget: s.customTarget, dtThreshold: s.dtThreshold, unityRank: s.unityRank, wsNames: s.wsNames, primaryWs: s.primaryWs, lockedMain: s.lockedMain, lockedSub: s.lockedSub,
+        customTarget: s.customTarget, dtThreshold: s.dtThreshold, unityRank: s.unityRank, jobPoints: s.jobPoints, masterLevel: s.masterLevel, wsNames: s.wsNames, primaryWs: s.primaryWs, lockedMain: s.lockedMain, lockedSub: s.lockedSub,
         results: s.results, resultsStamp: s.resultsStamp,
       }) as unknown as AppState,
     },

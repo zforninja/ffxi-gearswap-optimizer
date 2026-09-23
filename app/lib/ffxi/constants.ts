@@ -34,16 +34,16 @@ export function jobBaseStats(main: string, sub: string): Record<string, number> 
   return out;
 }
 
-/** Innate job traits at level 99 (approximate, includes typical job points). Values in % / points. */
+/** Innate job traits at level 99 including merits (job point gifts are applied separately from job-gifts.json). Values in % / points. */
 export type Traits = {
   doubleAttack: number; tripleAttack: number; storetp: number; dualWield: number; crithitrate: number;
   fastcast: number; martialArts: number; treasureHunter: number; MATT: number; attackBonus: number; subtleBlow: number;
 };
 const ZERO: Traits = { doubleAttack: 0, tripleAttack: 0, storetp: 0, dualWield: 0, crithitrate: 0, fastcast: 0, martialArts: 0, treasureHunter: 0, MATT: 0, attackBonus: 0, subtleBlow: 0 };
 const MAIN_TRAITS: Record<string, Partial<Traits>> = {
-  WAR: { doubleAttack: 15, attackBonus: 0 },
+  WAR: { doubleAttack: 23, attackBonus: 0 }, // Double Attack V (18%) + 5 merits
   MNK: { martialArts: 80, crithitrate: 0, subtleBlow: 20 },
-  THF: { tripleAttack: 8, treasureHunter: 3, crithitrate: 5 },
+  THF: { tripleAttack: 11, treasureHunter: 3, crithitrate: 5 }, // Triple Attack II (6%) + 5 merits
   SAM: { storetp: 40 },
   NIN: { dualWield: 35, subtleBlow: 25 },
   DNC: { dualWield: 35 },
@@ -131,23 +131,31 @@ export const WEAPONSKILLS: WeaponSkillDef[] = [
   // Scythe
   { name: 'Entropy', skill: 'Scythe', hits: 4, mods: { INT: 0.73 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true },
   { name: 'Cross Reaper', skill: 'Scythe', hits: 2, mods: { STR: 0.6 }, ftp: [2.25, 3.25, 4.25], ftpTransfers: false },
+  { name: 'Catastrophe', skill: 'Scythe', hits: 1, mods: { STR: 0.4, INT: 0.4 }, ftp: [2.75, 2.75, 2.75], ftpTransfers: false },
   { name: 'Insurgency', skill: 'Scythe', hits: 4, mods: { STR: 0.2, INT: 0.2 }, ftp: [1.5, 2.0, 2.5], ftpTransfers: false, accBonus: 25 },
   { name: 'Spiral Hell', skill: 'Scythe', hits: 1, mods: { STR: 0.3, INT: 0.3 }, ftp: [2.5, 3.5, 4.5], ftpTransfers: false },
   // Polearm
   { name: 'Stardiver', skill: 'Polearm', hits: 4, mods: { STR: 0.73 }, ftp: [0.75, 1.75, 2.75], ftpTransfers: true },
   { name: 'Impulse Drive', skill: 'Polearm', hits: 2, mods: { STR: 1.0 }, ftp: [1.0, 3.0, 5.5], ftpTransfers: false, crit: [0, 0, 0] },
   { name: "Camlann's Torment", skill: 'Polearm', hits: 2, mods: { STR: 0.6, VIT: 0.6 }, ftp: [2.75, 3.5, 4.25], ftpTransfers: false },
+  // Wheeling Thrust ignores 50-75% of target defense (not modeled)
+  { name: 'Wheeling Thrust', skill: 'Polearm', hits: 1, mods: { STR: 0.8 }, ftp: [1.75, 1.75, 1.75], ftpTransfers: false },
+  { name: 'Sonic Thrust', skill: 'Polearm', hits: 1, mods: { STR: 0.4, DEX: 0.4 }, ftp: [3.0, 3.7, 4.5], ftpTransfers: false },
   { name: 'Drakesbane', skill: 'Polearm', hits: 4, mods: { STR: 0.5 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true, crit: [10, 25, 40] },
   // Katana
   { name: 'Blade: Shun', skill: 'Katana', hits: 5, mods: { DEX: 0.73 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true, attMult: 1.0 },
   { name: 'Blade: Ten', skill: 'Katana', hits: 1, mods: { STR: 0.3, DEX: 0.3 }, ftp: [4.5, 6.25, 8.0], ftpTransfers: false },
   { name: 'Blade: Hi', skill: 'Katana', hits: 1, mods: { AGI: 0.8 }, ftp: [5.0, 5.0, 5.0], ftpTransfers: false, crit: [15, 20, 25] },
   { name: 'Blade: Metsu', skill: 'Katana', hits: 1, mods: { DEX: 0.8 }, ftp: [3.5, 4.5, 5.5], ftpTransfers: false },
+  // Blade: Kamu: Attack +125% (defense-down portion not modeled)
+  { name: 'Blade: Kamu', skill: 'Katana', hits: 1, mods: { STR: 0.6, INT: 0.6 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: false, attMult: 2.25 },
   // Great Katana
   { name: 'Tachi: Fudo', skill: 'Great Katana', hits: 1, mods: { STR: 0.8 }, ftp: [3.75, 5.75, 7.5], ftpTransfers: false },
   { name: 'Tachi: Shoha', skill: 'Great Katana', hits: 2, mods: { STR: 0.73 }, ftp: [1.375, 2.1875, 2.75], ftpTransfers: false },
   { name: 'Tachi: Kasha', skill: 'Great Katana', hits: 1, mods: { STR: 0.75 }, ftp: [1.5, 2.5, 3.5], ftpTransfers: false },
   { name: 'Tachi: Rana', skill: 'Great Katana', hits: 3, mods: { STR: 0.5 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true },
+  { name: 'Tachi: Gekko', skill: 'Great Katana', hits: 1, mods: { STR: 0.75 }, ftp: [1.5625, 2.6875, 4.125], ftpTransfers: false },
+  { name: 'Tachi: Kaiten', skill: 'Great Katana', hits: 1, mods: { STR: 0.8 }, ftp: [3.0, 3.0, 3.0], ftpTransfers: false },
   // Hand-to-Hand
   { name: 'Victory Smite', skill: 'Hand To Hand', hits: 4, mods: { STR: 0.8 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true, crit: [15, 20, 25] },
   { name: 'Shijin Spiral', skill: 'Hand To Hand', hits: 5, mods: { DEX: 0.73 }, ftp: [1.0, 1.0, 1.0], ftpTransfers: true },

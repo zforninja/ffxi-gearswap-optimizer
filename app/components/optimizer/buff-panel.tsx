@@ -1,8 +1,10 @@
 'use client';
 import { useMemo } from 'react';
-import { Music, Compass, Dice5, Utensils, Zap, Flame, Skull, Users } from 'lucide-react';
+import { Music, Compass, Dice5, Utensils, Zap, Flame, Skull, Users, GraduationCap } from 'lucide-react';
 import { BUFFS, type BuffCategory, type BuffDef } from '@/lib/ffxi/constants';
 import { UNITY_MAX_RANK } from '@/lib/ffxi/types';
+import { MAX_JOB_POINTS, MAX_MASTER_LEVEL, nextGift, unlockedGifts } from '@/lib/ffxi/job-points';
+import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
@@ -23,12 +25,24 @@ export function BuffPanel({
   onToggle,
   unityRank = 1,
   onUnityRank,
+  mainJob = '',
+  jobPoints = MAX_JOB_POINTS,
+  masterLevel = MAX_MASTER_LEVEL,
+  onJobPoints,
+  onMasterLevel,
 }: {
   buffIds: string[];
   onToggle: (id: string, group?: string, groupIds?: string[]) => void;
   unityRank?: number;
   onUnityRank?: (rank: number) => void;
+  mainJob?: string;
+  jobPoints?: number;
+  masterLevel?: number;
+  onJobPoints?: (v: number) => void;
+  onMasterLevel?: (v: number) => void;
 }) {
+  const gifts = useMemo(() => unlockedGifts(mainJob, jobPoints), [mainJob, jobPoints]);
+  const upcoming = useMemo(() => nextGift(mainJob, jobPoints), [mainJob, jobPoints]);
   const selected = useMemo(() => new Set(buffIds ?? []), [buffIds]);
   const groups = useMemo(() => {
     const m: Record<string, string[]> = {};
@@ -42,6 +56,34 @@ export function BuffPanel({
           <Badge variant="outline" className="mr-1 border-primary/40 text-primary">Low</Badge> sets use only personal buffs (food, JA, self haste).
           <Badge variant="outline" className="mx-1 border-primary/40 text-primary">High</Badge> sets add every party buff selected below.
         </p>
+        <div className="rounded-md bg-secondary/40 p-3">
+          <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wide text-primary"><GraduationCap className="h-3.5 w-3.5" />Job Points &amp; Master Level</div>
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-xs text-muted-foreground space-y-1">
+              <Tooltip>
+                <TooltipTrigger asChild><span className="cursor-help">{mainJob || 'Job'} job points</span></TooltipTrigger>
+                <TooltipContent side="right" className="text-xs max-w-[260px]">
+                  Total job points spent on your main job (0-2100). Gifts such as Physical Attack/Accuracy Bonus, Double Attack Effect, Store TP Effect and Weapon Skill Damage are added to the math once you pass their threshold.
+                </TooltipContent>
+              </Tooltip>
+              <Input type="number" inputMode="numeric" min={0} max={MAX_JOB_POINTS} step={5} value={jobPoints} aria-label="Job points"
+                onChange={(e) => onJobPoints?.(Number(e.target.value))} className="h-8 text-xs" />
+            </label>
+            <label className="text-xs text-muted-foreground space-y-1">
+              <Tooltip>
+                <TooltipTrigger asChild><span className="cursor-help">Master Level</span></TooltipTrigger>
+                <TooltipContent side="right" className="text-xs max-w-[260px]">
+                  Each Master Level adds +1 to every base attribute and +1 to your weapon skill caps (0-50).
+                </TooltipContent>
+              </Tooltip>
+              <Input type="number" inputMode="numeric" min={0} max={MAX_MASTER_LEVEL} value={masterLevel} aria-label="Master level"
+                onChange={(e) => onMasterLevel?.(Number(e.target.value))} className="h-8 text-xs" />
+            </label>
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {gifts.length} stat gift{gifts.length === 1 ? '' : 's'} unlocked{upcoming ? ` · next: ${upcoming[3]} +${upcoming[2]} at ${upcoming[0]} JP` : ' · all gifts unlocked'}
+          </p>
+        </div>
         <div className="rounded-md bg-secondary/40 p-3">
           <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wide text-primary"><Users className="h-3.5 w-3.5" />Unity Ranking</div>
           <div className="flex items-center justify-between gap-2">

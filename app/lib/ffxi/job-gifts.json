@@ -1,0 +1,2914 @@
+{
+"WAR":[
+[
+5,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+100,
+"crithitrate",
+5,
+"Critical Hit Bonus"
+],
+[
+125,
+"doubleAttack",
+2,
+"Double Attack Effect"
+],
+[
+150,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+180,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+450,
+"doubleAttack",
+2,
+"Double Attack Effect"
+],
+[
+500,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+550,
+"allWsdmgFirstHit",
+3,
+"Weapon Skill Damage"
+],
+[
+605,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1050,
+"doubleAttack",
+3,
+"Double Rate Attack"
+],
+[
+1125,
+"critDmgIncrease",
+3,
+"Critical Damage Bonus"
+],
+[
+1200,
+"crithitrate",
+5,
+"Critical Hit Bonus"
+],
+[
+1280,
+"DEF",
+25,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1900,
+"doubleAttack",
+3,
+"Double Attack Effect"
+],
+[
+2000,
+"critDmgIncrease",
+3,
+"Critical Damage Bonus"
+]
+],
+"MNK":[
+[
+5,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+8,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+6,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+100,
+"martialArts",
+5,
+"Martial Arts Effect"
+],
+[
+125,
+"subtleBlow",
+2,
+"Subtle Blow Effect"
+],
+[
+180,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+12,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+9,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+450,
+"subtleBlow",
+2,
+"Subtle Blow Effect"
+],
+[
+605,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+16,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+11,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1050,
+"subtleBlow",
+3,
+"Subtle Blow Effect"
+],
+[
+1200,
+"martialArts",
+5,
+"Martial Arts Effect"
+],
+[
+1280,
+"DEF",
+13,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+15,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1900,
+"subtleBlow",
+3,
+"Subtle Blow Effect"
+]
+],
+"WHM":[
+[
+10,
+"MATT",
+3,
+"Magic Attack Bonus"
+],
+[
+20,
+"MEVA",
+7,
+"Magic Evasion Bonus"
+],
+[
+30,
+"MACC",
+7,
+"Magic Accuracy Bonus"
+],
+[
+45,
+"ACC",
+2,
+"Physical Accuracy Bonus"
+],
+[
+125,
+"curePotency",
+5,
+"Cure Potency Bonus"
+],
+[
+210,
+"MATT",
+5,
+"Magic Attack Bonus"
+],
+[
+245,
+"MEVA",
+11,
+"Magic Evasion Bonus"
+],
+[
+280,
+"MACC",
+11,
+"Magic Accuracy Bonus"
+],
+[
+320,
+"ACC",
+3,
+"Physical Accuracy Bonus"
+],
+[
+450,
+"curePotency",
+5,
+"Cure Potency Bonus"
+],
+[
+660,
+"MATT",
+6,
+"Magic Attack Bonus"
+],
+[
+720,
+"MEVA",
+14,
+"Magic Evasion Bonus"
+],
+[
+780,
+"MACC",
+14,
+"Magic Accuracy Bonus"
+],
+[
+845,
+"ACC",
+4,
+"Physical Accuracy Bonus"
+],
+[
+1050,
+"curePotency",
+6,
+"Cure Potency Bonus"
+],
+[
+1360,
+"MATT",
+8,
+"Magic Attack Bonus"
+],
+[
+1445,
+"MEVA",
+18,
+"Magic Evasion Bonus"
+],
+[
+1530,
+"MACC",
+18,
+"Magic Accuracy Bonus"
+],
+[
+1620,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+1900,
+"curePotency",
+7,
+"Cure Potency Bonus"
+]
+],
+"BLM":[
+[
+10,
+"MATT",
+7,
+"Magic Attack Bonus"
+],
+[
+20,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+30,
+"MACC",
+6,
+"Magic Accuracy Bonus"
+],
+[
+80,
+"magicBurstBonusII",
+5,
+"Magic Burst Damage Bonus"
+],
+[
+125,
+"magicDamage",
+5,
+"Magic Damage Bonus"
+],
+[
+210,
+"MATT",
+11,
+"Magic Attack Bonus"
+],
+[
+245,
+"MEVA",
+9,
+"Magic Evasion Bonus"
+],
+[
+280,
+"MACC",
+9,
+"Magic Accuracy Bonus"
+],
+[
+405,
+"magicBurstBonusII",
+5,
+"Magic Burst Damage Bonus"
+],
+[
+450,
+"magicDamage",
+5,
+"Magic Damage Bonus"
+],
+[
+660,
+"MATT",
+14,
+"Magic Attack Bonus"
+],
+[
+720,
+"MEVA",
+12,
+"Magic Evasion Bonus"
+],
+[
+780,
+"MACC",
+12,
+"Magic Accuracy Bonus"
+],
+[
+980,
+"magicBurstBonusII",
+6,
+"Magic Burst Damage Bonus"
+],
+[
+1050,
+"magicDamage",
+6,
+"Magic Damage Bonus"
+],
+[
+1360,
+"MATT",
+18,
+"Magic Attack Bonus"
+],
+[
+1445,
+"MEVA",
+15,
+"Magic Evasion Bonus"
+],
+[
+1530,
+"MACC",
+15,
+"Magic Accuracy Bonus"
+],
+[
+1805,
+"magicBurstBonusII",
+7,
+"Magic Burst Damage Bonus"
+],
+[
+1900,
+"magicDamage",
+7,
+"Magic Damage Bonus"
+]
+],
+"RDM":[
+[
+10,
+"MATT",
+4,
+"Magic Attack Bonus"
+],
+[
+20,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+30,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+45,
+"ACC",
+3,
+"Physical Accuracy Bonus"
+],
+[
+150,
+"fastcast",
+2,
+"Fast Cast Effect"
+],
+[
+210,
+"MATT",
+6,
+"Magic Attack Bonus"
+],
+[
+245,
+"MEVA",
+12,
+"Magic Evasion Bonus"
+],
+[
+280,
+"MACC",
+15,
+"Magic Accuracy Bonus"
+],
+[
+320,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+500,
+"fastcast",
+2,
+"Fast Cast Effect"
+],
+[
+660,
+"MATT",
+8,
+"Magic Attack Bonus"
+],
+[
+720,
+"MEVA",
+16,
+"Magic Evasion Bonus"
+],
+[
+780,
+"MACC",
+20,
+"Magic Accuracy Bonus"
+],
+[
+845,
+"ACC",
+6,
+"Physical Accuracy Bonus"
+],
+[
+1125,
+"fastcast",
+2,
+"Fast Cast Effect"
+],
+[
+1360,
+"MATT",
+10,
+"Magic Attack Bonus"
+],
+[
+1445,
+"MEVA",
+20,
+"Magic Evasion Bonus"
+],
+[
+1530,
+"MACC",
+25,
+"Magic Accuracy Bonus"
+],
+[
+1620,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+2000,
+"fastcast",
+2,
+"Fast Cast Effect"
+]
+],
+"THF":[
+[
+5,
+"DEF",
+4,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+7,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+125,
+"tripleAttack",
+2,
+"Triple Attack Chance"
+],
+[
+150,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+180,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+11,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+450,
+"tripleAttack",
+2,
+"Triple Attack Chance"
+],
+[
+500,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+550,
+"dualWield",
+5,
+"Dual Wield Effect"
+],
+[
+605,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+14,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1050,
+"tripleAttack",
+2,
+"Triple Attack Chance"
+],
+[
+1125,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+1280,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+18,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1900,
+"tripleAttack",
+2,
+"Triple Attack Chance"
+],
+[
+2000,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+]
+],
+"PLD":[
+[
+5,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+4,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+4,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+6,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+23,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+6,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+6,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+9,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+9,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+30,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+8,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+12,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+12,
+"Magic Accuracy Bonus"
+],
+[
+1200,
+"curePotency",
+50,
+"Cure Potency Bonus"
+],
+[
+1280,
+"DEF",
+38,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+15,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+15,
+"Magic Accuracy Bonus"
+]
+],
+"DRK":[
+[
+5,
+"DEF",
+4,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+3,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+6,
+"Magic Accuracy Bonus"
+],
+[
+125,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+150,
+"allWsdmgFirstHit",
+2,
+"Weapon Skill Damage Bonus"
+],
+[
+180,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+23,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+9,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+9,
+"Magic Accuracy Bonus"
+],
+[
+450,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+500,
+"allWsdmgFirstHit",
+2,
+"Weapon Skill Damage Bonus"
+],
+[
+605,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+30,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+6,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+12,
+"Magic Accuracy Bonus"
+],
+[
+1050,
+"critDmgIncrease",
+2,
+"Critical Damage Dealt Bonus"
+],
+[
+1125,
+"allWsdmgFirstHit",
+2,
+"Weapon Skill Damage Bonus"
+],
+[
+1280,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+38,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+15,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+15,
+"Magic Accuracy Bonus"
+],
+[
+1900,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+2000,
+"allWsdmgFirstHit",
+2,
+"Weapon Skill Damage Bonus"
+]
+],
+"BST":[
+[
+5,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+25,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"BRD":[
+[
+5,
+"DEF",
+3,
+"Physical Defense Bonus"
+],
+[
+20,
+"ACC",
+2,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+245,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+720,
+"ACC",
+6,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+1445,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"RNG":[
+[
+5,
+"DEF",
+3,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+15,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+20,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+25,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"SAM":[
+[
+5,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+125,
+"storetp",
+2,
+"Store TP Effect"
+],
+[
+180,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+450,
+"storetp",
+2,
+"Store TP Effect"
+],
+[
+605,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1050,
+"storetp",
+2,
+"Store TP Effect"
+],
+[
+1280,
+"DEF",
+25,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1900,
+"storetp",
+2,
+"Store TP Effect"
+]
+],
+"NIN":[
+[
+5,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MATT",
+4,
+"Magic Attack Bonus"
+],
+[
+60,
+"MEVA",
+7,
+"Magic Evasion Bonus"
+],
+[
+80,
+"MACC",
+7,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+12,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+12,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MATT",
+6,
+"Magic Attack Bonus"
+],
+[
+360,
+"MEVA",
+11,
+"Magic Evasion Bonus"
+],
+[
+405,
+"MACC",
+11,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+16,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+16,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MATT",
+8,
+"Magic Attack Bonus"
+],
+[
+910,
+"MEVA",
+14,
+"Magic Evasion Bonus"
+],
+[
+980,
+"MACC",
+14,
+"Magic Accuracy Bonus"
+],
+[
+1200,
+"allWsdmgFirstHit",
+5,
+"Weapon Skill Damage Bonus"
+],
+[
+1280,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+20,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MATT",
+10,
+"Magic Attack Bonus"
+],
+[
+1710,
+"MEVA",
+18,
+"Magic Evasion Bonus"
+],
+[
+1805,
+"MACC",
+18,
+"Magic Accuracy Bonus"
+]
+],
+"DRG":[
+[
+5,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+9,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+80,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+180,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+14,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+405,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+605,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+18,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+980,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+1280,
+"DEF",
+25,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+23,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1805,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+]
+],
+"SMN":[
+[
+10,
+"MEVA",
+3,
+"Magic Evasion Bonus"
+],
+[
+20,
+"DEF",
+3,
+"Physical Defense Bonus"
+],
+[
+210,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+245,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+660,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+720,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+1360,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+1445,
+"DEF",
+8,
+"Physical Defense Bonus"
+]
+],
+"BLU":[
+[
+5,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+60,
+"MATT",
+5,
+"Magic Attack Bonus"
+],
+[
+80,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+125,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+360,
+"MATT",
+8,
+"Magic Attack Bonus"
+],
+[
+405,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+450,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+20,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+20,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+910,
+"MATT",
+10,
+"Magic Attack Bonus"
+],
+[
+980,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+1050,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+25,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+25,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1710,
+"MATT",
+13,
+"Magic Attack Bonus"
+],
+[
+1805,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1900,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"COR":[
+[
+5,
+"DEF",
+3,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+5,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+5,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MATT",
+2,
+"Magic Attack Bonus"
+],
+[
+60,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+80,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+8,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MATT",
+3,
+"Magic Attack Bonus"
+],
+[
+360,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+405,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+10,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+10,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MATT",
+4,
+"Magic Attack Bonus"
+],
+[
+910,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+980,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+13,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+13,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MATT",
+5,
+"Magic Attack Bonus"
+],
+[
+1710,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1805,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"PUP":[
+[
+5,
+"ATT",
+6,
+"Physical Attack Bonus"
+],
+[
+20,
+"ACC",
+7,
+"Physical Accuracy Bonus"
+],
+[
+30,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+45,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"ATT",
+9,
+"Physical Attack Bonus"
+],
+[
+245,
+"ACC",
+11,
+"Physical Accuracy Bonus"
+],
+[
+280,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+320,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+550,
+"martialArts",
+5,
+"Martial Arts Effect"
+],
+[
+605,
+"ATT",
+12,
+"Physical Attack Bonus"
+],
+[
+720,
+"ACC",
+14,
+"Physical Accuracy Bonus"
+],
+[
+780,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+845,
+"MACC",
+10,
+"Magic Accuracy bonus"
+],
+[
+1280,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+1445,
+"ACC",
+18,
+"Physical Accuracy Bonus"
+],
+[
+1530,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1620,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+],
+"DNC":[
+[
+5,
+"DEF",
+6,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+6,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+9,
+"Physical Accuracy Bonus"
+],
+[
+45,
+"MEVA",
+5,
+"Magic Evasion Bonus"
+],
+[
+60,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+80,
+"subtleBlow",
+3,
+"\"Subtle Blow\" Effect Bonus"
+],
+[
+125,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+180,
+"DEF",
+9,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+9,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+14,
+"Physical Accuracy Bonus"
+],
+[
+320,
+"MEVA",
+8,
+"Magic Evasion Bonus"
+],
+[
+360,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+405,
+"subtleBlow",
+3,
+"\"Subtle Blow\" Effect Bonus"
+],
+[
+450,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+550,
+"dualWield",
+5,
+"Dual Wield Effect"
+],
+[
+605,
+"DEF",
+12,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+12,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+18,
+"Physical Accuracy Bonus"
+],
+[
+845,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+910,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+980,
+"subtleBlow",
+3,
+"\"Subtle Blow\" Effect Bonus"
+],
+[
+1050,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+],
+[
+1280,
+"DEF",
+15,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+15,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+23,
+"Physical Accuracy Bonus"
+],
+[
+1620,
+"MEVA",
+13,
+"Magic Evasion Bonus"
+],
+[
+1710,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+],
+[
+1805,
+"subtleBlow",
+4,
+"Subtle Blow Effect Bonus"
+],
+[
+1900,
+"critDmgIncrease",
+2,
+"Critical Damage Bonus"
+]
+],
+"SCH":[
+[
+10,
+"MATT",
+5,
+"Magic Attack Bonus"
+],
+[
+20,
+"MEVA",
+6,
+"Magic Evasion Bonus"
+],
+[
+30,
+"MACC",
+6,
+"Magic Accuracy Bonus"
+],
+[
+150,
+"magicBurstBonusII",
+3,
+"Magic Burst Damage Bonus"
+],
+[
+210,
+"MATT",
+8,
+"Magic Attack Bonus"
+],
+[
+245,
+"MEVA",
+9,
+"Magic Evasion Bonus"
+],
+[
+280,
+"MACC",
+9,
+"Magic Accuracy Bonus"
+],
+[
+500,
+"magicBurstBonusII",
+3,
+"Magic Burst Damage Bonus"
+],
+[
+660,
+"MATT",
+10,
+"Magic Attack Bonus"
+],
+[
+720,
+"MEVA",
+12,
+"Magic Evasion Bonus"
+],
+[
+780,
+"MACC",
+12,
+"Magic Accuracy Bonus"
+],
+[
+1125,
+"magicBurstBonusII",
+3,
+"Magic Burst Damage Bonus"
+],
+[
+1360,
+"MATT",
+13,
+"Magic Attack Bonus"
+],
+[
+1445,
+"MEVA",
+15,
+"Magic Evasion Bonus"
+],
+[
+1530,
+"MACC",
+15,
+"Magic Accuracy Bonus"
+],
+[
+2000,
+"magicBurstBonusII",
+4,
+"Magic Burst Damage Bonus"
+]
+],
+"GEO":[
+[
+10,
+"MATT",
+6,
+"Magic Attack Bonus"
+],
+[
+20,
+"MEVA",
+7,
+"Magic Evasion Bonus"
+],
+[
+30,
+"MACC",
+7,
+"Magic Accuracy Bonus"
+],
+[
+150,
+"magicDamage",
+3,
+"Magic Damage Bonus"
+],
+[
+210,
+"MATT",
+9,
+"Magic Attack Bonus"
+],
+[
+245,
+"MEVA",
+11,
+"Magic Evasion Bonus"
+],
+[
+280,
+"MACC",
+11,
+"Magic Accuracy Bonus"
+],
+[
+500,
+"magicDamage",
+3,
+"Magic Damage Bonus"
+],
+[
+660,
+"MATT",
+12,
+"Magic Attack Bonus"
+],
+[
+720,
+"MEVA",
+14,
+"Magic Evasion Bonus"
+],
+[
+780,
+"MACC",
+14,
+"Magic Accuracy Bonus"
+],
+[
+1125,
+"magicDamage",
+3,
+"Magic Damage Bonus"
+],
+[
+1360,
+"MATT",
+15,
+"Magic Attack Bonus"
+],
+[
+1445,
+"MEVA",
+18,
+"Magic Evasion Bonus"
+],
+[
+1530,
+"MACC",
+18,
+"Magic Accuracy Bonus"
+],
+[
+2000,
+"magicDamage",
+4,
+"Magic Damage Bonus"
+]
+],
+"RUN":[
+[
+5,
+"DEF",
+5,
+"Physical Defense Bonus"
+],
+[
+10,
+"ATT",
+7,
+"Physical Attack Bonus"
+],
+[
+30,
+"ACC",
+8,
+"Physical Accuracy Bonus"
+],
+[
+60,
+"MEVA",
+10,
+"Magic Evasion Bonus"
+],
+[
+80,
+"MACC",
+5,
+"Magic Accuracy Bonus"
+],
+[
+180,
+"DEF",
+8,
+"Physical Defense Bonus"
+],
+[
+210,
+"ATT",
+11,
+"Physical Attack Bonus"
+],
+[
+280,
+"ACC",
+12,
+"Physical Accuracy Bonus"
+],
+[
+360,
+"MEVA",
+15,
+"Magic Evasion Bonus"
+],
+[
+405,
+"MACC",
+8,
+"Magic Accuracy Bonus"
+],
+[
+605,
+"DEF",
+10,
+"Physical Defense Bonus"
+],
+[
+660,
+"ATT",
+14,
+"Physical Attack Bonus"
+],
+[
+780,
+"ACC",
+16,
+"Physical Accuracy Bonus"
+],
+[
+910,
+"MEVA",
+20,
+"Magic Evasion Bonus"
+],
+[
+980,
+"MACC",
+10,
+"Magic Accuracy Bonus"
+],
+[
+1280,
+"DEF",
+13,
+"Physical Defense Bonus"
+],
+[
+1360,
+"ATT",
+18,
+"Physical Attack Bonus"
+],
+[
+1530,
+"ACC",
+20,
+"Physical Accuracy Bonus"
+],
+[
+1710,
+"MEVA",
+25,
+"Magic Evasion Bonus"
+],
+[
+1805,
+"MACC",
+13,
+"Magic Accuracy Bonus"
+]
+]
+}
