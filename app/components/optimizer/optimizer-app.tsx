@@ -7,6 +7,7 @@ import { Sword, Package, LogIn, LogOut, Play, Loader2, Sparkles, Settings2, Targ
 import { toast } from 'sonner';
 import { loadGearDb } from '@/lib/ffxi/gear-loader';
 import { evaluateSet } from '@/lib/ffxi/optimizer';
+import { buildAugmentedItem } from '@/lib/ffxi/augments';
 import type { GearDB, GearSet, OptimizedSet, Slot, BuffTier } from '@/lib/ffxi/types';
 import { useAppStore, resolveTarget } from '@/lib/store';
 import { useOptimizer } from './use-optimizer';
@@ -33,7 +34,15 @@ export function OptimizerApp({ user }: { user: User }) {
   const db = useMemo<GearDB | null>(() => {
     if (!baseDb) return null;
     const extra = s.extraItems ?? {};
-    return Object.keys(extra).length ? { ...baseDb, ...extra } : baseDb;
+    if (!Object.keys(extra).length) return baseDb;
+    // Re-derive every augmented copy from the current base row + augment parser, so imports saved before a parser or
+    // path-table improvement pick up the new stats without re-importing.
+    const rebuilt: GearDB = {};
+    for (const [k, it] of Object.entries(extra)) {
+      const base = it.baseId !== undefined ? baseDb[String(it.baseId)] : undefined;
+      rebuilt[k] = base ? buildAugmentedItem(base, it.augments ?? [], it.id) : it;
+    }
+    return { ...baseDb, ...rebuilt };
   }, [baseDb, s.extraItems]);
   const [dbError, setDbError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);

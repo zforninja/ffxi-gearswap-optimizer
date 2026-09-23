@@ -228,6 +228,18 @@ EQUIP_KEYS = ('DEF', 'HP', 'MP', 'STR', 'DEX', 'VIT', 'AGI', 'INT', 'MND', 'CHR'
               'magicBurstBonusCapped', 'conserveMp', 'skillchaindmg', 'tpBonus', 'wsacc', 'magicDamage',
               'moveSpeedGearBonus', 'martialArts', 'quadAttack')
 
+# The description parser and LSB name the same in-game line differently. When LSB already supplied one of these,
+# the description-derived twin must not be added on top (it double counted: Thrud/Ishvara/Ratri got WSD twice).
+ALIAS_GROUPS = [('allWsdmgAllHits', 'allWsdmgFirstHit')]
+
+
+def has_alias(stats: dict, key: str) -> bool:
+    for grp in ALIAS_GROUPS:
+        if key in grp:
+            return any(k in stats and k != key for k in grp)
+    return False
+
+
 PERCENT_KEYS = {'doubleAttack', 'tripleAttack', 'quadAttack', 'crithitrate', 'critDmgIncrease', 'storetp', 'dualWield', 'fastcast', 'allWsdmgFirstHit', 'curePotency', 'enmity'}
 
 
@@ -285,6 +297,8 @@ def main():
             # LSB has mods: add any key the description has that LSB lacks entirely
             added = False
             for k, v in equip_parsed.items():
+                if has_alias(stats, k):
+                    continue
                 if k not in stats:
                     stats[k] = v
                     added = True
@@ -293,6 +307,10 @@ def main():
                     scale_fixed.append((g['displayName'], k, stats[k], v))
                     stats[k] = v
                     added = True
+            # Gear "Weapon skill damage +n%" is first-hit only: fold LSB's AllHits key into FirstHit (max of the two)
+            if 'allWsdmgAllHits' in stats:
+                stats['allWsdmgFirstHit'] = max(stats.get('allWsdmgFirstHit', 0), stats.pop('allWsdmgAllHits'))
+                added = True
             if added:
                 g['stats'] = stats
                 g['statsSource'] = 'lsb+description'

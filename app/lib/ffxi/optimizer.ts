@@ -393,6 +393,84 @@ export function optimizeHybrid(db: GearDB, cands: Candidates, cfg: OptimizerConf
   return polished;
 }
 
+
+/** True when no item id is used more often than the player owns it. */
+function withinInventory(set: GearSet, inventory: Inventory): boolean {
+  const used = new Map<number, number>();
+  for (const s of Object.keys(set ?? {}) as Slot[]) {
+    const id = set[s];
+    if (id == null) continue;
+    used.set(id, (used.get(id) ?? 0) + 1);
+  }
+  for (const [id, n] of used) if (n > (inventory?.[id] ?? 0)) return false;
+  return true;
+}
+
+/**
+ * Pairwise-swap refinement. Per-slot coordinate ascent (optimizeContext) stops at a local optimum whenever two
+ * slots only pay off together (e.g. a piece that lifts STR past a WS-modifier breakpoint plus an accuracy piece
+ * elsewhere that keeps the hit rate at its cap). Every pair of non-weapon slots is re-searched jointly over a
+ * short list of promising items per slot, until no pair improves the score. Weapons and suits are left alone.
+ * On full-inventory tests (SAM Tachi: Fudo, WAR Upheaval) the greedy WS set was 6% below the pair-swap result.
+ */
+export function refineSet(
+  db: GearDB,
+  cands: Candidates,
+  cfg: OptimizerConfig,
+  ctx: PlayerContext,
+  oc: OptimizeContext,
+  start: { gear: GearSet; evaluation: SetEvaluation },
+  topK = 15,
+  maxPasses = 5,
+): { gear: GearSet; evaluation: SetEvaluation } {
+  const evalOf = (g: GearSet) => scoreSet(g, db, ctx, oc, cfg.primaryWs);
+  let gear: GearSet = { ...start.gear };
+  let evaluation = start.evaluation;
+  const slots = SLOTS.filter((s: Slot) => s !== 'main' && s !== 'sub');
+
+  for (let pass = 0; pass < maxPasses; pass++) {
+    const blocked = blockedSlots(gear, db);
+    const open = slots.filter((s: Slot) => !blocked[s]);
+    // shortlist: current item, empty, and the topK items by single-swap score
+    const short = new Map<Slot, (GearItem | undefined)[]>();
+    for (const slot of open) {
+      const scored: { item: GearItem; score: number }[] = [];
+      for (const item of cands[slot] ?? []) {
+        if (item?.id == null || isBlockingItem(item)) continue;
+        const trial: GearSet = { ...gear, [slot]: item.id };
+        if (!withinInventory(trial, cfg.inventory)) continue;
+        scored.push({ item, score: evalOf(trial).score });
+      }
+      scored.sort((a, b) => b.score - a.score);
+      const list: (GearItem | undefined)[] = scored.slice(0, topK).map((x) => x.item);
+      const cur = gear[slot] != null ? db?.[String(gear[slot])] : undefined;
+      if (cur && !list.some((i) => i?.id === cur.id)) list.push(cur);
+      list.push(undefined);
+      short.set(slot, list);
+    }
+    let improved = false;
+    for (let i = 0; i < open.length; i++) {
+      for (let j = i + 1; j < open.length; j++) {
+        const si = open[i] as Slot;
+        const sj = open[j] as Slot;
+        for (const a of short.get(si) ?? []) {
+          for (const b of short.get(sj) ?? []) {
+            const trial: GearSet = { ...gear };
+            if (a) trial[si] = a.id; else delete trial[si];
+            if (b) trial[sj] = b.id; else delete trial[sj];
+            if (trial[si] === gear[si] && trial[sj] === gear[sj]) continue;
+            if (!withinInventory(trial, cfg.inventory)) continue;
+            const e = evalOf(trial);
+            if (e.score > evaluation.score + 1e-6) { gear = trial; evaluation = e; improved = true; }
+          }
+        }
+      }
+    }
+    if (!improved) break;
+  }
+  return { gear, evaluation };
+}
+
 export type ProgressFn = (done: number, total: number, label: string) => void;
 
 export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: ProgressFn): OptimizedSet[] {
@@ -406,7 +484,8 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
 
   for (const tier of tiers) {
     const ctx: PlayerContext = { mainJob: cfg.mainJob, subJob: cfg.subJob, buffIds: tierBuffIds(cfg.buffIds, tier), target: cfg.target, unityRank: cfg.unityRank ?? 1 };
-    const push = (key: string, label: string, oc: OptimizeContext, r: { gear: GearSet; evaluation: SetEvaluation }) => {
+    const push = (key: string, label: string, oc: OptimizeContext, r0: { gear: GearSet; evaluation: SetEvaluation }) => {
+      const r = cfg.refine === false ? r0 : refineSet(db, cands, cfg, ctx, oc, r0);
       results.push({ key: `${key}:${tier}`, label, context: oc, tier, gear: r.gear, evaluation: r.evaluation });
     };
 

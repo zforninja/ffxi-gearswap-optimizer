@@ -10,12 +10,20 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { itemStatList } from './gear-grid';
 import { augmentKey, augmentVirtualId, buildAugmentedItem, isAugmentedId } from '@/lib/ffxi/augments';
+import { parseInvdumpCsv } from '@/lib/ffxi/csv-import';
 
 export type ParsedExport = {
   characterName: string; mainJob?: string; subJob?: string; inventory: Inventory; raw: string; unknown: number;
   /** Virtual augmented items (id >= 1,000,000) referenced by `inventory`. */
   extraItems: GearDB;
   augmented: number;
+  /** augment strings that were not understood, and path/rank pieces whose stats come from the base row only */
+  unparsedAugments: string[];
+  pathRankItems: number;
+  /** Path/Rank pieces whose augments were resolved from the BG-Wiki path table (Unity +1, Dynamis-D necks/weapons). */
+  pathResolvedItems?: number;
+  /** Unity items invdump flagged as stale (all-zero extdata): their real bonus imported as zero. CSV import only. */
+  staleUnityItems?: { id: number; name: string; container: string; slot: number }[];
 };
 
 function augmentList(it: any): string[] {
@@ -32,12 +40,22 @@ export function parseGearExport(text: string, db: GearDB): ParsedExport | null {
   const extraItems: GearDB = {};
   let unknown = 0;
   let augmented = 0;
+  const unparsedAugments: string[] = [];
+  let pathRankItems = 0;
+  let pathResolvedItems = 0;
+  const staleUnityItems: { id: number; name: string; container: string; slot: number }[] = [];
   for (const it of items) {
     const id = Number(it?.id ?? it?.itemId ?? it?.item_id);
     if (!Number.isFinite(id) || id <= 0) continue;
     const base = db?.[String(id)];
     if (!base) { unknown++; continue; }
     const count = Math.max(1, Number(it?.count ?? 1) || 1);
+    // GearExport addon v1.2+: `stale: true` means the item's extdata was present but all-zero, i.e. Windower
+    // never actually synced that slot this session. For a known-Unity item that always carries a real bonus,
+    // so surface it instead of silently importing at zero. See docs/STALE_EXTDATA_IMPORT.md.
+    if (it?.stale === true && base.unity) {
+      staleUnityItems.push({ id, name: base.displayName, container: String(it?.bag ?? ''), slot: Number(it?.slotIndex ?? 0) || 0 });
+    }
     const augs = augmentList(it);
     if (augs.length === 0) {
       inv[id] = (inv[id] ?? 0) + count;
@@ -47,12 +65,19 @@ export function parseGearExport(text: string, db: GearDB): ParsedExport | null {
     const key = augmentKey(id, augs);
     let vid = augmentVirtualId(key);
     while (extraItems[String(vid)] && extraItems[String(vid)]!.baseId !== id) vid++;
-    if (!extraItems[String(vid)]) { extraItems[String(vid)] = buildAugmentedItem(base, augs, vid); augmented++; }
+    if (!extraItems[String(vid)]) {
+      const built = buildAugmentedItem(base, augs, vid);
+      extraItems[String(vid)] = built;
+      augmented++;
+      for (const u of built.unparsedAugments ?? []) if (!unparsedAugments.includes(u)) unparsedAugments.push(u);
+      if ((built.pathRank ?? []).length) pathRankItems++;
+      if ((built.resolvedAugments ?? []).length) pathResolvedItems++;
+    }
     inv[vid] = (inv[vid] ?? 0) + count;
   }
   return {
     characterName: String(data?.character?.name ?? data?.player ?? ''), mainJob: data?.character?.mainJob, subJob: data?.character?.subJob,
-    inventory: inv, raw: text, unknown, extraItems, augmented,
+    inventory: inv, raw: text, unknown, extraItems, augmented, unparsedAugments, pathRankItems, pathResolvedItems, staleUnityItems,
   };
 }
 
@@ -101,10 +126,20 @@ export function InventoryDialog({ open, onOpenChange, db, inventory, extraItems,
     if (!file || !db) return;
     try {
       const text = await file.text();
-      const parsed = parseGearExport(text, db);
-      if (!parsed) { toast.error('Could not read this file. Export with the GearExport addon and try again.'); return; }
+      // The GearExport addon writes JSON; invdump (and similar inventory-dump addons) write CSV with an
+      // item_id/extdata header. Try CSV first when the file extension says so or JSON parsing fails.
+      const looksJson = /^\s*[[{]/.test(text);
+      const parsed = (file.name.toLowerCase().endsWith('.csv') || !looksJson) ? (parseInvdumpCsv(text, db) ?? parseGearExport(text, db)) : (parseGearExport(text, db) ?? parseInvdumpCsv(text, db));
+      if (!parsed) { toast.error('Could not read this file. Export with the GearExport or invdump addon and try again.'); return; }
       setLastRaw(text);
       onImport?.(parsed);
+      if (parsed.unparsedAugments.length) toast.warning(`${parsed.unparsedAugments.length} augment string(s) were not understood and count as zero: ${parsed.unparsedAugments.slice(0, 5).join(' | ')}${parsed.unparsedAugments.length > 5 ? ' …' : ''}`);
+      if (parsed.pathResolvedItems) toast.info(`${parsed.pathResolvedItems} Path/Rank piece(s) resolved to their Unity / Dynamis-D path augments (scaled by rank).`);
+      if (parsed.pathRankItems) toast.warning(`${parsed.pathRankItems} Path/Rank piece(s) are not in the path table yet: stats come from the base database row, not your chosen path.`);
+      if (parsed.staleUnityItems?.length) {
+        const names = parsed.staleUnityItems.map((s) => `${s.name} (${s.container})`).slice(0, 5).join(', ');
+        toast.warning(`${parsed.staleUnityItems.length} Unity item(s) had no augment data captured (Windower never synced that slot) and imported with zero bonus: ${names}${parsed.staleUnityItems.length > 5 ? ' …' : ''}. Open each bag in-game once, then re-export.`, { duration: 12000 });
+      }
       toast.success(`Imported ${Object.keys(parsed.inventory).length} items${parsed.characterName ? ` for ${parsed.characterName}` : ''}${parsed.augmented ? `, ${parsed.augmented} augmented` : ''}${parsed.unknown ? ` (${parsed.unknown} unknown skipped)` : ''}`);
     } catch (e) {
       console.error(e);
@@ -142,7 +177,7 @@ export function InventoryDialog({ open, onOpenChange, db, inventory, extraItems,
       const extra = (stored.__extraItems ?? {}) as GearDB;
       delete stored.__extraItems;
       const inv = stored as unknown as Inventory;
-      onImport?.({ characterName: d?.inventory?.characterName ?? '', inventory: inv, raw: '', unknown: 0, extraItems: extra, augmented: Object.keys(extra).length });
+      onImport?.({ characterName: d?.inventory?.characterName ?? '', inventory: inv, raw: '', unknown: 0, extraItems: extra, augmented: Object.keys(extra).length, unparsedAugments: [], pathRankItems: 0 });
       toast.success(`Loaded ${Object.keys(inv).length} items`);
     } catch (e) { console.error(e); toast.error('Could not load inventory'); } finally { setBusy(false); }
   };
@@ -158,7 +193,7 @@ export function InventoryDialog({ open, onOpenChange, db, inventory, extraItems,
       <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle className="font-display flex items-center gap-2"><Package className="h-5 w-5 text-primary" /> Inventory <Badge variant="secondary" className="ml-1 font-mono">{count} items</Badge></DialogTitle>
-          <DialogDescription>Import the JSON file produced by the GearExport Windower addon (v1.1+ includes augments), or add items by hand. Your inventory is stored in this browser{loggedIn ? ' and can be synced to your account' : ''}.</DialogDescription>
+          <DialogDescription>Import the JSON file from the GearExport addon (v1.2+ flags stale Unity data) or a compatible CSV export, or add items by hand. Your inventory is stored in this browser{loggedIn ? ' and can be synced to your account' : ''}.</DialogDescription>
         </DialogHeader>
         <Tabs defaultValue="import">
           <TabsList className="grid grid-cols-3">
@@ -169,7 +204,7 @@ export function InventoryDialog({ open, onOpenChange, db, inventory, extraItems,
           <TabsContent value="import" className="space-y-3">
             <div className="rounded-md bg-secondary/40 p-4 text-sm space-y-2">
               <p>In game run <code className="font-mono text-primary">//gearexport</code> (or <code className="font-mono text-primary">//ge</code>) with the addon loaded. The file is written to <code className="font-mono">Windower/addons/GearExport/data/&lt;Character&gt;.json</code>.</p>
-              <input ref={fileRef} type="file" accept=".json,application/json" className="hidden" onChange={(e) => void handleFile(e.target.files?.[0])} />
+              <input ref={fileRef} type="file" accept=".json,application/json,.csv,text/csv" className="hidden" onChange={(e) => void handleFile(e.target.files?.[0])} />
               <Button onClick={() => fileRef.current?.click()} disabled={!db}><Upload className="h-4 w-4 mr-2" /> Choose export file</Button>
               {count > 0 ? <Button variant="ghost" className="ml-2 text-destructive" onClick={() => { if (confirm('Clear the current inventory?')) onClear?.(); }}><Trash2 className="h-4 w-4 mr-2" /> Clear inventory</Button> : null}
             </div>

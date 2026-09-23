@@ -6,7 +6,7 @@ let pending: Promise<GearDB> | null = null;
 export async function loadGearDb(): Promise<GearDB> {
   if (cache) return cache;
   if (pending) return pending;
-  pending = fetch('/data/gear_database.json?v=4')
+  pending = fetch('/data/gear_database.json?v=5')
     .then(async (r: Response) => {
       if (!r?.ok) throw new Error(`Failed to load gear database (${r?.status})`);
       const data = (await r.json()) as GearDB;

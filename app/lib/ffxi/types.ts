@@ -37,17 +37,30 @@ export type GearItem = {
   /** Set on virtual augmented copies (id >= 1,000,000): the real item id and the augment strings. */
   baseId?: number;
   augments?: string[];
+  /** Augment strings the parser could not turn into stats (the piece is under-valued by their value). */
+  unparsedAugments?: string[];
+  /** Path/Rank augment strings (Nyame/Sakpata's/Odyssey-style gear): stats depend on the path, which the base DB row cannot express. */
+  pathRank?: string[];
+  /** Concrete augment lines expanded from `Path:`/`Rank:` via the BG-Wiki path table (already counted in stats). */
+  resolvedAugments?: string[];
   /** Unity Ranking bonus: stat -> [value at the lowest rank, value at rank 1]. */
   unity?: Record<string, [number, number]>;
 };
 
 export const UNITY_MAX_RANK = 11;
 
-/** Linear interpolation of a Unity Ranking bonus for a given rank (1 = best, 11 = lowest). */
+/**
+ * Fraction of the rank-1 (maximum) Unity Ranking bonus received at each rank (index 0 = rank 1 ... index 10 = rank 11).
+ * PLACEHOLDER: linear, which is a guess. Replace with the verified per-rank values (BG-Wiki "Unity Concord" /
+ * in-game item text at several ranks) - that is the only place the curve lives.
+ */
+export const UNITY_RANK_FRACTION: number[] = Array.from({ length: UNITY_MAX_RANK }, (_: unknown, i: number) => (UNITY_MAX_RANK - 1 - i) / (UNITY_MAX_RANK - 1));
+
+/** Unity Ranking bonus for a given rank (1 = best, 11 = lowest): interpolates between the [lowest-rank, rank-1] values. */
 export function unityBonus(range: [number, number] | undefined, rank: number): number {
   if (!range) return 0;
   const r = Math.min(UNITY_MAX_RANK, Math.max(1, Math.round(rank ?? 1)));
-  const t = (UNITY_MAX_RANK - r) / (UNITY_MAX_RANK - 1); // rank 1 -> 1, rank 11 -> 0
+  const t = UNITY_RANK_FRACTION[r - 1] ?? 0;
   return Math.round(range[0] + (range[1] - range[0]) * t);
 }
 
@@ -207,4 +220,6 @@ export type OptimizerConfig = {
   wsNames: string[];
   /** Unity Ranking of the player's Unity (1 = best bonus ... 11). */
   unityRank?: number;
+  /** Run the pairwise-swap refinement pass on every result (default true). */
+  refine?: boolean;
 };

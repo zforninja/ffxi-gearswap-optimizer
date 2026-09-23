@@ -47,6 +47,18 @@ GearExport: Scanned 12 bag(s). File: .../addons/GearExport/data/Nekomata.json
 
 Then upload `data/<CharName>.json` to the optimizer.
 
+If a Unity Ranking item comes back with no augment data (see "Stale Unity items"
+below), you'll instead see something like:
+
+```
+GearExport: 1 Unity item(s) had no augment data this session (stale cache), their bonus exported as zero: Grounded Mantle (Wardrobe 7 slot 34). Open each bag in your in-game Items menu once, then //ge again.
+GearExport: Exported 312 equipment items for Nekomata (WAR/SAM)
+GearExport: Scanned 12 bag(s). File: .../addons/GearExport/data/Nekomata.json
+```
+
+The file is still written and still usable - just re-export after opening the
+named bag(s) once, so that item's Unity bonus isn't optimized as zero.
+
 ### Bags scanned
 
 | Bag id | Bag | Readable |
@@ -85,7 +97,7 @@ currency and furniture are ignored.
     "subJobId": 12
   },
   "exportDate": "2026-09-20T12:00:00",
-  "addonVersion": "1.1.0",
+  "addonVersion": "1.3.0",
   "bags": [
     { "name": "Inventory", "bagId": 0, "max": 80, "itemCount": 54, "equipmentCount": 21 }
   ],
@@ -102,7 +114,8 @@ currency and furniture are ignored.
       "level": 99,
       "iLevel": 119,
       "category": "Weapon",
-      "augments": []
+      "augments": [],
+      "stale": false
     },
     {
       "id": 26857,
@@ -116,7 +129,8 @@ currency and furniture are ignored.
       "level": 99,
       "iLevel": 119,
       "category": "Armor",
-      "augments": ["Accuracy+25", "\"Triple Atk.\"+3", "STR+8", "Weapon skill damage +4%"]
+      "augments": ["Accuracy+25", "\"Triple Atk.\"+3", "STR+8", "Weapon skill damage +4%"],
+      "stale": false
     }
   ]
 }
@@ -139,6 +153,34 @@ Field notes:
 - Items in a Wardrobe with no entry in your Windower `resources` build are still
   exported, with `name` = `Unknown (<id>)` and `category` = `Unknown`. Update
   Windower resources if you see these.
+- `stale` — `true` when this item's extdata blob was present but every byte was
+  zero: Windower's cache never actually received this slot's data this session
+  (see "Stale Unity items" below). `false`, including for ordinary items with
+  no extdata at all, is the normal case.
+
+### Stale Unity items
+
+Windower populates each item's `extdata` (the augment/Path/Rank blob) from
+whatever the client has cached; GearExport only reads that cache, it never
+requests fresh data from the server. On some servers a bag's items don't get
+their full data pushed until you've opened that bag's tab in the in-game Items
+menu at least once in the current session - wardrobes 3 and up are the usual
+culprits, since most players rarely open them. When that happens the item's
+extdata comes back as 50 zero bytes instead of real data. A genuinely
+un-augmented item still carries a non-zero extdata header (creator/serial
+bytes), so all-zero is a reliable "this wasn't actually synced" signal - and
+since a real Unity Ranking item can never have a zero bonus, GearExport flags
+any known Unity item (`res.items` matched against the gear database's own
+Unity list) that comes back that way, both as a chat warning and as
+`"stale": true` on that item in the JSON. **Fix:** open the named bag(s) in
+your in-game Items menu once, then run `//ge` again.
+
+## Unity NPC path augments
+
+If a Unity item has an *optional* augment applied through the Unity NPC (not the always-on
+`Unity Ranking: "Store TP"+4~8` line - that one's always captured), this addon may not be able to see it. See
+`docs/UNITY_PATH_AUGMENTS.md` in the repo root for why, and run `//ge probe <bagId> <slot>` on that item to help
+pin down whether your Windower build can resolve it.
 
 ## Compatibility notes
 

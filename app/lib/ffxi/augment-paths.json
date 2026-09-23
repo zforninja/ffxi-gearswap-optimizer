@@ -1,0 +1,3153 @@
+{
+ "20852": {
+  "name": "Aizkora +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +45",
+    "\"Triple Attack\" +3%",
+    "\"Quadruple Attack\" +3%"
+   ]
+  }
+ },
+ "20607": {
+  "name": "Anathema Harpe +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+20",
+    "Accuracy & Magic Accuracy +40",
+    "Critical Hit Rate +10%"
+   ]
+  }
+ },
+ "20854": {
+  "name": "Beheader +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+53",
+    "Accuracy & Magic Accuracy +40",
+    "Haste +10%"
+   ]
+  }
+ },
+ "20807": {
+  "name": "Buramgh +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+30",
+    "Pet: Accuracy & Magic Accuracy +30",
+    "Accuracy & Magic Accuracy +35"
+   ]
+  }
+ },
+ "20697": {
+  "name": "Combuster +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+19",
+    "Accuracy & Mag. Accuracy +40",
+    "\"Store TP\"+10"
+   ]
+  }
+ },
+ "20508": {
+  "name": "Comeuppances +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX+20",
+    "Accuracy & Mag. Accuracy +40",
+    "\"Store TP\"+10",
+    "Pet: Accuracy & Mag. Accuracy +40"
+   ]
+  }
+ },
+ "20709": {
+  "name": "Demers. Degen +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +45",
+    "DEX +10",
+    "Sword Enhancement Spell Damage +50%"
+   ]
+  }
+ },
+ "20522": {
+  "name": "Emeici +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+30",
+    "Accuracy & Magic Accuracy +30",
+    "Critical Hit Rate +10%"
+   ]
+  }
+ },
+ "20528": {
+  "name": "Fists of Fury +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+14",
+    "Accuracy & Magic Accuracy +40",
+    "\"Regen\" +5"
+   ]
+  }
+ },
+ "20682": {
+  "name": "Flyssa +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+10",
+    "Accuracy & Mag. Accuracy +40",
+    "Damage taken -5%"
+   ]
+  }
+ },
+ "20943": {
+  "name": "Gae Derg +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+62",
+    "Accuracy & Magic Accuracy +40",
+    "\"Store TP\" +8"
+   ]
+  }
+ },
+ "21749": {
+  "name": "Habilitator +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+21",
+    "Accuracy & Mag. Accuracy +40",
+    "STR/DEX/CHR+10",
+    "Pet: Accuracy & Mag. Accuracy +40"
+   ]
+  }
+ },
+ "20609": {
+  "name": "Jugo Kukri +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+13",
+    "Accuracy & Magic Accuracy +40",
+    "Evasion +20"
+   ]
+  }
+ },
+ "21703": {
+  "name": "Kladenets +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+50",
+    "Accuracy & Magic Accuracy +40",
+    "\"Fast Cast\" +10%"
+   ]
+  }
+ },
+ "21035": {
+  "name": "Kunimune +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "TP Bonus +500",
+    "Accuracy & Magic Accuracy +30",
+    "STR +10"
+   ]
+  }
+ },
+ "20581": {
+  "name": "Kustawi +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Ranged Attack +20",
+    "Ranged Accuracy & Magic Accuracy +40",
+    "Enmity -5"
+   ]
+  }
+ },
+ "21091": {
+  "name": "Loxotic Mace +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+33",
+    "Accuracy & Magic Accuracy +40",
+    "Weapon Skill Damage +10%"
+   ]
+  }
+ },
+ "20800": {
+  "name": "Mdomo Axe +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+24",
+    "Accuracy & Magic Accuracy +40",
+    "Pet: Accuracy & Magic Accuracy +50"
+   ]
+  }
+ },
+ "21689": {
+  "name": "Montante +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+20",
+    "Accuracy & Mag. Accuracy +40",
+    "HP+100"
+   ]
+  }
+ },
+ "21030": {
+  "name": "Norifusa +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+10",
+    "Accuracy & Magic Accuracy +40",
+    "Skillchain Damage +20%"
+   ]
+  }
+ },
+ "21696": {
+  "name": "Nullis +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+33",
+    "Accuracy & Mag. Accuracy +40",
+    "Dark magic skill +10"
+   ]
+  }
+ },
+ "20805": {
+  "name": "Perun +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Ranged Attack +45",
+    "Ranged Accuracy & Magic Accuracy +30",
+    "\"Snapshot\" +5%"
+   ]
+  }
+ },
+ "21806": {
+  "name": "Pixquizpan +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+36",
+    "Accuracy & Magic Accuracy +40",
+    "Magic Attack Bonus +50"
+   ]
+  }
+ },
+ "20614": {
+  "name": "Pukulatmuj +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+38",
+    "Accuracy & Magic Accuracy +30",
+    "Sword Enhancement Spell Damage +150%"
+   ]
+  }
+ },
+ "20981": {
+  "name": "Raicho +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+20",
+    "Accuracy & Magic Accuracy +40",
+    "Magic Defense Bonus +5"
+   ]
+  }
+ },
+ "20612": {
+  "name": "Sangarius +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+35",
+    "Accuracy & Magic Accuracy +30",
+    "\"Quadruple Attack\" +3%"
+   ]
+  }
+ },
+ "20988": {
+  "name": "Tancho +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+25",
+    "Accuracy, Ranged Accuracy, & Magic Accuracy +20",
+    "Magic Attack Bonus +20"
+   ]
+  }
+ },
+ "20680": {
+  "name": "Tanmogayi +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG+11",
+    "Accuracy & Mag. Accuracy +40",
+    "Attack+40"
+   ]
+  }
+ },
+ "20604": {
+  "name": "Ternion Dagger +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+17",
+    "Accuracy & Magic Accuracy +40",
+    "Weapon Skill Damage +5%"
+   ]
+  }
+ },
+ "20899": {
+  "name": "Triska Scythe +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+56",
+    "Accuracy & Magic Accuracy +40",
+    "Critical Hit Rate +10%"
+   ]
+  }
+ },
+ "21691": {
+  "name": "Ushenzi +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+28",
+    "Accuracy & Magic Accuracy +40",
+    "\"Cure\" Potency Received +10%"
+   ]
+  }
+ },
+ "21165": {
+  "name": "Ababinili +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Healing Magic Skill +10",
+    "Enhancing Magic Skill +10",
+    "Damage Taken -10%"
+   ]
+  }
+ },
+ "22058": {
+  "name": "Contemplator +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +70",
+    "Enfeebling Magic Skill +20",
+    "MND +10"
+   ]
+  }
+ },
+ "21100": {
+  "name": "Magesmasher +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+45",
+    "Accuracy & Magic Accuracy +30",
+    "Weapon Skill Damage +15%"
+   ]
+  }
+ },
+ "21160": {
+  "name": "Marin Staff +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Attack Bonus +40",
+    "Accuracy & Magic Accuracy +40",
+    "INT/MND +10"
+   ]
+  }
+ },
+ "21163": {
+  "name": "Pouwhenua +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+45",
+    "Accuracy & Magic Accuracy +30",
+    "\"Store TP\" +10"
+   ]
+  }
+ },
+ "21076": {
+  "name": "Septoptic +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+10",
+    "Accuracy & Magic Accuracy +40",
+    "\"Mag. Atk. Bns.\"+30"
+   ]
+  }
+ },
+ "22267": {
+  "name": "Antitail +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Mag. Evasion+15",
+    "\"Double Attack\"+3"
+   ]
+  }
+ },
+ "22121": {
+  "name": "Imati +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+17",
+    "Ranged Accuracy +40",
+    "\"Snapshot\" +10%"
+   ]
+  }
+ },
+ "21484": {
+  "name": "Malison +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Rng. Atk.+45",
+    "Rng. Acc. & Mag. Acc. +40",
+    "DMG:+5"
+   ]
+  }
+ },
+ "21223": {
+  "name": "Mengado +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Snapshot\" +15",
+    "DMG:+10",
+    "Ranged Accuracy +20"
+   ]
+  }
+ },
+ "21220": {
+  "name": "Paloma Bow +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DMG:+9",
+    "Ranged Accuracy +40",
+    "\"Rapid Shot\" +15%"
+   ]
+  }
+ },
+ "21350": {
+  "name": "Wingcutter +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +10",
+    "Evasion +10"
+   ]
+  }
+ },
+ "27639": {
+  "name": "Ajax +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Shield Block Rate +10%",
+    "Enhancing Magic Received Duration +10%"
+   ]
+  }
+ },
+ "27641": {
+  "name": "Deliverance +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +30",
+    "Shield Skill +10"
+   ]
+  }
+ },
+ "27637": {
+  "name": "Evalach +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "HP +150",
+    "Shield Skill +10",
+    "Accuracy & Magic Accuracy +20"
+   ]
+  }
+ },
+ "26402": {
+  "name": "Forfend +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+15",
+    "Mag. Acc.+15",
+    "Enha. mag. skill +10"
+   ]
+  }
+ },
+ "21417": {
+  "name": "Refined Grip +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF +20",
+    "Parrying Skill +10"
+   ]
+  }
+ },
+ "21419": {
+  "name": "Rigorous Grip +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Attack +30",
+    "STR +15"
+   ]
+  }
+ },
+ "26715": {
+  "name": "Adorned Helm +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +45",
+    "Attack +50",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26787": {
+  "name": "Alhazen Hat +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "All Base Stats +30",
+    "Evasion +50",
+    "Accuracy, Ranged Accuracy, & Magic Accuracy +25"
+   ]
+  }
+ },
+ "25602": {
+  "name": "Blistering Sallet +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +45",
+    "Critical Hit Rate +10%",
+    "STR/DEX +25"
+   ]
+  }
+ },
+ "26785": {
+  "name": "Hike Khat +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Physical Damage Taken -10%",
+    "Pet: Damage Taken -5%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26710": {
+  "name": "Imp. Wing Hair. +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +35",
+    "Magic Evasion +100",
+    "Critical Hit Rate +10%"
+   ]
+  }
+ },
+ "25636": {
+  "name": "Loess Barbuta +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Enmity +10",
+    "Damage taken -10%",
+    "All Attr. +10"
+   ]
+  }
+ },
+ "26732": {
+  "name": "Stinger Helm +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +30",
+    "Physical Damage Limit +5%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26943": {
+  "name": "Agony Jerkin +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Attack +60",
+    "\"Store TP\" +10",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "25681": {
+  "name": "Cohort Cloak +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +100",
+    "Magic Attack Bonus +100",
+    "All Base Stats +20"
+   ]
+  }
+ },
+ "26871": {
+  "name": "Emet Harness +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Evasion +30",
+    "Accuracy +40",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26873": {
+  "name": "Hime Domaru +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +45",
+    "\"Double Attack\" +5%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26897": {
+  "name": "Lugra Cloak +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +60",
+    "Spell Interruption Rate -20%",
+    "All Base Stats +20"
+   ]
+  }
+ },
+ "25710": {
+  "name": "Obviat. Cuirass +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Mag. Evasion+60",
+    "Enmity+5",
+    "All Attr. +10"
+   ]
+  }
+ },
+ "26869": {
+  "name": "Ros. Jaseran +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +45",
+    "Damage Taken -5%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "26888": {
+  "name": "Shomonjijoe +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Avatar: TP Bonus +300",
+    "Avatar: Accuracy & Magic Accuracy +30",
+    "Avatar: All Base Stats +10"
+   ]
+  }
+ },
+ "25733": {
+  "name": "Tatena. Harama. +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+30",
+    "All Attr.+10",
+    "\"Triple Attack\" +5%"
+   ]
+  }
+ },
+ "27107": {
+  "name": "Asteria Mitts +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "MP +45",
+    "Avatar: Accuracy & Magic Accuracy +40",
+    "Avatar: Magic Burst Bonus +10%"
+   ]
+  }
+ },
+ "27151": {
+  "name": "Gazu Bracelets +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +50",
+    "Haste +10%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27051": {
+  "name": "Kachi. Kote +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Attack +45",
+    "Accuracy & Magic Accuracy +30",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27109": {
+  "name": "Lamassu Mitts +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Avatar: All Base Stats +30",
+    "Avatar: Accuracy & Magic Accuracy +40",
+    "Avatar Perpetuation Cost -5"
+   ]
+  }
+ },
+ "27994": {
+  "name": "Macabre Gaunt. +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Evasion +75",
+    "Occasionally Resist Status Ailments +10",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27996": {
+  "name": "Shigure Tekko +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Evasion +90",
+    "Magic Evasion +80",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27149": {
+  "name": "Tatena. Gote +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+40",
+    "All Attr.+10",
+    "\"Triple Attack\" +4%"
+   ]
+  }
+ },
+ "28135": {
+  "name": "Assid. Pants +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Avatar: Accuracy & Magic Accuracy +35",
+    "Avatar: All Base Stats +20",
+    "MP +20"
+   ]
+  }
+ },
+ "28137": {
+  "name": "Augury Cuisses +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Attack +60",
+    "Magic Attack Bonus +30",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "25856": {
+  "name": "Tatena. Haidate +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+60",
+    "All Attr.+10",
+    "\"Triple Attack\" +3%"
+   ]
+  }
+ },
+ "27231": {
+  "name": "Zoar Subligar +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +30",
+    "Critical Hit Rate +5%",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27410": {
+  "name": "Hippo. Socks +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Resist Bind\" +45",
+    "Evasion +20",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "27408": {
+  "name": "Hygieia Clogs +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Cure\" Potency +15%",
+    "Healing Magic Skill +10",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "28276": {
+  "name": "Jute Boots +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX/AGI +15",
+    "Magic Evasion +30",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "28274": {
+  "name": "Regal Pumps +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Healing Magic Skill +10",
+    "Enhancing Magic Skill +10",
+    "All Base Stats +10"
+   ]
+  }
+ },
+ "25924": {
+  "name": "Tatena. Sune. +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+60",
+    "All Attr.+10",
+    "\"Triple Attack\" +3%"
+   ]
+  }
+ },
+ "28430": {
+  "name": "Acuity Belt +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +15",
+    "INT +10"
+   ]
+  }
+ },
+ "27561": {
+  "name": "Apeile Ring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF +20",
+    "Magic Defense Bonus +5"
+   ]
+  }
+ },
+ "28487": {
+  "name": "Arete del Luna +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Resist Sleep\" +15",
+    "\"Resist Charm\" +15"
+   ]
+  }
+ },
+ "27620": {
+  "name": "Aurist's Cape +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy & Magic Accuracy +25",
+    "INT/MND +25"
+   ]
+  }
+ },
+ "27518": {
+  "name": "Bathy Choker +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Evasion +15",
+    "\"Counter\" +10"
+   ]
+  }
+ },
+ "10771": {
+  "name": "Cacoethic Ring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX +10",
+    "AGI +10"
+   ]
+  }
+ },
+ "28353": {
+  "name": "Canto Necklace +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +15",
+    "CHR +10"
+   ]
+  }
+ },
+ "27543": {
+  "name": "Domin. Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+10",
+    "DEX+6"
+   ]
+  }
+ },
+ "27610": {
+  "name": "Fi Follet Cape +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Fast Cast\" +10%",
+    "Spell Interruption Rate -5%"
+   ]
+  }
+ },
+ "10769": {
+  "name": "Gelatinous Ring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "VIT +15",
+    "HP +100"
+   ]
+  }
+ },
+ "21344": {
+  "name": "Ghastly Tathlum +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Damage +10",
+    "INT +5"
+   ]
+  }
+ },
+ "27602": {
+  "name": "Ground. Mantle +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy +15",
+    "DEX +10"
+   ]
+  }
+ },
+ "28491": {
+  "name": "Handler's Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Pet: Accuracy & Magic Accuracy +15",
+    "Accuracy +10"
+   ]
+  }
+ },
+ "28413": {
+  "name": "Kentarch Belt +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR +10",
+    "DEX +10"
+   ]
+  }
+ },
+ "26002": {
+  "name": "Loricate Torque +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF+45",
+    "Spell interruption rate down 5%"
+   ]
+  }
+ },
+ "28482": {
+  "name": "Lugra Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF +20",
+    "STR/DEX/VIT/INT +8"
+   ]
+  }
+ },
+ "27559": {
+  "name": "Mephitas's Ring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Conserve MP\" +15",
+    "INT +5"
+   ]
+  }
+ },
+ "27563": {
+  "name": "Metamor. Ring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Magic Accuracy +10",
+    "INT/MND/CHR +10"
+   ]
+  }
+ },
+ "28485": {
+  "name": "Nourish. Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Resist Silence\" +15",
+    "Spell Interruption Rate -5%"
+   ]
+  }
+ },
+ "27549": {
+  "name": "Odnowa Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF +30",
+    "Damage Taken -3%"
+   ]
+  }
+ },
+ "28428": {
+  "name": "Sailfi Belt +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR +15",
+    "\"Double Attack\" +5%"
+   ]
+  }
+ },
+ "28424": {
+  "name": "Shinjutsu-no-Obi +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "\"Conserve MP\" +15",
+    "\"Fast Cast\" +5%"
+   ]
+  }
+ },
+ "22255": {
+  "name": "Seeth. Bomblet +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR +10",
+    "Haste +5%"
+   ]
+  }
+ },
+ "27509": {
+  "name": "Unmoving Collar +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEF +30",
+    "HP +200"
+   ]
+  }
+ },
+ "26022": {
+  "name": "Vim Torque +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Accuracy+15",
+    "\"Store TP\"+10"
+   ]
+  }
+ },
+ "27505": {
+  "name": "Warder's Charm +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Skillchain Damage +15%",
+    "Magic Burst Bonus +10%"
+   ]
+  }
+ },
+ "27533": {
+  "name": "Zwazo Earring +1",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "HP +45",
+    "Shield Block Rate +3%"
+   ]
+  }
+ },
+ "25417": {
+  "name": "Warrior's Beads",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "HP +50",
+    "STR & DEX +10",
+    "\"Dbl. Atk.\" +5%"
+   ]
+  }
+ },
+ "25418": {
+  "name": "War. Beads +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "HP +75",
+    "STR & DEX +12",
+    "\"Dbl. Atk.\" +6%"
+   ]
+  }
+ },
+ "25419": {
+  "name": "War. Beads +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "HP +100",
+    "STR & DEX +15",
+    "\"Dbl. Atk.\" +7%"
+   ]
+  }
+ },
+ "25423": {
+  "name": "Monk's Nodowa",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & MND +10",
+    "Kick Attacks +15",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25424": {
+  "name": "Mnk. Nodowa +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & MND +12",
+    "Kick Attacks +20",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25425": {
+  "name": "Mnk. Nodowa +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & MND +15",
+    "Kick Attacks +25",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25429": {
+  "name": "Cleric's Torque",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "INT & MND +10",
+    "Enmity -15",
+    "\"Fast Cast\" +6%"
+   ]
+  }
+ },
+ "25430": {
+  "name": "Clr. Torque +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "INT & MND +12",
+    "Enmity -20",
+    "\"Fast Cast\" +8%"
+   ]
+  }
+ },
+ "25431": {
+  "name": "Clr. Torque +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "INT & MND +15",
+    "Enmity -25",
+    "\"Fast Cast\" +10%"
+   ]
+  }
+ },
+ "25435": {
+  "name": "Sorcerer's Stole",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "INT & MND +10",
+    "Magic Burst DMG +6%",
+    "Magic Burst ACC +15"
+   ]
+  }
+ },
+ "25436": {
+  "name": "Src. Stole +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "INT & MND +12",
+    "Magic Burst DMG +8%",
+    "Magic Burst ACC +20"
+   ]
+  }
+ },
+ "25437": {
+  "name": "Src. Stole +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "INT & MND +15",
+    "Magic Burst DMG +10%",
+    "Magic Burst ACC +25"
+   ]
+  }
+ },
+ "25441": {
+  "name": "Duelist's Torque",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "INT & MND +10",
+    "Enh. Mag. eff. dur. +15%",
+    "Enf. Mag. eff. dur. +15%"
+   ]
+  }
+ },
+ "25442": {
+  "name": "Dls. Torque +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "INT & MND +12",
+    "Enh. Mag. eff. dur. +20%",
+    "Enf. Mag. eff. dur. +20%"
+   ]
+  }
+ },
+ "25443": {
+  "name": "Dls. Torque +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "INT & MND +15",
+    "Enh. Mag. eff. dur. +25%",
+    "Enf. Mag. eff. dur. +25%"
+   ]
+  }
+ },
+ "25447": {
+  "name": "Assassin's Gorget",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & AGI +10",
+    "Evasion +15",
+    "\"Trip. Atk.\" +2%"
+   ]
+  }
+ },
+ "25448": {
+  "name": "Asn. Gorget +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & AGI +12",
+    "Evasion +20",
+    "\"Trip. Atk.\" +3%"
+   ]
+  }
+ },
+ "25449": {
+  "name": "Asn. Gorget +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & AGI +15",
+    "Evasion +25",
+    "\"Trip. Atk.\" +4%"
+   ]
+  }
+ },
+ "25453": {
+  "name": "Knight's Beads",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "HP +30",
+    "VIT & MND +10",
+    "Damage taken -5%"
+   ]
+  }
+ },
+ "25454": {
+  "name": "Kgt. Beads +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "HP +45",
+    "VIT & MND +12",
+    "Damage taken -6%"
+   ]
+  }
+ },
+ "25455": {
+  "name": "Kgt. Beads +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "HP +60",
+    "VIT & MND +15",
+    "Damage taken -7%"
+   ]
+  }
+ },
+ "25459": {
+  "name": "Abyssal Beads",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR +15",
+    "\"Store TP\" +5",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25460": {
+  "name": "Abyssal Beads +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR +20",
+    "\"Store TP\" +6",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25461": {
+  "name": "Abyssal Beads +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR +25",
+    "\"Store TP\" +7",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25465": {
+  "name": "Beastmaster Collar",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR & DEX +10",
+    "Physical Damage Limit +6%",
+    "Pet: \"Double Attack\" +15%"
+   ]
+  }
+ },
+ "25466": {
+  "name": "Bst. Collar +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR & DEX +12",
+    "Physical Damage Limit +8%",
+    "Pet: \"Double Attack\" +20%"
+   ]
+  }
+ },
+ "25467": {
+  "name": "Bst. Collar +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR & DEX +15",
+    "Physical Damage Limit +10%",
+    "Pet: \"Double Attack\" +25%"
+   ]
+  }
+ },
+ "25471": {
+  "name": "Bard's Charm",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & CHR +15",
+    "\"Store TP\" +5",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25472": {
+  "name": "Bard's Charm +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & CHR +20",
+    "\"Store TP\" +6",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25473": {
+  "name": "Bard's Charm +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & CHR +25",
+    "\"Store TP\" +7",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25477": {
+  "name": "Scout's Gorget",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "AGI +15",
+    "\"Store TP\" +5",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25478": {
+  "name": "Scout's Gorget +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "AGI +20",
+    "\"Store TP\" +6",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25479": {
+  "name": "Scout's Gorget +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "AGI +25",
+    "\"Store TP\" +7",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25483": {
+  "name": "Samurai's Nodowa",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR +15",
+    "\"Store TP\" +5",
+    "Physical damage limit +6%"
+   ]
+  }
+ },
+ "25484": {
+  "name": "Sam. Nodowa +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR +20",
+    "\"Store TP\" +6",
+    "Physical damage limit +8%"
+   ]
+  }
+ },
+ "25485": {
+  "name": "Sam. Nodowa +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR +25",
+    "\"Store TP\" +7",
+    "Physical damage limit +10%"
+   ]
+  }
+ },
+ "25489": {
+  "name": "Ninja Nodowa",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & AGI +10",
+    "Daken +15",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25490": {
+  "name": "Ninja Nodowa +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & AGI +12",
+    "Daken +20",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25491": {
+  "name": "Ninja Nodowa +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & AGI +15",
+    "Daken +25",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25495": {
+  "name": "Dragoon's Collar",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR & VIT +10",
+    "Physical Damage Limit +6%",
+    "Wyvern : Damage Taken -15%"
+   ]
+  }
+ },
+ "25496": {
+  "name": "Dgn. Collar +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR & VIT +12",
+    "Physical Damage Limit +8%",
+    "Wyvern : Damage Taken -20%"
+   ]
+  }
+ },
+ "25497": {
+  "name": "Dgn. Collar +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR & VIT +15",
+    "Physical Damage Limit +10%",
+    "Wyvern : Damage Taken -25%"
+   ]
+  }
+ },
+ "25501": {
+  "name": "Summoner's Collar",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "MP +30",
+    "Avatar: All Base Stats +15",
+    "Blood Pact Damage +6%"
+   ]
+  }
+ },
+ "25502": {
+  "name": "Smn. Collar +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "MP +40",
+    "Avatar: All Base Stats +20",
+    "Blood Pact Damage +8%"
+   ]
+  }
+ },
+ "25503": {
+  "name": "Smn. Collar +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "MP +50",
+    "Avatar: All Base Stats +25",
+    "Blood Pact Damage +10%"
+   ]
+  }
+ },
+ "25507": {
+  "name": "Mirage Stole",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR & DEX +15",
+    "\"Store TP\" +5",
+    "Crit Rate +3%"
+   ]
+  }
+ },
+ "25508": {
+  "name": "Mirage Stole +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR & DEX +20",
+    "\"Store TP\" +6",
+    "Crit Rate +4%"
+   ]
+  }
+ },
+ "25509": {
+  "name": "Mirage Stole +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR & DEX +25",
+    "\"Store TP\" +7",
+    "Crit Rate +5%"
+   ]
+  }
+ },
+ "25513": {
+  "name": "Commodore Charm",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "STR & AGI +10",
+    "Magic Damage +15",
+    "\"Magic Attack Bonus\" +5"
+   ]
+  }
+ },
+ "25514": {
+  "name": "Comm. Charm +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "STR & AGI +12",
+    "Magic Damage +20",
+    "\"Magic Attack Bonus\" +6"
+   ]
+  }
+ },
+ "25515": {
+  "name": "Comm. Charm +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "STR & AGI +15",
+    "Magic Damage +25",
+    "\"Magic Attack Bonus\" +7"
+   ]
+  }
+ },
+ "25519": {
+  "name": "Pup. Collar",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & AGI +10",
+    "Physical Damage Limit +6%",
+    "Automaton: \"Mag. Atk. Bns.\" +15"
+   ]
+  }
+ },
+ "25520": {
+  "name": "Pup. Collar +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & AGI +12",
+    "Physical Damage Limit +8%",
+    "Automaton: \"Mag. Atk. Bns.\" +20"
+   ]
+  }
+ },
+ "25521": {
+  "name": "Pup. Collar +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & AGI +15",
+    "Physical Damage Limit +10%",
+    "Automaton: \"Mag. Atk. Bns.\" +25"
+   ]
+  }
+ },
+ "25525": {
+  "name": "Etoile Gorget",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "DEX & CHR +15",
+    "\"Store TP\" +5",
+    "Physical Damage Limit +6%"
+   ]
+  }
+ },
+ "25526": {
+  "name": "Etoile Gorget +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "DEX & CHR +20",
+    "\"Store TP\" +6",
+    "Physical Damage Limit +8%"
+   ]
+  }
+ },
+ "25527": {
+  "name": "Etoile Gorget +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "DEX & CHR +25",
+    "\"Store TP\" +7",
+    "Physical Damage Limit +10%"
+   ]
+  }
+ },
+ "25531": {
+  "name": "Argute Stole",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "INT & MND +10",
+    "Magic Damage +15",
+    "Helix eff. Duration +6%"
+   ]
+  }
+ },
+ "25532": {
+  "name": "Argute Stole +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "INT & MND +12",
+    "Magic Damage +20",
+    "Helix eff. Duration +8%"
+   ]
+  }
+ },
+ "25533": {
+  "name": "Argute Stole +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "INT & MND +15",
+    "Magic Damage +25",
+    "Helix eff. Duration +10%"
+   ]
+  }
+ },
+ "25537": {
+  "name": "Bagua Charm",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "MP +30",
+    "Luopan Duration +15%",
+    "Luopan: Absorbs Damage +6%"
+   ]
+  }
+ },
+ "25538": {
+  "name": "Bagua Charm +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "MP +40",
+    "Luopan Duration +20%",
+    "Luopan: Absorbs Damage +8%"
+   ]
+  }
+ },
+ "25539": {
+  "name": "Bagua Charm +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "MP +50",
+    "Luopan Duration +25%",
+    "Luopan: Absorbs Damage +10%"
+   ]
+  }
+ },
+ "25543": {
+  "name": "Futhark Torque",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "HP +30",
+    "STR & MND +10",
+    "Damage taken -5%"
+   ]
+  }
+ },
+ "25544": {
+  "name": "Futhark Torque +1",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "HP +45",
+    "STR & MND +12",
+    "Damage taken -6%"
+   ]
+  }
+ },
+ "25545": {
+  "name": "Futhark Torque +2",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "HP +60",
+    "STR & MND +15",
+    "Damage taken -7%"
+   ]
+  }
+ },
+ "21876": {
+  "name": "Wyrm Lance",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Wyvern: HP +150",
+    "Wyvern: Damage Taken -10%"
+   ]
+  }
+ },
+ "22033": {
+  "name": "Cleric's Wand",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Afflatus Misery\" stored +150%",
+    "Healing magic recast delay -15%",
+    "Damage Taken -10%"
+   ]
+  }
+ },
+ "21576": {
+  "name": "Bard's Knife",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Song spellcasting time -15%",
+    "Song effects: \"Double Attack\" +2%"
+   ]
+  }
+ },
+ "22036": {
+  "name": "Bagua Wand",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Magic burst damage II +6",
+    "Magic burst accuracy +20",
+    "\"Drain\" and \"Aspir\" potency +10"
+   ]
+  }
+ },
+ "21625": {
+  "name": "Duelist's Sword",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Sword enhancement spell damage +300%",
+    "Elemental weapon skill damage +50%"
+   ]
+  }
+ },
+ "22094": {
+  "name": "Summoner's Staff",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Pet: Chance of double damage +20%",
+    "Chance of doubling \"Blood Pact\" status +15%",
+    "Blood Pact Dmg.+10"
+   ]
+  }
+ },
+ "21823": {
+  "name": "Abyss Scythe",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Drain\" potency +15%",
+    "Weapon Skill Damage +10%"
+   ]
+  }
+ },
+ "21915": {
+  "name": "Koga Shin.",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Ninjutsu recast time -15%",
+    "Enmity +6 for each Utsusemi"
+   ]
+  }
+ },
+ "21968": {
+  "name": "Saotome-no-Tachi",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Sekkanoki\" recast time -15%",
+    "\"Sekkanoki\": Weapon Skill Damage +50%"
+   ]
+  }
+ },
+ "21573": {
+  "name": "Assassin's Knife",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Evasion+50",
+    "TP during evasion +20"
+   ]
+  }
+ },
+ "22091": {
+  "name": "Sorcerer's Staff",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "MP+50",
+    "\"Mana Wall\"+15%",
+    "Damage Taken -10%"
+   ]
+  }
+ },
+ "21772": {
+  "name": "War. Chopper",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "TP Gained when landing critical hits +30",
+    "Crit. Hit Rate +6%"
+   ]
+  }
+ },
+ "21628": {
+  "name": "Valor Sword",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "HP +150",
+    "\"Cure\" potency +15%",
+    "\"Refresh\" +2"
+   ]
+  }
+ },
+ "21667": {
+  "name": "Futhark Claymore",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Potency of \"Regen\" effects received +15",
+    "\"Vivacious Pulse\" potency +20%"
+   ]
+  }
+ },
+ "22097": {
+  "name": "Argute Staff",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Regen\" potency +15",
+    "\"Cure\" potency +15%",
+    "\"Fast Cast\"+6%"
+   ]
+  }
+ },
+ "21715": {
+  "name": "Monster Axe",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Damage Taken -15%",
+    "Pet: Damage Taken -10%"
+   ]
+  }
+ },
+ "21579": {
+  "name": "Comm. Knife",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Phantom Roll\" effect duration +30",
+    "\"Phantom Roll XI\": Recover HP and MP +10%",
+    "\"Phantom Roll\" +6"
+   ]
+  }
+ },
+ "21521": {
+  "name": "Melee Fists",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "HP+200",
+    "\"Chakra\"+20"
+   ]
+  }
+ },
+ "21582": {
+  "name": "Etoile Knife",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Flourish\" recast time -15%",
+    "\"Step\" duration +30"
+   ]
+  }
+ },
+ "22147": {
+  "name": "Scout's Crossbow",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Additional ammo damage: +200%",
+    "Additional ammo accuracy +100"
+   ]
+  }
+ },
+ "21524": {
+  "name": "Pantin Fists",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "Weapon skill damage +10%",
+    "Automaton: Special attack damage +15%"
+   ]
+  }
+ },
+ "21631": {
+  "name": "Mirage Sword",
+  "maxRank": 15,
+  "paths": {
+   "A": [
+    "Chance of double damage +30%",
+    "Store TP+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +30%",
+    "\"Subtle Blow II\" +15"
+   ],
+   "C": [
+    "\"Chain Affinity\" recast time -15%",
+    "\"Burst Affinity\" recast time -15%"
+   ]
+  }
+ },
+ "21877": {
+  "name": "Pteroslaver Lance",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Wyvern: HP +200",
+    "Wyvern: Damage Taken -12%"
+   ]
+  }
+ },
+ "22034": {
+  "name": "Piety Wand",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Afflatus Misery\" stored +200%",
+    "Healing magic recast delay -20%",
+    "Damage Taken -12%"
+   ]
+  }
+ },
+ "21577": {
+  "name": "Bihu Knife",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Song spellcasting time -20%",
+    "Song effects: \"Double Attack\" +3%"
+   ]
+  }
+ },
+ "22037": {
+  "name": "Sifang Wand",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Magic burst damage II +8%",
+    "Magic burst accuracy +25",
+    "\"Drain\" and \"Aspir\" potency +15%"
+   ]
+  }
+ },
+ "21626": {
+  "name": "Vitiation Sword",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Sword enhancement spell damage +400%",
+    "Elemental weapon skill damage +75%"
+   ]
+  }
+ },
+ "22095": {
+  "name": "Glyphic Staff",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Pet: Chance of double damage +35%",
+    "Chance of doubling \"Blood Pact\" status +20%",
+    "Blood Pact Dmg.+12"
+   ]
+  }
+ },
+ "21824": {
+  "name": "Fallen's Scythe",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Drain\" Potency +20%",
+    "Weapon Skill Damage +12%"
+   ]
+  }
+ },
+ "21916": {
+  "name": "Mochi. Shin.",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Ninjutsu recast time -20%",
+    "Enmity +8 for each Utsusemi"
+   ]
+  }
+ },
+ "21969": {
+  "name": "Sakonji-no-Tachi",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Sekkanoki\" recast time -20%",
+    "\"Sekkanoki\": Weapon Skill Damage +75%"
+   ]
+  }
+ },
+ "21574": {
+  "name": "Plun. Knife",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Evasion+75",
+    "TP during evasion +35"
+   ]
+  }
+ },
+ "22092": {
+  "name": "Archmage's Staff",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "MP+75",
+    "\"Mana Wall\"+20%",
+    "Damage Taken -12%"
+   ]
+  }
+ },
+ "21773": {
+  "name": "Agoge Chopper",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "TP Gained when landing critical hits +40",
+    "Crit. Hit Rate +8%"
+   ]
+  }
+ },
+ "21629": {
+  "name": "Cabal. Sword",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "HP +200",
+    "\"Cure\" potency +20%",
+    "\"Refresh\" +3"
+   ]
+  }
+ },
+ "21668": {
+  "name": "Peord Claymore",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Potency of \"Regen\" effects received +20",
+    "\"Vivacious Pulse\" potency +25%"
+   ]
+  }
+ },
+ "22098": {
+  "name": "Pedagogy Staff",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Regen\" potency +20",
+    "\"Cure\" potency +20%",
+    "\"Fast Cast\"+8%"
+   ]
+  }
+ },
+ "21716": {
+  "name": "Ankusa Axe",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Damage Taken -20%",
+    "Pet: Damage Taken -12%"
+   ]
+  }
+ },
+ "21580": {
+  "name": "Lanun Knife",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Phantom Roll\" effect duration +45",
+    "\"Phantom Roll XI\": Recover HP and MP +12%",
+    "\"Phantom Roll\" +7"
+   ]
+  }
+ },
+ "21522": {
+  "name": "Hes. Fists",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "HP+300",
+    "\"Chakra\"+35"
+   ]
+  }
+ },
+ "21583": {
+  "name": "Horos Knife",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Flourish\" recast time -20%",
+    "\"Step\" duration +45"
+   ]
+  }
+ },
+ "22148": {
+  "name": "Arke Crossbow",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Additional ammo damage: +250%",
+    "Additional ammo accuracy +125"
+   ]
+  }
+ },
+ "21525": {
+  "name": "Pitre Fists",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "Weapon skill damage +12%",
+    "Automaton: Special attack damage +20%"
+   ]
+  }
+ },
+ "21632": {
+  "name": "Luhlaza Sword",
+  "maxRank": 20,
+  "paths": {
+   "A": [
+    "Chance of double damage +40%",
+    "Store TP+20"
+   ],
+   "B": [
+    "Chance of follow-up attack +40%",
+    "\"Subtle Blow II\" +20"
+   ],
+   "C": [
+    "\"Chain Affinity\" recast time -20%",
+    "\"Burst Affinity\" recast time -20%"
+   ]
+  }
+ },
+ "21878": {
+  "name": "Aram",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+14"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+14"
+   ],
+   "C": [
+    "Wyvern: HP +250",
+    "Wyvern: Damage Taken -15%",
+    "DMG:+14"
+   ]
+  }
+ },
+ "22035": {
+  "name": "Asclepius",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+8"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+8"
+   ],
+   "C": [
+    "\"Afflatus Misery\" stored +250%",
+    "Healing magic recast delay -25%",
+    "Damage Taken -15%"
+   ]
+  }
+ },
+ "21578": {
+  "name": "Barfawc",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+5"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+5"
+   ],
+   "C": [
+    "Song Spellcasting Time -25%",
+    "Song Effects: Double Attack +4%",
+    "DMG:+5"
+   ]
+  }
+ },
+ "22038": {
+  "name": "Bhima",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+8"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+8"
+   ],
+   "C": [
+    "Magic burst damage II +10%",
+    "Magic burst accuracy +30",
+    "\"Drain\" and \"Aspir\" potency +20%"
+   ]
+  }
+ },
+ "21627": {
+  "name": "Crocea Mors",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+7"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+7"
+   ],
+   "C": [
+    "Sword enhancement spell damage +500%",
+    "Elemental weapon skill damage +100%",
+    "DMG:+7"
+   ]
+  }
+ },
+ "22096": {
+  "name": "Draumstafir",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+11"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+11"
+   ],
+   "C": [
+    "Pet: Chance of double damage +50%",
+    "Chance of doubling \"Blood Pact\" status +25%",
+    "Blood Pact Dmg.+15"
+   ]
+  }
+ },
+ "21825": {
+  "name": "Father Time",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+15"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+15"
+   ],
+   "C": [
+    "\"Drain\" Potency +25%",
+    "Weapon Skill Damage +15%",
+    "DMG:+15"
+   ]
+  }
+ },
+ "21917": {
+  "name": "Fudo Masamune",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+7"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+7"
+   ],
+   "C": [
+    "Ninjutsu recast time -25%",
+    "Enmity+10 for each Utsusemi",
+    "DMG:+7"
+   ]
+  }
+ },
+ "21970": {
+  "name": "Fusenaikyo",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+13"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+13"
+   ],
+   "C": [
+    "\"Sekkanoki\" recast time -25%",
+    "\"Sekkanoki\": Weapon Skill Damage +100%",
+    "DMG:+13"
+   ]
+  }
+ },
+ "21575": {
+  "name": "Gandring",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+5"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+5"
+   ],
+   "C": [
+    "Evasion+100",
+    "TP during evasion +50",
+    "DMG:+5"
+   ]
+  }
+ },
+ "22093": {
+  "name": "Kaumodaki",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+11"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+11"
+   ],
+   "C": [
+    "MP+100",
+    "\"Mana Wall\"+25%",
+    "Damage Taken -15%"
+   ]
+  }
+ },
+ "21774": {
+  "name": "Labraunda",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+14"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+14"
+   ],
+   "C": [
+    "TP Gained when landing critical hits +50",
+    "Crit. Hit Rate +10%",
+    "DMG:+14"
+   ]
+  }
+ },
+ "21630": {
+  "name": "Moralltach",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+7"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+7"
+   ],
+   "C": [
+    "HP +250",
+    "\"Cure\" potency +25%",
+    "\"Refresh\" +4"
+   ]
+  }
+ },
+ "21669": {
+  "name": "Morgelai",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+14"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+14"
+   ],
+   "C": [
+    "Potency of \"Regen\" effects received +25",
+    "\"Vivacious Pulse\" potency +30%",
+    "DMG:+14"
+   ]
+  }
+ },
+ "22099": {
+  "name": "Musa",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+11"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+11"
+   ],
+   "C": [
+    "\"Regen\" potency +25",
+    "\"Cure\" potency +25%",
+    "\"Fast Cast\"+10%"
+   ]
+  }
+ },
+ "21717": {
+  "name": "Pangu",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+11"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+11"
+   ],
+   "C": [
+    "Damage Taken -25%",
+    "Pet: Damage Taken -15%",
+    "DMG:+11"
+   ]
+  }
+ },
+ "21581": {
+  "name": "Rostam",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+5"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+5"
+   ],
+   "C": [
+    "\"Phantom Roll\" effect duration +60",
+    "\"Phantom Roll XI\": Recover HP and MP +15%",
+    "\"Phantom Roll\" +8"
+   ]
+  }
+ },
+ "21523": {
+  "name": "Sagitta",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+12"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+12"
+   ],
+   "C": [
+    "HP+400",
+    "\"Chakra\"+50",
+    "DMG:+12"
+   ]
+  }
+ },
+ "21584": {
+  "name": "Setan Kober",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+5"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+5"
+   ],
+   "C": [
+    "\"Flourish\" recast time -25%",
+    "\"Step\" duration +60",
+    "DMG:+5"
+   ]
+  }
+ },
+ "22149": {
+  "name": "Sharanga",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+6"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+6"
+   ],
+   "C": [
+    "Additional ammo damage: +250%",
+    "Additional ammo accuracy +150",
+    "DMG:+6"
+   ]
+  }
+ },
+ "21526": {
+  "name": "Xiucoatl",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+12"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+12"
+   ],
+   "C": [
+    "Weapon Skill Damage +15%",
+    "Automaton: Special attack damage +25%",
+    "DMG:+12"
+   ]
+  }
+ },
+ "21633": {
+  "name": "Zomorrodnegar",
+  "maxRank": 25,
+  "paths": {
+   "A": [
+    "Chance of double damage +50%",
+    "Store TP+25",
+    "DMG:+7"
+   ],
+   "B": [
+    "Chance of follow-up attack +50%",
+    "\"Subtle Blow II\" +25",
+    "DMG:+7"
+   ],
+   "C": [
+    "\"Chain Affinity\" recast time -25%",
+    "\"Burst Affinity\" recast time -25%",
+    "DMG:+7"
+   ]
+  }
+ }
+}
