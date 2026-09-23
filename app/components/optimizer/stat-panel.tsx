@@ -115,6 +115,68 @@ export function StatPanel({ current, evaluation, results }: { current: Optimized
             <Stat icon={<ShieldCheck className="h-3.5 w-3.5" />} label="DT" value={n(s, 'dt')} suffix="%" />
           </>
         )}
+        {kind === 'curecast' && (
+          <>
+            <Stat icon={<Zap className="h-3.5 w-3.5" />} label="Cure cast time -" value={n(s, 'castTimeTotal')} suffix="%" accent />
+            <Stat icon={<Zap className="h-3.5 w-3.5" />} label="Fast cast" value={n(s, 'fastcast')} suffix="%" />
+            <Stat icon={<Heart className="h-3.5 w-3.5" />} label="Cure cast time gear" value={n(s, 'cureCastTime')} suffix="%" />
+            <Stat icon={<ShieldCheck className="h-3.5 w-3.5" />} label="DT" value={n(s, 'dt')} suffix="%" />
+          </>
+        )}
+        {kind === 'mb' && (
+          <>
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Burst damage" value={n(s, 'mbDamage')} accent />
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Unburst nuke" value={n(s, 'magicDamage')} />
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="MB bonus" value={n(s, 'mbBonus')} suffix="%" />
+            <Stat icon={<Crosshair className="h-3.5 w-3.5" />} label="Magic acc" value={n(s, 'macc')} />
+            <Stat icon={<Swords className="h-3.5 w-3.5" />} label="MAB" value={n(s, 'mab')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="INT" value={n(s, 'int')} />
+          </>
+        )}
+        {kind === 'enhancing' && (
+          <>
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Enhancing skill" value={n(s, 'enhancingSkill')} accent />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="Enh. duration" value={n(s, 'enhDuration')} suffix="%" />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="MND" value={n(s, 'mnd')} />
+            <Stat icon={<ShieldCheck className="h-3.5 w-3.5" />} label="SIRD" value={n(s, 'sird')} suffix="%" />
+          </>
+        )}
+        {kind === 'enfeebling' && (
+          <>
+            <Stat icon={<Crosshair className="h-3.5 w-3.5" />} label="Eff. magic acc" value={n(s, 'macc')} accent />
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Enfeebling skill" value={n(s, 'enfeeblingSkill')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="MND" value={n(s, 'mnd')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="INT" value={n(s, 'int')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="Enf. potency" value={n(s, 'enfPotency')} suffix="%" />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="Enf. duration" value={n(s, 'enfDuration')} suffix="%" />
+          </>
+        )}
+        {kind === 'cursna' && (
+          <>
+            <Stat icon={<Heart className="h-3.5 w-3.5" />} label="Cursna +" value={n(s, 'cursnaBonus')} accent />
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Healing skill" value={n(s, 'healingSkill')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="MND" value={n(s, 'mnd')} />
+            <Stat icon={<Zap className="h-3.5 w-3.5" />} label="Fast cast" value={n(s, 'fastcast')} suffix="%" />
+          </>
+        )}
+        {kind === 'regen' && (
+          <>
+            <Stat icon={<Heart className="h-3.5 w-3.5" />} label="Regen potency +" value={n(s, 'regenPotency')} accent />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="Regen duration" value={n(s, 'regenDuration')} suffix="%" />
+            <Stat icon={<Sparkles className="h-3.5 w-3.5" />} label="Enhancing skill" value={n(s, 'enhancingSkill')} />
+            <Stat icon={<ShieldCheck className="h-3.5 w-3.5" />} label="DT" value={n(s, 'dt')} suffix="%" />
+          </>
+        )}
+        {kind === 'mpidle' && (
+          <>
+            <Stat icon={<Zap className="h-3.5 w-3.5" />} label="Refresh" value={n(s, 'refresh')} accent />
+            <Stat icon={<ShieldCheck className="h-3.5 w-3.5" />} label="DT" value={n(s, 'dt')} suffix="%" />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="Magic eva" value={n(s, 'meva')} />
+            <Stat icon={<Gauge className="h-3.5 w-3.5" />} label="MP" value={n(s, 'mp')} />
+            <Stat icon={<Heart className="h-3.5 w-3.5" />} label="HP" value={n(s, 'hp')} />
+            <Stat icon={<Heart className="h-3.5 w-3.5" />} label="Regen" value={n(s, 'regen')} />
+          </>
+        )}
       </motion.div>
       {results?.length ? (
         <div className="rounded-md bg-secondary/40 p-3">

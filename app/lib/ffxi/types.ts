@@ -179,7 +179,13 @@ export type Target = {
 
 export type BuffTier = 'low' | 'high';
 
-export type ContextKind = 'tp' | 'ws' | 'magic' | 'healing' | 'idle' | 'fastcast' | 'hybrid' | 'th';
+export type ContextKind =
+  | 'tp' | 'ws' | 'magic' | 'healing' | 'idle' | 'fastcast' | 'hybrid' | 'th'
+  // caster contexts (built for mage jobs / mage subjobs)
+  | 'mb' | 'enhancing' | 'enfeebling' | 'curecast' | 'cursna' | 'regen' | 'mpidle';
+
+/** Contexts that are only built when the player is (or subs) a spellcasting job. */
+export const CASTER_CONTEXTS: ContextKind[] = ['mb', 'enhancing', 'enfeebling', 'curecast', 'cursna', 'regen', 'mpidle'];
 
 export type OptimizeContext = {
   kind: ContextKind;
@@ -207,6 +213,8 @@ export type OptimizedSet = {
   evaluation: SetEvaluation;
 };
 
+export type WeaponLock = { main: number | null; sub: number | null };
+
 export type OptimizerConfig = {
   mainJob: string;
   subJob: string;
@@ -215,6 +223,12 @@ export type OptimizerConfig = {
   target: Target;
   lockedMain: number | null;
   lockedSub: number | null;
+  /**
+   * Weapon locks per weapon-skill category (keyed by combat skill, e.g. "Great Axe"). A category lock is
+   * used for every weapon skill of that skill type; the main/sub locks above only apply to weapon skills
+   * of the TP weapon's skill type.
+   */
+  weaponLocks?: Record<string, WeaponLock>;
   primaryWs: string | null;
   dtThreshold: number;
   wsNames: string[];

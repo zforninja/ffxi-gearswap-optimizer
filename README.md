@@ -15,6 +15,8 @@ Live app: https://gsoptimizer.abacusai.app
 ## Features
 - All jobs / subjobs, Low/High buff tiers, target difficulty tiers, Unity Ranking bonus selector
 - Set contexts: TP, per-weapon-skill, Magic, Healing, Idle/DT, Fast Cast, Hybrid DT, Treasure Hunter
+- Caster contexts (mage main jobs or WHM/BLM/RDM/SCH subjobs): Magic Burst, Enhancing Magic, Enfeebling Magic, Cure Precast, Cursna, Regen, Idle/Refresh
+- Weapon locks: a global TP-set lock plus a per-weapon-type lock for each weapon skill group (lock a sword and every sword WS uses it; other weapon types keep their own best weapon)
 - Joint TP + WS weapon search; slot-blocking gear (suits) handled; augmented items treated as distinct pieces
 - GearSwap Lua export with augments
 - Job Points (up to 2100) and Master Level (up to 50) gift bonuses applied to every set

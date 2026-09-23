@@ -1,4 +1,4 @@
-import { WS_BY_NAME, jobTraits, MELEE_SKILLS, RANGED_SKILLS } from './constants';
+import { WS_BY_NAME, jobTraits, MELEE_SKILLS, RANGED_SKILLS, CASTER_JOBS, CASTER_SUBJOBS } from './constants';
 import {
   aggregate,
   evaluateDefense,
@@ -20,6 +20,7 @@ import {
   blockedSlots,
   blockedSlotsOf,
   type BuffTier,
+  type ContextKind,
   type GearDB,
   type GearItem,
   type GearSet,
@@ -132,6 +133,61 @@ export function scoreSet(set: GearSet, db: GearDB, ctx: PlayerContext, oc: Optim
       const capped = clamp(fc, 0, FAST_CAST_CAP);
       const score = capped * 1000 + def.hp * 0.2 - clamp(def.dt, DT_CAP, 0) * 10 + (agg?.MP ?? 0) * 0.05;
       return { score, summary: { fastcast: fc, fastcastCapped: capped, hp: def.hp, dt: def.dt, mp: agg?.MP ?? 0 } };
+    }
+    case 'curecast': {
+      // Cure precast: Fast Cast and "Cure spellcasting time -x%" share the 80% cast-time cap.
+      const fc = agg?.fastcast ?? 0;
+      const cct = agg?.cureCastTime ?? 0;
+      const total = clamp(fc + cct, 0, FAST_CAST_CAP);
+      const score = total * 1000 + clamp(fc, 0, FAST_CAST_CAP) * 10 + def.hp * 0.2 - clamp(def.dt, DT_CAP, 0) * 10;
+      return { score, summary: { fastcast: fc, cureCastTime: cct, castTimeTotal: total, hp: def.hp, dt: def.dt } };
+    }
+    case 'mb': {
+      // Magic burst: nuke damage × (1 + capped MB bonus (≤40%) + uncapped MB bonus) on top of the innate burst multiplier.
+      const r = evaluateMagic(agg, ctx.target);
+      const mbII = agg?.magicBurstBonusUncapped ?? 0;
+      const burst = Math.floor(r.damage * (1.35 + (r.mbBonus + mbII) / 100));
+      return { score: burst, summary: { mbDamage: burst, magicDamage: r.damage, macc: r.macc, mab: r.mab, int: r.int, magicHitRate: r.resistMult * 100, mbBonus: r.mbBonus + mbII, dt: def.dt } };
+    }
+    case 'enhancing': {
+      // Enhancing skill drives potency (Phalanx, Temper, enspells, Stoneskin) and duration; duration+ gear stacks on top.
+      const skill = agg?.enhance ?? 0;
+      const dur = agg?.enhMagicDuration ?? 0;
+      const mnd = agg?.MND ?? 0;
+      const sird = agg?.spellinterrupt ?? 0;
+      const score = skill * 3 + dur * 30 + mnd * 0.2 + sird * 0.5;
+      return { score, summary: { enhancingSkill: skill, enhDuration: dur, mnd, sird, dt: def.dt } };
+    }
+    case 'enfeebling': {
+      // Enfeebling: land rate (skill + MACC + MND/INT) first, then potency/duration.
+      const skill = agg?.enfeeble ?? 0;
+      const mnd = agg?.MND ?? 0;
+      const int = agg?.INT ?? 0;
+      const macc = (agg?.MACC ?? 0) + skill + Math.floor(mnd * 0.5);
+      const pot = agg?.enfMagPotency ?? 0;
+      const dur = agg?.enfMagDuration ?? 0;
+      const score = macc + int * 0.25 + pot * 8 + dur * 5;
+      return { score, summary: { enfeeblingSkill: skill, macc, mnd, int, enfPotency: pot, enfDuration: dur, dt: def.dt } };
+    }
+    case 'cursna': {
+      const cursna = agg?.enhancesCursna ?? 0;
+      const healing = agg?.healing ?? 0;
+      const mnd = agg?.MND ?? 0;
+      const score = cursna * 20 + healing + mnd * 0.5 + (agg?.fastcast ?? 0) * 0.5;
+      return { score, summary: { cursnaBonus: cursna, healingSkill: healing, mnd, fastcast: agg?.fastcast ?? 0, dt: def.dt } };
+    }
+    case 'regen': {
+      const pot = agg?.regenMultiplier ?? 0;
+      const dur = agg?.regenDuration ?? 0;
+      const skill = agg?.enhance ?? 0;
+      const score = pot * 30 + dur * 15 + skill;
+      return { score, summary: { regenPotency: pot, regenDuration: dur, enhancingSkill: skill, dt: def.dt } };
+    }
+    case 'mpidle': {
+      // Caster idle: refresh is king, then DT / magic evasion / MP pool.
+      const dtScore = -clamp(def.dt, DT_CAP, 0) * 40;
+      const score = def.refresh * 500 + dtScore + def.meva * 0.6 + (agg?.MP ?? 0) * 0.1 + def.hp * 0.2 + def.regen * 20 + (def.move > 0 ? 40 : 0);
+      return { score, summary: { refresh: def.refresh, dt: def.dt, meva: def.meva, mp: agg?.MP ?? 0, hp: def.hp, regen: def.regen, move: def.move } };
     }
     case 'hybrid': {
       const ws = primaryWs && wsUsable(WS_BY_NAME[primaryWs], main, range) ? primaryWs : null;
@@ -501,6 +557,14 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
       lockedMain: cfg.lockedMain ?? tpGear.main ?? null,
       lockedSub: cfg.lockedSub ?? (tpGear.sub != null && db?.[String(tpGear.sub)]?.type === 'weapon' ? tpGear.sub : null),
     });
+    /** Per-weapon-type lock (only counts when it names an item that exists in the DB). */
+    const categoryLock = (skill: string | undefined): { main: number | null; sub: number | null } | undefined => {
+      const l = skill ? cfg.weaponLocks?.[skill] : undefined;
+      if (!l) return undefined;
+      const main = l.main != null && db?.[String(l.main)] ? l.main : null;
+      const sub = l.sub != null && db?.[String(l.sub)] ? l.sub : null;
+      return main == null && sub == null ? undefined : { main, sub };
+    };
     type TpResult = { tp: { gear: GearSet; evaluation: SetEvaluation }; wsRefDamage?: number; wsTp?: number };
     /** Build the coupled TP + reference-WS pair for one weapon choice (or free choice when `lockMain` is null). */
     const buildTp = (lockMain: number | null, seed?: GearSet): TpResult => {
@@ -527,8 +591,10 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
     // The main weapon decides both the TP rate and the WS damage, so it cannot be judged inside the greedy
     // slot loop with a WS reference taken from another weapon: every serious candidate gets its own
     // coupled TP + WS build and the weapon whose complete cycle deals the most damage wins.
-    let chosen = buildTp(null);
-    if (cfg.lockedMain == null && primaryWs) {
+    // a category lock on the primary weapon skill's weapon type drives the TP set when no main lock is set
+    const primaryLock = primaryWs ? categoryLock(WS_BY_NAME[primaryWs]?.skill) : undefined;
+    let chosen = buildTp(primaryLock?.main ?? null);
+    if (cfg.lockedMain == null && primaryLock?.main == null && primaryWs) {
       const weaponCands = pickWeaponCandidates(cands, { kind: 'tp' }, primaryWs).filter((w: GearItem) => w.id !== chosen.tp.gear.main);
       // cheap pre-ranking: swap each weapon into the current TP set, keep the strongest few for a full build
       const ranked = weaponCands
@@ -550,9 +616,14 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
       const oc: OptimizeContext = { kind: 'ws', wsName: ws, wsTp };
       const def = WS_BY_NAME[ws];
       // a weapon skill of another weapon type (e.g. Upheaval while the TP weapon is a sword) is built with
-      // its own best weapon instead of being impossible under the TP weapon lock
+      // its own best weapon (or the weapon locked for that weapon type) instead of being impossible under
+      // the TP weapon lock - including a user-set main/sub lock, which only concerns the TP weapon's type
+      const catLock = def && !RANGED_SKILLS.has(def.skill) ? categoryLock(def.skill) : undefined;
       const useTpWeapons = !def || RANGED_SKILLS.has(def.skill) || def.skill === tpMainSkill;
-      const r = optimizeContext(db, cands, useTpWeapons ? wsCfg : cfg, ctx, oc);
+      const wsPassCfg: OptimizerConfig = catLock
+        ? { ...cfg, lockedMain: catLock.main, lockedSub: catLock.sub }
+        : useTpWeapons ? wsCfg : { ...cfg, lockedMain: null, lockedSub: null };
+      const r = optimizeContext(db, cands, wsPassCfg, ctx, oc);
       push(`ws:${ws}`, `WS: ${ws}`, oc, r);
       step(ws);
     }
@@ -580,6 +651,23 @@ export function optimizeAll(db: GearDB, cfg: OptimizerConfig, onProgress?: Progr
     const th = optimizeContext(db, cands, cfg, ctx, { kind: 'th', wsRefDamage });
     push('th', 'Treasure Hunter', { kind: 'th', wsRefDamage }, th);
     step('Treasure Hunter');
+
+    if (CASTER_JOBS.has(cfg.mainJob) || CASTER_SUBJOBS.has(cfg.subJob)) {
+      const casterSets: [ContextKind, string][] = [
+        ['mb', 'Magic Burst'],
+        ['enhancing', 'Enhancing Magic'],
+        ['enfeebling', 'Enfeebling Magic'],
+        ['curecast', 'Cure Precast'],
+        ['cursna', 'Cursna'],
+        ['regen', 'Regen'],
+        ['mpidle', 'Idle / Refresh'],
+      ];
+      for (const [kind, label] of casterSets) {
+        const r = optimizeContext(db, cands, cfg, ctx, { kind });
+        push(kind, label, { kind }, r);
+        step(label);
+      }
+    }
   }
   return results;
 }

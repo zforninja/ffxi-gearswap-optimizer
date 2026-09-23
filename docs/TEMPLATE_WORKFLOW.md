@@ -30,17 +30,28 @@ complete job file with every `sets.*` block present but empty, then fill it from
 | `sets.engaged`, `sets.melee`, `sets.TP` (+ `.Acc`, mode variants) | TP set |
 | `sets.engaged.DT` / `.Hybrid` / `.PDT` (any DT-ish token) | Hybrid DT set |
 | `sets.engaged.TH`, `sets.TreasureHunter` | Treasure Hunter set |
-| `sets.idle*`, `sets.defense.*`, `sets.Kiting`, `sets.resting` | Idle / DT set |
+| bare `sets.idle`, `sets.idle.Refresh`, `sets.resting` | Idle / Refresh set (caster jobs; falls back to Idle / DT) |
+| `sets.idle.DT`, `sets.defense.*`, `sets.Kiting` | Idle / DT set |
 | `sets.precast.FC*`, `sets.midcast.FastRecast`, Utsusemi, spell-interrupt | Fast Cast set |
+| `sets.precast.FC.Cure*` | Cure Precast set (Fast Cast + Cure spellcasting time) |
 | `sets.precast.WS` | first weapon skill in your list |
 | `sets.precast.WS['Name']` (+ `.Acc`) | that weapon skill's set — the WS must be in the optimizer table **and** in your WS list |
 | `sets.midcast.Cure*` | Healing set |
+| `sets.midcast.Cursna` | Cursna set |
+| `sets.midcast.Regen*` | Regen set |
 | nuke / elemental / ninjutsu magic paths | Magic set |
+| `...MagicBurst`, `.MB`, `.Burst` under a nuke path | Magic Burst set |
+| `sets.midcast['Enhancing Magic']`, Phalanx, Stoneskin, enspells, bar-spells... | Enhancing Magic set |
+| `sets.midcast['Enfeebling Magic']`, MndEnfeebles/IntEnfeebles, Dia/Slow/Paralyze..., Dark/Divine magic, geomancy | Enfeebling Magic set |
 | everything else (`sets.precast.JA[...]`, `sets.buff.*`, pet sets, …) | **left exactly as in the template** and listed in the report |
 
 Slot key style is detected from the template (`ear1/ring1` vs `left_ear/left_ring`). Augmented pieces are
 written as `{ name="…", augments={…} }` tables. When the template names a weapon skill you have not
 optimized yet, the report offers **Add to weapon skill list** so you can re-run and refill.
+
+Caster sets (Magic Burst, Enhancing, Enfeebling, Cure Precast, Cursna, Regen, Idle / Refresh) are only built when the main job
+is a caster (WHM BLM RDM SCH GEO SMN BLU PLD RUN DRK NIN BRD) or the subjob is WHM/BLM/RDM/SCH; for other jobs those
+blocks fall back to the closest broader set (Magic, Fast Cast, Healing, Idle) and the report says so.
 
 `.Acc` variants are currently filled from the same result as the base set (no separate accuracy pass yet);
 the report notes this on each such block.

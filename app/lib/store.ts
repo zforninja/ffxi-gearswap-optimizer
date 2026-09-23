@@ -1,7 +1,7 @@
 'use client';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import type { GearDB, Inventory, OptimizedSet, Target } from './ffxi/types';
+import type { GearDB, Inventory, OptimizedSet, Target, WeaponLock } from './ffxi/types';
 import { MOB_TIERS } from './ffxi/constants';
 
 export type MobTier = 'easy' | 'medium' | 'hard' | 'extreme' | 'custom';
@@ -27,6 +27,8 @@ export type AppState = {
   primaryWs: string | null;
   lockedMain: number | null;
   lockedSub: number | null;
+  /** Main/sub weapon locks per weapon-skill category (keyed by combat skill, e.g. "Great Axe"). */
+  weaponLocks: Record<string, WeaponLock>;
   results: OptimizedSet[];
   resultsStamp: string | null;
   setMainJob: (j: string) => void;
@@ -47,6 +49,7 @@ export type AppState = {
   setPrimaryWs: (n: string | null) => void;
   setLockedMain: (id: number | null) => void;
   setLockedSub: (id: number | null) => void;
+  setWeaponLock: (skill: string, lock: Partial<WeaponLock>) => void;
   setResults: (r: OptimizedSet[]) => void;
 };
 
@@ -69,9 +72,10 @@ export const useAppStore = create<AppState>()(
       primaryWs: 'Savage Blade',
       lockedMain: null,
       lockedSub: null,
+      weaponLocks: {},
       results: [],
       resultsStamp: null,
-      setMainJob: (j: string) => set({ mainJob: j, lockedMain: null, lockedSub: null, results: [] }),
+      setMainJob: (j: string) => set({ mainJob: j, lockedMain: null, lockedSub: null, weaponLocks: {}, results: [] }),
       setSubJob: (j: string) => set({ subJob: j }),
       setInventory: (inv: Inventory, characterName?: string, extraItems?: GearDB) =>
         set({ inventory: inv ?? {}, characterName: characterName ?? get().characterName, extraItems: extraItems ?? {} }),
@@ -108,6 +112,16 @@ export const useAppStore = create<AppState>()(
       setPrimaryWs: (n: string | null) => set({ primaryWs: n }),
       setLockedMain: (id: number | null) => set({ lockedMain: id }),
       setLockedSub: (id: number | null) => set({ lockedSub: id }),
+      setWeaponLock: (skill: string, lock: Partial<WeaponLock>) => {
+        const all = { ...(get().weaponLocks ?? {}) };
+        const prev: WeaponLock = all[skill] ?? { main: null, sub: null };
+        const next: WeaponLock = {
+          main: lock.main !== undefined ? lock.main : prev.main,
+          sub: lock.sub !== undefined ? lock.sub : prev.sub,
+        };
+        if (next.main == null && next.sub == null) delete all[skill]; else all[skill] = next;
+        set({ weaponLocks: all });
+      },
       setResults: (r: OptimizedSet[]) => set({ results: r ?? [], resultsStamp: new Date().toISOString() }),
     }),
     {
@@ -115,7 +129,7 @@ export const useAppStore = create<AppState>()(
       storage: createJSONStorage(() => localStorage),
       partialize: (s: AppState) => ({
         mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory, extraItems: s.extraItems, characterName: s.characterName, buffIds: s.buffIds, mobTier: s.mobTier,
-        customTarget: s.customTarget, dtThreshold: s.dtThreshold, unityRank: s.unityRank, jobPoints: s.jobPoints, masterLevel: s.masterLevel, wsNames: s.wsNames, primaryWs: s.primaryWs, lockedMain: s.lockedMain, lockedSub: s.lockedSub,
+        customTarget: s.customTarget, dtThreshold: s.dtThreshold, unityRank: s.unityRank, jobPoints: s.jobPoints, masterLevel: s.masterLevel, wsNames: s.wsNames, primaryWs: s.primaryWs, lockedMain: s.lockedMain, lockedSub: s.lockedSub, weaponLocks: s.weaponLocks,
         results: s.results, resultsStamp: s.resultsStamp,
       }) as unknown as AppState,
     },

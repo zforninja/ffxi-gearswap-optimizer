@@ -85,6 +85,11 @@ export function jobTraits(main: string, sub: string): Traits {
 
 export const TWO_HANDED_SKILLS = new Set(['Great Sword', 'Great Axe', 'Scythe', 'Polearm', 'Great Katana', 'Staff']);
 export const RANGED_SKILLS = new Set(['Archery', 'Marksmanship', 'Throwing']);
+/** Jobs whose GearSwap files need the caster sets (enhancing, enfeebling, magic burst, cure precast, refresh idle ...). */
+export const CASTER_JOBS = new Set(['WHM', 'BLM', 'RDM', 'SCH', 'GEO', 'SMN', 'BLU', 'PLD', 'RUN', 'DRK', 'NIN', 'BRD']);
+/** Subjobs that bring enough spells along to justify the caster sets on a melee main. */
+export const CASTER_SUBJOBS = new Set(['WHM', 'BLM', 'RDM', 'SCH']);
+
 export const MELEE_SKILLS = new Set(['Hand To Hand', 'Dagger', 'Sword', 'Great Sword', 'Axe', 'Great Axe', 'Scythe', 'Polearm', 'Katana', 'Great Katana', 'Club', 'Staff']);
 
 /** fTP triples are [1000, 2000, 3000] TP. Values are community approximations. */

@@ -86,7 +86,7 @@ export function OptimizerApp({ user }: { user: User }) {
   }, [db, current, currentGear, overrides]);
 
   function cfg() {
-    return { mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory ?? {}, buffIds: s.buffIds ?? [], target, lockedMain: s.lockedMain, lockedSub: s.lockedSub, primaryWs: s.primaryWs, dtThreshold: s.dtThreshold, wsNames: s.wsNames ?? [], unityRank: s.unityRank ?? 1, jobPoints: s.jobPoints ?? 2100, masterLevel: s.masterLevel ?? 50 };
+    return { mainJob: s.mainJob, subJob: s.subJob, inventory: s.inventory ?? {}, buffIds: s.buffIds ?? [], target, lockedMain: s.lockedMain, lockedSub: s.lockedSub, weaponLocks: s.weaponLocks ?? {}, primaryWs: s.primaryWs, dtThreshold: s.dtThreshold, wsNames: s.wsNames ?? [], unityRank: s.unityRank ?? 1, jobPoints: s.jobPoints ?? 2100, masterLevel: s.masterLevel ?? 50 };
   }
 
   const run = async () => {
@@ -155,8 +155,8 @@ export function OptimizerApp({ user }: { user: User }) {
             {sidebarTab === 'setup' && (
               <>
                 <JobSelector mainJob={s.mainJob} subJob={s.subJob} onMain={s.setMainJob} onSub={s.setSubJob} />
-                <WsPanel db={db} inventory={s.inventory ?? {}} mainJob={s.mainJob} wsNames={s.wsNames ?? []} primaryWs={s.primaryWs} lockedMain={s.lockedMain} lockedSub={s.lockedSub}
-                  onWsNames={s.setWsNames} onPrimary={s.setPrimaryWs} onLockMain={s.setLockedMain} onLockSub={s.setLockedSub} />
+                <WsPanel db={db} inventory={s.inventory ?? {}} mainJob={s.mainJob} wsNames={s.wsNames ?? []} primaryWs={s.primaryWs} lockedMain={s.lockedMain} lockedSub={s.lockedSub} weaponLocks={s.weaponLocks ?? {}}
+                  onWsNames={s.setWsNames} onPrimary={s.setPrimaryWs} onLockMain={s.setLockedMain} onLockSub={s.setLockedSub} onWeaponLock={s.setWeaponLock} />
               </>
             )}
             {sidebarTab === 'buffs' && <BuffPanel buffIds={s.buffIds ?? []} onToggle={s.toggleBuff} unityRank={s.unityRank ?? 1} onUnityRank={s.setUnityRank} mainJob={s.mainJob} jobPoints={s.jobPoints ?? 2100} masterLevel={s.masterLevel ?? 50} onJobPoints={s.setJobPoints} onMasterLevel={s.setMasterLevel} />}

@@ -42,6 +42,13 @@ function setPath(s: OptimizedSet): string | null {
     case 'idle': return 'sets.idle.DT';
     case 'fastcast': return 'sets.precast.FC';
     case 'th': return 'sets.TreasureHunter';
+    case 'mb': return `sets.midcast['Elemental Magic'].MagicBurst`;
+    case 'enhancing': return `sets.midcast['Enhancing Magic']`;
+    case 'enfeebling': return `sets.midcast['Enfeebling Magic']`;
+    case 'curecast': return 'sets.precast.FC.Cure';
+    case 'cursna': return 'sets.midcast.Cursna';
+    case 'regen': return 'sets.midcast.Regen';
+    case 'mpidle': return 'sets.idle.Refresh';
     default: return null;
   }
 }

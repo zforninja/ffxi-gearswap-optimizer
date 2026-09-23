@@ -160,13 +160,17 @@ export function buildSkeleton(job: string, opts: SkeletonOptions): string {
   if (HEALER_JOBS.has(J)) {
     p(block('sets.midcast.Cure', { comment: 'Cure potency' }));
     p(block('sets.midcast.Curaga', { combine: 'sets.midcast.Cure', comment: 'Curaga' }));
+    p(block('sets.midcast.Cursna', { comment: 'Cursna (Cursna+ / healing skill)' }));
+    p(block('sets.midcast.Regen', { comment: 'Regen potency / duration' }));
   }
   if (NUKER_JOBS.has(J)) {
     const nukePath = J === 'NIN' ? 'sets.midcast.ElementalNinjutsu' : J === 'DRK' ? "sets.midcast['Dark Magic']" : J === 'BLU' ? "sets.midcast['Blue Magic']" : "sets.midcast['Elemental Magic']";
     p(block(nukePath, { comment: 'Nuking (magic attack / magic accuracy)' }));
     p(block(`${nukePath}.Resistant`, { combine: nukePath, comment: 'Nuking against resistant targets' }));
+    p(block(`${nukePath}.MagicBurst`, { combine: nukePath, comment: 'Magic burst' }));
   }
   if (mage) p(block("sets.midcast['Enhancing Magic']", { comment: 'Enhancing magic skill' }));
+  if (mage && !['NIN', 'SMN', 'BRD'].includes(J)) p(block("sets.midcast['Enfeebling Magic']", { comment: 'Enfeebling magic (magic accuracy / skill / potency)' }));
   if (ranged) p(block('sets.midcast.RA', { comment: 'Ranged attack midcast' }));
   p();
   p('    ------------------------------------------------------------------------------------------------');

@@ -1,16 +1,18 @@
 'use client';
 import { useMemo } from 'react';
 import { Sparkles, Lock, Unlock } from 'lucide-react';
-import { WEAPONSKILLS, type WeaponSkillDef } from '@/lib/ffxi/constants';
-import type { GearDB, GearItem, Inventory } from '@/lib/ffxi/types';
+import { RANGED_SKILLS, TWO_HANDED_SKILLS, WEAPONSKILLS, type WeaponSkillDef } from '@/lib/ffxi/constants';
+import type { GearDB, GearItem, Inventory, WeaponLock } from '@/lib/ffxi/types';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
-export function WsPanel({ db, inventory, mainJob, wsNames, primaryWs, lockedMain, lockedSub, onWsNames, onPrimary, onLockMain, onLockSub }: {
+export function WsPanel({ db, inventory, mainJob, wsNames, primaryWs, lockedMain, lockedSub, weaponLocks, onWsNames, onPrimary, onLockMain, onLockSub, onWeaponLock }: {
   db: GearDB | null; inventory: Inventory; mainJob: string; wsNames: string[]; primaryWs: string | null; lockedMain: number | null; lockedSub: number | null;
+  weaponLocks?: Record<string, WeaponLock>;
   onWsNames: (n: string[]) => void; onPrimary: (n: string | null) => void; onLockMain: (id: number | null) => void; onLockSub: (id: number | null) => void;
+  onWeaponLock?: (skill: string, lock: Partial<WeaponLock>) => void;
 }) {
   const ownedWeapons = useMemo(() => {
     if (!db) return { mains: [] as GearItem[], subs: [] as GearItem[], skills: new Set<string>() };
@@ -36,6 +38,10 @@ export function WsPanel({ db, inventory, mainJob, wsNames, primaryWs, lockedMain
     return order.map((k) => ({ skill: k, list: m[k] ?? [], owned: ownedWeapons.skills.has(k) }));
   }, [ownedWeapons]);
 
+  /** Off-hand choices for a weapon type: grips only under two-handers, otherwise every owned sub item. */
+  const subsFor = (skill: string): GearItem[] =>
+    TWO_HANDED_SKILLS.has(skill) ? ownedWeapons.subs.filter((w: GearItem) => !w.slots?.includes('Main')) : ownedWeapons.subs;
+
   const toggle = (name: string) => {
     const cur = new Set(wsNames ?? []);
     if (cur.has(name)) cur.delete(name); else cur.add(name);
@@ -58,28 +64,59 @@ export function WsPanel({ db, inventory, mainJob, wsNames, primaryWs, lockedMain
       </div>
       <div className="space-y-2">
         <Label className="text-xs uppercase tracking-wide text-muted-foreground">Weapon skills to build sets for</Label>
+        <p className="text-[11px] text-muted-foreground">Selecting a weapon skill shows main / off-hand locks for that weapon type. Weapon skills of a different type than the TP weapon are always built with their own weapon (locked or best owned).</p>
         <div className="max-h-64 overflow-y-auto rounded-md bg-secondary/40 p-2 space-y-2">
-          {grouped.map((g) => (
-            <div key={g.skill}>
-              <div className={cn('text-[11px] font-semibold uppercase tracking-wide mb-1', g.owned ? 'text-primary' : 'text-muted-foreground/60')}>{g.skill}{g.owned ? '' : ' (no weapon owned)'}</div>
-              <div className="flex flex-wrap gap-1">
-                {g.list.map((ws: WeaponSkillDef) => {
-                  const on = (wsNames ?? []).includes(ws.name);
-                  return (
-                    <button key={ws.name} type="button" onClick={() => toggle(ws.name)}
-                      className={cn('rounded px-2 py-1 text-xs transition-colors', on ? 'bg-primary text-primary-foreground shadow' : 'bg-card hover:bg-accent text-foreground')}>
-                      {ws.name}
-                    </button>
-                  );
-                })}
+          {grouped.map((g) => {
+            const selected = g.list.some((ws: WeaponSkillDef) => (wsNames ?? []).includes(ws.name));
+            const lock = weaponLocks?.[g.skill];
+            const mains = ownedWeapons.mains.filter((w: GearItem) => w.weapon?.skill === g.skill);
+            const showLock = selected && g.owned && !RANGED_SKILLS.has(g.skill);
+            return (
+              <div key={g.skill}>
+                <div className={cn('text-[11px] font-semibold uppercase tracking-wide mb-1', g.owned ? 'text-primary' : 'text-muted-foreground/60')}>{g.skill}{g.owned ? '' : ' (no weapon owned)'}</div>
+                <div className="flex flex-wrap gap-1">
+                  {g.list.map((ws: WeaponSkillDef) => {
+                    const on = (wsNames ?? []).includes(ws.name);
+                    return (
+                      <button key={ws.name} type="button" onClick={() => toggle(ws.name)}
+                        className={cn('rounded px-2 py-1 text-xs transition-colors', on ? 'bg-primary text-primary-foreground shadow' : 'bg-card hover:bg-accent text-foreground')}>
+                        {ws.name}
+                      </button>
+                    );
+                  })}
+                </div>
+                {showLock && (
+                  <div className="mt-1.5 grid grid-cols-2 gap-1.5">
+                    <Select value={lock?.main != null ? String(lock.main) : '__auto'} onValueChange={(v: string) => onWeaponLock?.(g.skill, { main: v === '__auto' ? null : Number(v) })}>
+                      <SelectTrigger className="h-7 bg-card text-[11px]" aria-label={`${g.skill} weapon lock`}>
+                        {lock?.main != null ? <Lock className="h-3 w-3 shrink-0 text-primary" /> : <Unlock className="h-3 w-3 shrink-0 text-muted-foreground" />}
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-72">
+                        <SelectItem value="__auto">Auto {g.skill.toLowerCase()}</SelectItem>
+                        {mains.map((w: GearItem) => <SelectItem key={w.id} value={String(w.id)}>{w.displayName}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                    <Select value={lock?.sub != null ? String(lock.sub) : '__auto'} onValueChange={(v: string) => onWeaponLock?.(g.skill, { sub: v === '__auto' ? null : Number(v) })}>
+                      <SelectTrigger className="h-7 bg-card text-[11px]" aria-label={`${g.skill} off-hand lock`}>
+                        {lock?.sub != null ? <Lock className="h-3 w-3 shrink-0 text-primary" /> : <Unlock className="h-3 w-3 shrink-0 text-muted-foreground" />}
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-72">
+                        <SelectItem value="__auto">Auto off-hand</SelectItem>
+                        {subsFor(g.skill).map((w: GearItem) => <SelectItem key={w.id} value={String(w.id)}>{w.displayName}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
       <div className="grid grid-cols-1 gap-3">
         <div className="space-y-1.5">
-          <Label className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-muted-foreground">{lockedMain != null ? <Lock className="h-3.5 w-3.5 text-primary" /> : <Unlock className="h-3.5 w-3.5" />} Lock main weapon</Label>
+          <Label className="flex items-center gap-1.5 text-xs uppercase tracking-wide text-muted-foreground">{lockedMain != null ? <Lock className="h-3.5 w-3.5 text-primary" /> : <Unlock className="h-3.5 w-3.5" />} Lock main weapon (TP set)</Label>
           <Select value={lockedMain != null ? String(lockedMain) : '__auto'} onValueChange={(v: string) => onLockMain?.(v === '__auto' ? null : Number(v))}>
             <SelectTrigger className="bg-secondary/60"><SelectValue /></SelectTrigger>
             <SelectContent className="max-h-72">

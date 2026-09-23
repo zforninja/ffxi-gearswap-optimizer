@@ -30,7 +30,7 @@ export type TemplateBlock = {
 };
 
 export type SetTarget =
-  | { kind: 'tp' | 'hybrid' | 'idle' | 'fastcast' | 'healing' | 'magic' | 'th'; acc?: boolean; note?: string }
+  | { kind: 'tp' | 'hybrid' | 'idle' | 'fastcast' | 'healing' | 'magic' | 'th' | 'mb' | 'enhancing' | 'enfeebling' | 'curecast' | 'cursna' | 'regen' | 'mpidle'; acc?: boolean; note?: string }
   | { kind: 'ws'; wsName: string | null; acc?: boolean; note?: string };
 
 export type FillEntry = { path: string; source: string; slots: number; note?: string };
@@ -147,6 +147,15 @@ const IDLE_TOKENS = new Set(['idle', 'kiting', 'resting', 'defense', 'town', 'we
 const HEAL_TOKENS = new Set(['cure', 'curaga', 'cureself', 'cures', 'curesolace', 'curaga', 'healing magic', 'healingmagic', 'cureweather', 'cureclaudo']);
 const NUKE_TOKENS = new Set(['elemental magic', 'nuke', 'nuking', 'mb', 'magicburst', 'burst', 'elementalmagic', 'ninjutsu', 'elementalninjutsu', 'dark magic', 'blue magic']);
 const FC_MIDCAST_TOKENS = new Set(['fastrecast', 'fc', 'utsusemi', 'spellinterrupt']);
+const MB_TOKENS = new Set(['mb', 'magicburst', 'burst']);
+const ENHANCING_TOKENS = new Set(['enhancing magic', 'enhancingmagic', 'enhancing', 'enhance', 'phalanx', 'stoneskin', 'aquaveil', 'temper', 'enspell', 'enspells', 'gainspell', 'barspell', 'protect', 'shell', 'haste', 'reraise', 'auspice', 'boostspell', 'bar-element', 'barelement', 'barstatus', 'bar-status']);
+const ENFEEBLING_TOKENS = new Set(['enfeebling magic', 'enfeeblingmagic', 'enfeebling', 'enfeeble', 'mndenfeebles', 'intenfeebles', 'mndenfeeble', 'intenfeeble', 'dia', 'bio', 'slow', 'paralyze', 'silence', 'sleep', 'blind', 'gravity', 'bind', 'dispel', 'frazzle', 'distract', 'addle', 'poison', 'dark magic', 'darkmagic', 'absorb', 'drain', 'aspir', 'divine magic', 'divinemagic', 'flash', 'repose', 'geomancy', 'indi', 'geo', 'ninjutsu', 'enfeeblingninjutsu', 'debuff', 'macc']);
+const CURSNA_TOKENS = new Set(['cursna', 'statusremoval', 'status removal', 'esuna', 'sacrifice']);
+const REGEN_TOKENS = new Set(['regen', 'regenspell', 'regeniv', 'regenv']);
+const REFRESH_IDLE_TOKENS = new Set(['refresh', 'mp', 'normal', 'sublimation']);
+const CURECAST_TOKENS = new Set(['cure', 'curaga', 'healing magic', 'healingmagic']);
+/** Caster sets that fall back to a broader set when the job did not build them. */
+const CASTER_FALLBACK: Record<string, string> = { mb: 'magic', enhancing: 'fastcast', enfeebling: 'magic', curecast: 'fastcast', cursna: 'healing', regen: 'enhancing', mpidle: 'idle' };
 
 /** Decide which optimizer result a set path should be filled from; null = leave the block alone. */
 export function classifySetPath(path: string): SetTarget | null {
@@ -163,12 +172,21 @@ export function classifySetPath(path: string): SetTarget | null {
     return { kind: 'tp', acc: has(ACC_TOKENS), note: modeNote(extra([ACC_TOKENS, new Set(['stp', 'normal', 'crit', 'da'])])) };
   }
   if (root === 'idle' || root === 'kiting' || root === 'defense' || root === 'resting') {
+    if (root === 'idle' && !has(DT_TOKENS) && (rest.length === 0 || has(REFRESH_IDLE_TOKENS))) {
+      return { kind: 'mpidle', note: modeNote(extra([IDLE_TOKENS, REFRESH_IDLE_TOKENS, new Set(['regen'])])) };
+    }
+    if (root === 'resting') return { kind: 'mpidle' };
     return { kind: 'idle', note: modeNote(extra([DT_TOKENS, IDLE_TOKENS, new Set(['regen', 'refresh', 'normal', 'pdt', 'mdt'])])) };
   }
   if (root === 'treasurehunter' || root === 'th') return { kind: 'th' };
   if (root === 'precast') {
     const sub = rest[0] ?? '';
-    if (sub === 'fc' || sub === 'fastcast') return { kind: 'fastcast' };
+    if (sub === 'fc' || sub === 'fastcast') {
+      const tail = rest.slice(1);
+      if (tail.some((s) => CURECAST_TOKENS.has(s) || s.startsWith('cure'))) return { kind: 'curecast' };
+      if (tail.some((s) => CURSNA_TOKENS.has(s))) return { kind: 'cursna', note: 'Cursna precast filled from the Cursna set' };
+      return { kind: 'fastcast', note: tail.length ? `precast variant "${tail.join('.')}" filled from the Fast Cast set` : undefined };
+    }
     if (sub === 'ws' || sub === 'weaponskill') {
       const name = rest[1] && !ACC_TOKENS.has(rest[1]) && !DT_TOKENS.has(rest[1]) ? rest[1] : null;
       const tail = rest.slice(name ? 2 : 1);
@@ -180,8 +198,13 @@ export function classifySetPath(path: string): SetTarget | null {
   }
   if (root === 'midcast') {
     if (has(FC_MIDCAST_TOKENS)) return { kind: 'fastcast', note: 'recast/interruption set filled from the Fast Cast result' };
+    if (has(CURSNA_TOKENS)) return { kind: 'cursna' };
+    if (has(REGEN_TOKENS)) return { kind: 'regen' };
     if (has(HEAL_TOKENS) || rest.some((s) => s.startsWith('cure') || s.startsWith('curaga'))) return { kind: 'healing' };
+    if (has(MB_TOKENS)) return { kind: 'mb', note: modeNote(extra([NUKE_TOKENS, MB_TOKENS, new Set(['resistant', 'futae', 'normal', 'seidr'])])) };
     if (has(NUKE_TOKENS)) return { kind: 'magic', note: modeNote(extra([NUKE_TOKENS, new Set(['resistant', 'futae', 'normal', 'seidr', 'burst'])])) };
+    if (has(ENHANCING_TOKENS)) return { kind: 'enhancing', note: modeNote(extra([ENHANCING_TOKENS, new Set(['self', 'others', 'duration', 'skill', 'normal'])])) };
+    if (has(ENFEEBLING_TOKENS)) return { kind: 'enfeebling', note: modeNote(extra([ENFEEBLING_TOKENS, new Set(['normal', 'potency', 'skill', 'duration', 'macc'])])) };
     return null;
   }
   if (root === 'buff' || root === 'weapons' || root === 'gear') return null;
@@ -224,8 +247,14 @@ function resolveTarget(
     return { set, source: `${set.label} (${set.tier})`, note };
   }
   const set = findResult(pool, target.kind, tier);
-  if (!set) return { error: `no ${target.kind} result — run the optimizer first` };
-  return { set, source: `${set.label} (${set.tier})`, note };
+  if (set) return { set, source: `${set.label} (${set.tier})`, note };
+  const fb = CASTER_FALLBACK[target.kind];
+  const fbSet = fb ? findResult(pool, fb, tier) : null;
+  if (fbSet) {
+    const fbNote = `no ${target.kind} set for this job; filled from the ${fbSet.label} set`;
+    return { set: fbSet, source: `${fbSet.label} (${fbSet.tier})`, note: [note, fbNote].filter(Boolean).join('; ') };
+  }
+  return { error: `no ${target.kind} result — run the optimizer first` };
 }
 
 function detectKeyStyle(lines: string[], blocks: TemplateBlock[]): Record<Slot, string> {
