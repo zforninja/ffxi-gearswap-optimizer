@@ -52,10 +52,10 @@ export function BuffPanel({
   return (
     <TooltipProvider delayDuration={200}>
       <div className="space-y-4">
-        <p className="text-xs text-muted-foreground">
+        <div className="text-xs text-muted-foreground">
           <Badge variant="outline" className="mr-1 border-primary/40 text-primary">Low</Badge> sets use only personal buffs (food, JA, self haste).
           <Badge variant="outline" className="mx-1 border-primary/40 text-primary">High</Badge> sets add every party buff selected below.
-        </p>
+        </div>
         <div className="rounded-md bg-secondary/40 p-3">
           <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wide text-primary"><GraduationCap className="h-3.5 w-3.5" />Job Points &amp; Master Level</div>
           <div className="grid grid-cols-2 gap-2">
