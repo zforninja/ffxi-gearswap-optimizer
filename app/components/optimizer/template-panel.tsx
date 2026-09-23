@@ -164,8 +164,8 @@ export function TemplatePanel({ db, results, mainJob, subJob, characterName, tar
 
       {report ? (
         <div className="rounded-md bg-secondary/40 p-2 space-y-2 text-xs">
-          <div className="flex items-center justify-between">
-            <span className="font-medium"><CheckCircle2 className="inline h-3.5 w-3.5 mr-1 text-emerald-400" />{report.filled.length} of {report.blocks} sets filled</span>
+          <div className="flex flex-wrap items-center justify-between gap-1.5">
+            <span className="font-medium whitespace-nowrap"><CheckCircle2 className="inline h-3.5 w-3.5 mr-1 text-emerald-400" />{report.filled.length} of {report.blocks} sets filled</span>
             <span className="flex gap-1">
               <Button size="sm" variant="secondary" onClick={() => setPreview(true)}><FileText className="h-3.5 w-3.5 mr-1" /> Preview</Button>
               <Button size="sm" onClick={() => downloadText(fileName, report.text)}><Download className="h-3.5 w-3.5 mr-1" /> {fileName}</Button>
